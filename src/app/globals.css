@@ -36,8 +36,9 @@ width: 100%;
 }
 .image__container{
   position: absolute;
+
   top: 0%;
   left: 0%;
-  height: 100vh;
-  width: 100vw;
+  background-size: cover;
+  background-image: url('../../assets/real-home.jpg');
 }

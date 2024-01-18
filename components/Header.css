@@ -1,4 +1,52 @@
 .onHoverUnderline:hover{
     text-decoration: underline ;
-    margin-bottom: 20px;
+}
+
+.hero__container{
+    height: 70vh;
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__list{
+    width: 80vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero__container__one{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 60%;
+    justify-content: center;
+    row-gap: 20px;
+    
+}
+.hero__container__two{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 60%;
+    justify-content: center;
+}
+
+.hero__container__two > img{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    object-fit: contain;
+    background-position: cover;
+}
+
+@media screen and (max-width:1040px){
+    .header__list{
+        width: 60vw;
+    }
+    .hero__container__one,.hero__container__two{
+        width: 30%;
+    }
 }
