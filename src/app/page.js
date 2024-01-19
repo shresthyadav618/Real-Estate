@@ -3,6 +3,7 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
+import Featured from "../../components/featured";
 import Overview from "../../components/overview";
 import Slider from "../../components/slider";
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <Overview/>
     
     <Slider/>
+    <Featured/>
     <Footer/>
    </div>
   )
