@@ -11,8 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'></link>
       <body className={inter.className}>{children}</body>
       <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://kit.fontawesome.com/cacef5af72.js" crossorigin="anonymous"></script>
     </html>
   )
 }

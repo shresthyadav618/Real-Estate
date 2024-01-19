@@ -1,0 +1,89 @@
+.overview__container{
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.overview__child1{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    position: relative;
+    
+}
+.overview__child1 * > {
+    width: 80%;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+}
+.overview__child1 >h1 {
+font-size: xx-large;
+font-weight: bold;
+
+}
+.overview__child1 > p{
+    font-size: large;
+}
+.overview__child1 > button{
+    background-color: #97B618;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    width: 40%;
+    position: absolute;
+    left: 0;
+    top: 80%;
+    
+}
+.overview__child2{
+    cursor: pointer;
+    margin-top: 100px;
+width: 40%;
+display: flex;
+height: 60%;
+justify-content: center;
+align-items: center;
+column-gap: 15px;
+}
+.sub__child1{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 70%;
+}
+.sub__child2{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 70%;
+}
+.sub__child1 > img{
+    width: 200px !important;
+    border-radius: 10px;
+    transition: transform 2 ease-in-out;
+    }
+    .sub__child2 > img{
+    width: 200px !important;
+    border-radius: 10px;
+    transition: transform 2 ease-in-out;
+    }
+.sub__child1 > img:hover{
+    transform: scale(1.1);
+}
+.sub__child2 > img:hover{
+    transform: scale(1.1);
+
+}
+
+
+

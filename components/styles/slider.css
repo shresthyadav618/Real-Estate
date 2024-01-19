@@ -1,0 +1,109 @@
+@keyframes left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes right {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  
+.container{
+    background-color: #F4DFC8;
+    color: black;
+}
+
+  .con1 {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    column-gap: 20px;
+  }
+  .con1::-webkit-scrollbar {
+    display: none;
+  }
+  .con1-in {
+    animation-name: right;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .con1-in > div {
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .con2-in > div {
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .con3-in > div {
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .con2 {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    column-gap: 20px;
+  }
+  .con2::-webkit-scrollbar {
+    display: none;
+  }
+  .con2-in {
+    animation-name: left;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .con3 > div {
+    flex: 0 0 300px;
+    white-space: nowrap;
+  }
+  .con3 {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    column-gap: 20px;
+  }
+  .con3::-webkit-scrollbar {
+    display: none;
+  }
+  .con3-in {
+    animation-name: right;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @media screen and (max-width: 950px) {
+      .container{
+          flex-direction: column!important;
+          justify-content: start!important;
+          align-items: normal!important;
+      }
+      .first__container{
+          width: 50%!important;
+      }
+      .second__container{
+          width: 100%!important;
+      }
+  }
