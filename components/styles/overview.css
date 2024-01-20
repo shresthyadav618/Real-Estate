@@ -87,3 +87,19 @@ column-gap: 15px;
 
 
 
+.child__provider{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 30%;
+    /* flex-wrap: wrap; */
+    /* column-gap: 20px; */
+    background-color: #F4DFC8;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.child__provider > img{
+    width: 80px!important;
+}

@@ -1,0 +1,46 @@
+.footer__container{
+    width: 100vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    height: 40vh;
+}
+
+.footer__parent{
+    width: 80vw;
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+    height: 100%;
+}
+
+.footer__parent > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 90%;
+}
+
+.footer__button{
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    background: #a8cf45;
+    width: 40%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.footer__links{
+    display: flex;
+    column-gap: 15px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    left: 0%;
+    top: 80%;
+}
