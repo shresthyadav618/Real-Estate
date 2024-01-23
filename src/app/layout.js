@@ -1,6 +1,6 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-
+import { Inter } from 'next/font/google';
+import AuthProvider from '../../components/authProvider/authProvider';
+import './globals.css';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -11,10 +11,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* <AuthProvider> */}
       <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'></link>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+
+        <AuthProvider>
+          {children}
+          </AuthProvider>
+        
+        </body>
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="https://kit.fontawesome.com/cacef5af72.js" crossorigin="anonymous"></script>
+      {/* </AuthProvider> */}
     </html>
   )
 }
