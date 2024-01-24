@@ -11,6 +11,7 @@
 import { useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 import { PuffLoader } from "react-spinners";
+import Header from "../../../../components/Header";
 import "../../../../components/styles/dashboard.css";
 // import { useRouter } from "next/navigation";
 export default function AddProperty() {
@@ -76,7 +77,9 @@ console.log(subCategories[newPropertyCategory]);
 
 
   return (
-    <div>
+    <>
+    <Header/>
+    <div className="form__property__add">
       <form className="flex flex-col w-[60%] gap-y-4">
         {check ? (
           <div className="p-[10px]">Edit Property</div>
@@ -166,7 +169,7 @@ console.log(subCategories[newPropertyCategory]);
           })} */}
 
         <label htmlFor="photos">Photos</label>
-        <label className="ml-2 btn font-normal cursor-pointer flex flex-col items-center justify-center gap-y-2">
+        <label className="ml-2 btn__property font-normal cursor-pointer flex flex-col items-center justify-center gap-y-2">
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +221,7 @@ console.log(subCategories[newPropertyCategory]);
         <label htmlFor="desc">Description</label>
         <textarea
           value={data.description}
-          rows={"40"}
+          rows={"10"}
           onChange={(e) => {
             changeData((prev) => {
               return { ...prev, description: e.target.value };
@@ -243,12 +246,12 @@ console.log(subCategories[newPropertyCategory]);
           <button
             onClick={(e) => {
               handleSubmit(e);
-            }}
+            }} className="btn__property"
           >
             Edit This Product
           </button>
         ) : (
-          <button
+          <button className="btn__property"
             onClick={(e) => {
               handleSubmit(e);
             }}
@@ -258,5 +261,6 @@ console.log(subCategories[newPropertyCategory]);
         )}
       </form>
     </div>
+    </>
   );
 }
