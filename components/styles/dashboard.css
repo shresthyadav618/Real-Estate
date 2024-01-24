@@ -15,3 +15,46 @@ table, th , td{
     width: -moz-fit-content;
     width: fit-content;
   }
+
+  label {
+    --tw-bg-opacity: 1;
+    color: rgb(30 58 138 / var(--tw-bg-opacity));
+    padding-left: 10px!important;
+    font-weight: bold;
+    font-size: large;
+}
+
+/* button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+} */
+
+input, textarea, select {
+  --tw-bg-opacity: 1;
+  border: 2px solid rgb(30 58 138 / var(--tw-bg-opacity));
+  color: black!important;
+  padding: 10px!important;
+  border-radius: 5px!important;
+}
+
+button, select {
+  text-transform: none;
+}
+
+
+.btn {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity))!important;
+  color: white!important;
+  padding: 10px!important;
+  border-radius: 5px!important;
+  width: -moz-fit-content;
+  width: fit-content;
+}
