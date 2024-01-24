@@ -6,19 +6,12 @@ table, th , td{
     padding: 15px;
   }
 
-  .bl{
-    --tw-bg-opacity: 1;
-    background-color: rgb(30 58 138 / var(--tw-bg-opacity))!important;
-    color: white!important;
-    padding: 10px!important;
-    border-radius: 5px!important;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
 
   label {
     --tw-bg-opacity: 1;
     color: rgb(30 58 138 / var(--tw-bg-opacity));
+    color: #F4DFC8;
+    width: 40%;
     padding-left: 10px!important;
     font-weight: bold;
     font-size: large;
@@ -38,15 +31,28 @@ table, th , td{
 
 input, textarea, select {
   --tw-bg-opacity: 1;
-  border: 2px solid rgb(30 58 138 / var(--tw-bg-opacity));
+  /* border: 2px solid rgb(30 58 138 / var(--tw-bg-opacity)); */
+  /* border: 2px solid white; */
+  background-color: #F4DFC8;
   color: black!important;
   padding: 10px!important;
   border-radius: 5px!important;
-  width: 40%;
+  width: 80%;
 }
 
-textarea{
+
+
+input:active{
+  border: none;
+}
+
+input::placeholder{
+  color: black!important;
+}
+
+textarea::placeholder{
   /* width: 80%!important; */
+  color : black!important;
 }
 
 button, select {
@@ -56,8 +62,10 @@ button, select {
 
 .btn__property {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity))!important;
-  color: white!important;
+  /* background-color: rgb(30 58 138 / var(--tw-bg-opacity))!important;
+   */
+   background-color: #F4DFC8!important;
+  color: black!important;
   padding: 10px!important;
   border-radius: 5px!important;
   width: -moz-fit-content;
@@ -67,4 +75,18 @@ button, select {
 .form__property__add{
   width: 80vw;
   margin: 100px auto;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+form > div{
+  width: 50%;
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 }

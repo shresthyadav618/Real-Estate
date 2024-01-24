@@ -10,7 +10,6 @@
 "use client";
 import { useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { PuffLoader } from "react-spinners";
 import Header from "../../../../components/Header";
 import "../../../../components/styles/dashboard.css";
 // import { useRouter } from "next/navigation";
@@ -18,14 +17,12 @@ export default function AddProperty() {
   const [data, changeData] = useState({
     name: "",
     description: "",
-    project_type: "",
-    sub_type: "",
     images: [],
     floorPlansImages: [],
-    amenities: [],
+    amenities: "",
     propertyCategory: "Residential",
-    subCategory: [],
-    details: "",
+    subCategory: "",
+    details: [],
     price : ""
   });
   const categories = [
@@ -51,9 +48,24 @@ export default function AddProperty() {
 
 }
 
+const arr = [{'key-1' : 'value-1'},
+    {'key-2' : 'value-2'},
+    {'key-3' : 'value-3'}]
+
+arr.map((elm)=>{
+  for(const newKey in elm){
+    if(elm.hasOwnProperty(newKey)){
+      console.log(newKey);
+      console.log(elm[newKey]);
+    }
+  }
+})
 
 
 
+
+arr.push({'Key-4':'value-4'});
+console.log(arr);
 
 function handleSubmit(e){
     console.log('Submitting form');
@@ -74,18 +86,36 @@ console.log(newPropertyCategory);
 console.log(subCategories[newPropertyCategory]);
 
 
+const [key,changeKey] = useState('');
+const [value,changeValue] = useState('');
+console.log(key,value);
+console.log(data.details);
+
+function handleKeyValueAdd(e){
+e.preventDefault();
+
+const pvkav = data.details;
+pvkav.push({[key]:value})
+changeData((prev)=>{
+  return {...prev,pvkav};
+})
+changeKey("");
+changeValue("");
+}
 
 
   return (
     <>
     <Header/>
     <div className="form__property__add">
-      <form className="flex flex-col w-[60%] gap-y-4">
-        {check ? (
+    {check ? (
           <div className="p-[10px]">Edit Property</div>
         ) : (
-          <div className="p-[10px]">New Property</div>
+          <div className=" font-bolder text-4xl mb-4 pl-[10px]">New Property</div>
         )}
+      <form className="flex flex-wrap w-[100%]">
+        
+        <div>
         <label htmlFor="name">Property Name</label>
         <input
           value={data.name}
@@ -218,6 +248,57 @@ console.log(subCategories[newPropertyCategory]);
           </div>
         </div>
 
+
+        <label htmlFor="photos">Floor Plan Photos</label>
+        <label className="ml-2 btn__property font-normal cursor-pointer flex flex-col items-center justify-center gap-y-2">
+          {" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
+            />
+          </svg>
+          Upload
+          <input
+            onChange={(e) => {
+              uploadImages(e);
+            }}
+            type="file"
+            className="hidden"
+          ></input>
+        </label>
+
+        <div className="relative">
+          {loading && (
+            <div className="p-2">
+              <PuffLoader color="#36d7b7" />
+            </div>
+          )}
+          <div className="uploaded__images">
+            <ReactSortable list={data.floorPlansImages} setList={updateImagesOrder}>
+              {data?.floorPlansImages?.length > 0 &&
+                data?.floorPlansImages?.map((imageContent) => {
+                  if (imageContent)
+                    return (
+                      <img
+                        src={imageContent}
+                        width={"60px"}
+                        height={"60px"}
+                      ></img>
+                    );
+                })}
+            </ReactSortable>
+          </div>
+        </div>
+
         <label htmlFor="desc">Description</label>
         <textarea
           value={data.description}
@@ -242,8 +323,64 @@ console.log(subCategories[newPropertyCategory]);
           name="price"
         ></input>
 
+        </div>
+          
+
+          <div>
+            
+        <label htmlFor="amenities">Amenities</label>
+        <textarea
+          value={data.amenities}
+          rows={"10"}
+          onChange={(e) => {
+            changeData((prev) => {
+              return { ...prev, amenities: e.target.value };
+            });
+          }}
+          placeholder="Amenities"
+          name="amenities"
+        ></textarea>
+
+
+
+{/* <div></div> <div> </div> */}
+
+       <div className="flex flex-col gap-y-4 mb-10">
+       <label htmlFor="details">Details</label>
+       {data.details!=[] && data.details.map((elm,index)=>{
+        let newHTML = '';
+        for(const newKey in elm){
+          if(elm.hasOwnProperty(newKey)){
+            console.log(newKey,elm[newKey]);
+            newHTML = <div className="flex gap-x-2 items-center ">  <input value={newKey} onChange={(e)=>{
+              changeData((prev)=>{
+                let newDetails = data.details;
+                newDetails[index] = {[e.target.value] : elm[newKey]};
+                return {...prev, details : newDetails};
+              })
+            }} ></input> <input onChange={(e)=>{
+              changeData((prev)=>{
+                let newDetails = data.details;
+                newDetails[index] = {[newKey] : e.target.value};
+                return {...prev  , details : newDetails};
+              })
+            }} value={elm[newKey]}></input>   <button type="button" className="btn__property">Delete</button> </div>
+          }
+        }
+        // return <div className="flex gap-x-4">    </div>
+        return newHTML;
+      })}
+       <input value={key} name="details" placeholder="Write the Key" onChange={(e)=>{
+        changeKey(()=>{return e.target.value});
+       }}></input>
+       <input value={value} name="details" placeholder="Write the Value" onChange={(e)=>{
+        changeValue(()=>{return e.target.value});
+       }}></input>
+       <button type="button" className="btn__property" onClick={(e)=>{handleKeyValueAdd(e)}}>Add Key-Value Pair</button>
+       </div>
+
         {check ? (
-          <button
+          <button type="submit"
             onClick={(e) => {
               handleSubmit(e);
             }} className="btn__property"
@@ -251,7 +388,7 @@ console.log(subCategories[newPropertyCategory]);
             Edit This Product
           </button>
         ) : (
-          <button className="btn__property"
+          <button type="submit" className="btn__property"
             onClick={(e) => {
               handleSubmit(e);
             }}
@@ -259,6 +396,9 @@ console.log(subCategories[newPropertyCategory]);
             Save
           </button>
         )}
+          </div>
+
+
       </form>
     </div>
     </>
