@@ -10,6 +10,7 @@
 "use client";
 import { useState } from "react";
 import { ReactSortable } from "react-sortablejs";
+import { PuffLoader } from "react-spinners";
 import Header from "../../../../components/Header";
 import "../../../../components/styles/dashboard.css";
 // import { useRouter } from "next/navigation";
@@ -48,38 +49,86 @@ export default function AddProperty() {
 
 }
 
-const arr = [{'key-1' : 'value-1'},
-    {'key-2' : 'value-2'},
-    {'key-3' : 'value-3'}]
-
-arr.map((elm)=>{
-  for(const newKey in elm){
-    if(elm.hasOwnProperty(newKey)){
-      console.log(newKey);
-      console.log(elm[newKey]);
-    }
-  }
-})
-
-
-
-
-arr.push({'Key-4':'value-4'});
-console.log(arr);
 
 function handleSubmit(e){
     console.log('Submitting form');
 
 }
+const [loading,setLoading] = useState(false);
+const [loading1,setLoading1] = useState(false);
+const [loading2,setLoading2] = useState(false);
+async function uploadImages(e){
+  console.log(e.target.name);
+  if(e.target.name=="images"){
+    setLoading1(true);
+  }else{
+    setLoading2(true);
+  }
+  console.log('UPLOADING IMAGES');
+  setLoading(true);
+  console.log(e);
+  const files = e.target?.files;
+  console.log(files);
+  if(files?.length>0){
+   const dataForm = new FormData();
+   for(const file of files){
+      dataForm.append('file',file);
+   }
+   const response = await fetch('http://localhost:3001/api/upload',{
+      method : 'POST',
+      body : dataForm
+   });
+   console.log('the response is : ',response);
+   const bodyResponse = await response.json();
+   console.log('the json response is : ',bodyResponse);
+   if(e.target.name=="images"){
+    console.log(data.images);
+   const newImages = data.images? data.images: [];
+   newImages.push(bodyResponse[0]);
+   console.log('the new images are : ',newImages);
+   
+   changeData((prev)=>{
+      
+      
+      return {
+          ...prev , images : newImages
+      }
+   })
+   }else{
+    console.log(data.floorPlansImages);
+   const newImages = data.floorPlansImages? data.floorPlansImages: [];
+   newImages.push(bodyResponse[0]);
+   console.log('the new images are : ',newImages);
+   
+   changeData((prev)=>{
+      
+      
+      return {
+          ...prev , floorPlansImages : newImages
+      }
+   })
+   }
+   console.log(bodyResponse);
+   console.log('the updated data is : ',data);
+  
+  }else{
+      console.log('No file found')
+  } 
+  if(e.target.name=="images"){
+    setLoading1(false);
+  }else{
+    setLoading2(false);
+  }
+  }
 
 function updateImagesOrder(){
-    console.log(arguments[0]);
-    changeData((prev)=>{
-        return {...prev, images : arguments[0]}
-    })
+    // console.log(arguments[0]);
+    // changeData((prev)=>{
+    //     return {...prev, images : arguments[0]}
+    // })
 }
 const check = false;
-const [loading,setLoading] = useState(false);
+
 const newPropertyCategory =  (data.propertyCategory);
 console.log(newPropertyCategory);
 
@@ -199,8 +248,9 @@ changeValue("");
           })} */}
 
         <label htmlFor="photos">Photos</label>
-        <label className="ml-2 btn__property font-normal cursor-pointer flex flex-col items-center justify-center gap-y-2">
+        <label className=" btn__property font-normal cursor-pointer flex  items-center justify-center gap-x-4">
           {" "}
+          Upload
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -215,8 +265,8 @@ changeValue("");
               d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
             />
           </svg>
-          Upload
-          <input
+          
+          <input name="images"
             onChange={(e) => {
               uploadImages(e);
             }}
@@ -226,22 +276,32 @@ changeValue("");
         </label>
 
         <div className="relative">
-          {loading && (
+          {loading1 && (
             <div className="p-2">
               <PuffLoader color="#36d7b7" />
             </div>
           )}
-          <div className="uploaded__images">
+          <div className="uploaded__images flex ">
             <ReactSortable list={data.images} setList={updateImagesOrder}>
               {data?.images?.length > 0 &&
                 data?.images?.map((imageContent) => {
                   if (imageContent)
                     return (
+                  <div className="relative ">
+                  
                       <img
                         src={imageContent}
-                        width={"60px"}
-                        height={"60px"}
+                        width={"160px"}
+                        height={"160px"}
                       ></img>
+                      <i className="fa-solid fa-trash absolute text-black" onClick={(e)=>{
+                        changeData((prev)=>{
+                          return {...prev , images : data.images.filter((imgc)=>{
+                            return imgc!==imageContent;
+                          })}
+                        })
+                      }}></i>
+                      </div>
                     );
                 })}
             </ReactSortable>
@@ -250,8 +310,9 @@ changeValue("");
 
 
         <label htmlFor="photos">Floor Plan Photos</label>
-        <label className="ml-2 btn__property font-normal cursor-pointer flex flex-col items-center justify-center gap-y-2">
+        <label className=" btn__property font-normal cursor-pointer flex  items-center justify-center gap-x-4">
           {" "}
+          Upload
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -266,8 +327,8 @@ changeValue("");
               d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
             />
           </svg>
-          Upload
-          <input
+         
+          <input name="floorimages"
             onChange={(e) => {
               uploadImages(e);
             }}
@@ -277,7 +338,7 @@ changeValue("");
         </label>
 
         <div className="relative">
-          {loading && (
+          {loading2 && (
             <div className="p-2">
               <PuffLoader color="#36d7b7" />
             </div>
@@ -288,11 +349,20 @@ changeValue("");
                 data?.floorPlansImages?.map((imageContent) => {
                   if (imageContent)
                     return (
+                  <div className="relative">
                       <img
                         src={imageContent}
-                        width={"60px"}
-                        height={"60px"}
+                        width={"160px"}
+                        height={"160px"}
                       ></img>
+                      <i className="fa-solid fa-trash absolute text-black" onClick={(e)=>{
+                        changeData((prev)=>{
+                          return {...prev , floorPlansImages : data.floorPlansImages.filter((imgc)=>{
+                            return imgc!==imageContent;
+                          })}
+                        })
+                      }}></i>
+                      </div>
                     );
                 })}
             </ReactSortable>
@@ -364,7 +434,12 @@ changeValue("");
                 newDetails[index] = {[newKey] : e.target.value};
                 return {...prev  , details : newDetails};
               })
-            }} value={elm[newKey]}></input>   <button type="button" className="btn__property">Delete</button> </div>
+            }} value={elm[newKey]}></input>   <button type="button" className="btn__property" onClick={()=>{
+              changeData((prev)=>{
+                return {...prev, details : data.details.filter((el,id)=>{return id!==index})}
+              })
+              
+            }}>Delete</button> </div>
           }
         }
         // return <div className="flex gap-x-4">    </div>
