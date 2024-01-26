@@ -10,9 +10,9 @@ console.log('INSIDE THE POST REQUEST TO ADD PROPERTY');
 
         const body = await NextRequest.json();
         console.log('The body is : ',body);
-        const {name,description,images,floorPlansImages,amenities,propertyCategory,subCategory,details,price} = body;
-        console.log(name,description,images,floorPlansImages,amenities,propertyCategory,subCategory,details,price);
-        const newProperty = new PropertyModel({name,description,images,floorPlansImages,amenities,propertyCategory,subCategory,details,price});
+        const {name,description,images,floorPlansImages,amenities,propertyCategory,subCategory,details,price,area,location} = body;
+        console.log(name,description,images,floorPlansImages,amenities,propertyCategory,subCategory,details,price,area,location);
+        const newProperty = new PropertyModel({name,description,images,floorPlansImages,amenities,propertyCategory,subCategory,details,price,area,location});
         const savedNew = await newProperty.save()
 
         console.log(savedNew);

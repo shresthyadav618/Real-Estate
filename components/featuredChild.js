@@ -3,27 +3,28 @@
 import Image from "next/image";
 import { useState } from "react";
 export default function featuredChild(props){
-    const heading = props.heading;
+    const name = props.heading;
     const location = props.location;
     const img = props.img;
-    const bed = props.bed;
-    const bath = props.bath;
+    // const bed = props.bed;
+    // const bath = props.bath;
     const area = props.area;
     const price = props.price;
-    const relevance = props.relevance;
-
+    // const relevance = props.relevance;
+    const type = props.type;
+    console.log('the images is : ',img);
     const [toggle,setToggle] = useState("all");
 
     return (
         <div className="featured__display">
-        <Image src={img} className="w-[100%]"></Image>
+        <Image src={img} width={200} height={100} className="w-[100%!important] "></Image>
 
-        <h1 className="font-bold">{heading}</h1>
+        <h1 className="font-bold">{name}</h1>
         <div className="l">{location}</div>
 
         <div className="featured__icons font-bold ">
 
-        <div className="flex">
+        {/* <div className="flex">
         <i class="fa-solid fa-bed"></i>
         <div>{bed}</div>
         </div>
@@ -31,6 +32,10 @@ export default function featuredChild(props){
         <div className="flex">
         <i class="fa-solid fa-shower"></i>
         <div>{bath}</div>
+        </div> */}
+
+        <div className="flex">
+            <div>{type}</div>
         </div>
 
         <div className="flex">

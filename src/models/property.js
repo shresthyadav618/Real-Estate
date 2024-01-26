@@ -18,7 +18,17 @@ const PropertySchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    area : {
+        type : String,
+        required : true
+    },
+    location  :{
+        type : String,
+        required : true
+    },
     details: Object // Consider a more specific schema if needed
+},{
+    timestamps : true
 });
 
 const PropertyModel = mongoose.models.propertys || mongoose.model('propertys', PropertySchema);

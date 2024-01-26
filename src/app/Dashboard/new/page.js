@@ -15,25 +15,6 @@ import Header from "../../../../components/Header";
 import "../../../../components/styles/dashboard.css";
 // import { useRouter } from "next/navigation";
 export default function AddProperty() {
-  const [data, changeData] = useState({
-    name: "",
-    description: "",
-    images: [],
-    floorPlansImages: [],
-    amenities: "",
-    propertyCategory: "Residential",
-    subCategory: "",
-    details: [],
-    price : ""
-  });
-  const categories = [
-    { name: "Residential" },
-    { name: "Commercial" },
-    { name: "Rental" },
-    { name: "Resale" },
-    { name: "Plot" },
-  ];
-
   const subCategories = { Residential : [
     {name : 'Ready To Move' , value : 'rtm'} , { name : 'New Launches' , value : 'nl' } , {name : 'Under Construction' , value : 'uc'}
   ] ,
@@ -48,6 +29,28 @@ export default function AddProperty() {
   ],
 
 }
+  const [data, changeData] = useState({
+    name: "",
+    description: "",
+    images: [],
+    floorPlansImages: [],
+    amenities: "",
+    propertyCategory: "Residential",
+    subCategory: "rtm",
+    details: [],
+    price : "",
+    area : "",
+    location : ""
+  });
+  const categories = [
+    { name: "Residential" },
+    { name: "Commercial" },
+    { name: "Rental" },
+    { name: "Resale" },
+    { name: "Plot" },
+  ];
+
+  
 
 
 async function handleSubmit(e){
@@ -408,6 +411,31 @@ changeValue("");
           }}
           placeholder="Price"
           name="price"
+        ></input>
+
+
+        <label htmlFor="area">Area (in sqft)</label>
+        <input
+          value={data.area}
+          onChange={(e) => {
+            changeData((prev) => {
+              return { ...prev, area: e.target.value };
+            });
+          }}
+          placeholder="Area"
+          name="area"
+        ></input>
+
+        <label htmlFor="location">Location</label>
+        <input
+          value={data.location}
+          onChange={(e) => {
+            changeData((prev) => {
+              return { ...prev, location: e.target.value };
+            });
+          }}
+          placeholder="Location"
+          name="location"
         ></input>
 
         </div>
