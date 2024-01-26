@@ -50,8 +50,25 @@ export default function AddProperty() {
 }
 
 
-function handleSubmit(e){
-    console.log('Submitting form');
+async function handleSubmit(e){
+  e.preventDefault();
+  console.log('Submitting form');
+  console.log('the data submitted in the api req ',data);
+  const res = await fetch('http://localhost:3001/api/property/add',{
+    headers : {'Content-Type': 'application/json'},
+    method : 'POST',
+    body : JSON.stringify(data),
+    
+  });
+  console.log('the response is : ',res);
+  if(res.ok){
+  const jsonRes = await res.json();
+  console.log('received the json response',jsonRes);
+  }else{
+    console.log('entered the error path')
+    const errorRes = await res.json();
+    console.log('Received some error',errorRes);
+  }
 
 }
 const [loading,setLoading] = useState(false);
@@ -146,7 +163,7 @@ e.preventDefault();
 const pvkav = data.details;
 pvkav.push({[key]:value})
 changeData((prev)=>{
-  return {...prev,pvkav};
+  return {...prev, details : pvkav};
 })
 changeKey("");
 changeValue("");
