@@ -377,7 +377,7 @@ changeValue("");
                         width={"160px"}
                         height={"160px"}
                       ></img>
-                      <i className="fa-solid fa-trash absolute text-black" onClick={(e)=>{
+                      <i className="fa-solid fa-trash absolute " onClick={(e)=>{
                         changeData((prev)=>{
                           return {...prev , floorPlansImages : data.floorPlansImages.filter((imgc)=>{
                             return imgc!==imageContent;

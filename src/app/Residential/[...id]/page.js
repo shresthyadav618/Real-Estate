@@ -76,12 +76,12 @@ export default function Residential(){
 
             <div className="left2">
                 <h1 className="text-3xl text-[#97B618] font-extrabold">Overview</h1>
-                <div className="font-bold">{data.description}</div>
+                <div  dangerouslySetInnerHTML={{__html:data.description}}></div>
             </div>
 
             <div className="left3">
             <h1 className="text-3xl text-[#97B618] font-extrabold">Amenities</h1>
-                <div className="font-bold">{data.amenities}</div>
+                <div className="font-bold" dangerouslySetInnerHTML={{__html : data.amenities}}></div>
             </div>
 
             <div className="left4">
