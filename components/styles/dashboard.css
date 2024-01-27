@@ -112,3 +112,13 @@ form > div{
   width: 160px!important;
   height: 160px!important;
 }
+
+.xx{
+  --tw-bg-opacity: 1;
+    background-color: rgb(30 58 138 / var(--tw-bg-opacity))!important;
+    color: white!important;
+    padding: 10px!important;
+    border-radius: 5px!important;
+    width: -moz-fit-content;
+    width: fit-content;
+}

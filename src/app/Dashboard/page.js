@@ -2,7 +2,7 @@
 import { PropertiesContext } from "@/propertiesProvider/propertiesProvider";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Header from "../../../components/Header";
 import "../../../components/styles/dashboard.css";
 export default function Dashboard(){
@@ -12,6 +12,9 @@ const {data : session} = useSession();
 const propertyContext = useContext(PropertiesContext);
 console.log('the value of propertyContext is  :',propertyContext);
 const [p,changeP] = useState(propertyContext);
+useEffect(()=>{
+changeP(propertyContext);
+},[propertyContext]);
     return(
         <>
         <Header/>

@@ -11,7 +11,7 @@ try{
 const allProperties = await PropertyModel.find({});    
 
 if(allProperties){
-    console.log('got all the properties',allProperties);
+    // console.log('got all the properties',allProperties);
     return NextResponse.json({
         status : 200,
         allProperties
