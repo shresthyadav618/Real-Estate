@@ -13,6 +13,7 @@ export default function featuredChild(props){
     const relevance = props.relevance;
     const type = props.type;
     console.log('the images is : ',img);
+    const _id = props._id;
     const [toggle,setToggle] = useState("all");
 // all pe default top 4-5 properties display karege, then residential pe filter 
     return (
@@ -46,7 +47,7 @@ export default function featuredChild(props){
         </div>
         <div className="featured__buttons">
             <div className="price font-bold text-2xl">{price}</div>
-            <button className="rounded-lg font-bold">View Details</button>
+            <button className="rounded-lg font-bold" onClick={()=>{window.location.href=`/${type}/${_id}`}}>View Details</button>
         </div>
     </div>
     )

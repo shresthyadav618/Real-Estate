@@ -25,6 +25,7 @@ return NextResponse.json({
 })
 
 }catch(err){
+    console.log('the error is  : ',err);
     return NextResponse.json({
         status : 500,
         err

@@ -53,7 +53,7 @@ export default function featured(){
             </div>
         <div className="featured__container">
             {p!=[] && p.map((property)=>{
-                return <FeaturedChild heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price} relevance={relevance} />
+                return <FeaturedChild heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price} relevance={relevance} _id={property._id} />
                 
             })}
         </div>
