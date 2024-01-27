@@ -1,3 +1,4 @@
+import PropertiesProvider from '@/propertiesProvider/propertiesProvider';
 import { Inter } from 'next/font/google';
 import AuthProvider from '../../components/authProvider/authProvider';
 import './globals.css';
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
 
         <AuthProvider>
+          <PropertiesProvider>
           {children}
+          </PropertiesProvider>
           </AuthProvider>
         
         </body>
