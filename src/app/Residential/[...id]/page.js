@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Footer from "../../../../components/Footer";
 import Header from "../../../../components/Header";
 import "../../../../components/styles/indiProperty.css";
 export default function Residential(){
@@ -79,12 +80,15 @@ export default function Residential(){
             </div>
 
             <div className="left3">
-            <h1 className="text-3xl text-[#97B618] font-extrabold">Amenties</h1>
+            <h1 className="text-3xl text-[#97B618] font-extrabold">Amenities</h1>
                 <div className="font-bold">{data.amenities}</div>
             </div>
 
             <div className="left4">
-
+            <h1 className="text-3xl text-[#97B618] font-extrabold">Floor Plans</h1>
+            <Image src={data?.floorPlansImages?.[0]} onClick={(e)=>{
+                window.location.href=`http://localhost:3001/_next/image?url=${data?.floorPlansImages?.[0]}&w=640&q=75`
+            }} width={200} height={200}></Image>
             </div>
 
             <div className="left5">
@@ -95,6 +99,7 @@ export default function Residential(){
         <div className="indi__right"></div>
     </div>
         }
+        <Footer/>
         </>
     )
 

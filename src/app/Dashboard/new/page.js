@@ -9,6 +9,8 @@
 // details
 "use client";
 import { useState } from "react";
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
 import { ReactSortable } from "react-sortablejs";
 import { PuffLoader } from "react-spinners";
 import Header from "../../../../components/Header";
@@ -390,17 +392,13 @@ changeValue("");
         </div>
 
         <label htmlFor="desc">Description</label>
-        <textarea
+        <ReactQuill
           value={data.description}
           rows={"10"}
-          onChange={(e) => {
-            changeData((prev) => {
-              return { ...prev, description: e.target.value };
-            });
-          }}
+          onChange={newValue => changeData((prev)=>{return {...prev,description:newValue}})}
           placeholder="Description"
-          name="desc"
-        ></textarea>
+          name="desc" className="textarea"
+        ></ReactQuill>
         <label htmlFor="price">Price (in RS)</label>
         <input
           value={data.price}
@@ -444,17 +442,13 @@ changeValue("");
           <div>
             
         <label htmlFor="amenities">Amenities</label>
-        <textarea
+        <ReactQuill className="textarea"
           value={data.amenities}
           rows={"10"}
-          onChange={(e) => {
-            changeData((prev) => {
-              return { ...prev, amenities: e.target.value };
-            });
-          }}
+          onChange={newValue => changeData((prev)=>{return {...prev,amenities:newValue}})}
           placeholder="Amenities"
           name="amenities"
-        ></textarea>
+        ></ReactQuill>
 
 
 

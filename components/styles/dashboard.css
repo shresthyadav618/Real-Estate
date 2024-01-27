@@ -48,7 +48,17 @@ table, th , td{
   border-radius: 5px!important;
   width: 40%;
 }
+.dform > div > div > div > input,textarea,select{
+  background-color: #F4DFC8;
+  color: black!important;
+  padding: 10px!important;
+  border-radius: 5px!important;
+  width: 40%;
+}
+.dform > div > textarea::placeholder{
 
+  color : black!important;
+}
 
 .dform > div > input:active{
   border: none;
@@ -61,10 +71,7 @@ table, th , td{
   color: black!important;
 }
 
-.dform > div > textarea::placeholder{
 
-  color : black!important;
-}
 
 .dform > div >  button, select {
   text-transform: none;
@@ -125,4 +132,43 @@ table, th , td{
     border-radius: 5px!important;
     width: -moz-fit-content;
     width: fit-content;
+}
+
+
+
+.dform > div >  .textarea{
+  width: 70%!important;
+}
+
+
+.dform > div > input , .textarea, select{
+  background-color: #F4DFC8;
+  color: black!important;
+  padding: 10px!important;
+  border-radius: 5px!important;
+  width: 40%;
+}
+
+
+.dform > div > div > input,.textarea,select{
+  background-color: #F4DFC8;
+  color: black!important;
+  padding: 10px!important;
+  border-radius: 5px!important;
+  width: 40%;
+}
+.dform > div > div > div > input,.textarea,select{
+  background-color: #F4DFC8;
+  color: black!important;
+  padding: 10px!important;
+  border-radius: 5px!important;
+  width: 40%;
+}
+.dform > div > .textarea::placeholder{
+
+  color : black!important;
+}
+
+.ql-container.ql-snow{
+  border: none!important;
 }

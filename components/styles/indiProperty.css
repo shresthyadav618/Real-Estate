@@ -32,6 +32,14 @@
     margin-bottom: 10px;
 }
 
+.left4 > img{
+    width: 40%!important;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+
 .left1__bottom{
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +52,7 @@
 .left1__bottom > div > div{
     height: 15px;
 }
-.left1 ,.left2 ,.left3{
+.left1 ,.left2 ,.left3 , .left4{
     background-color: #F4DFC8;
     padding: 15px;
     border-radius: 10px;
