@@ -45,7 +45,7 @@ export default function featured(){
                     changeRelevance("Residential")
                 }}>Residential</div>
                 <div onClick={()=>{
-                    changeRelevance("Plots")
+                    changeRelevance("Plot")
                 }}>Plots</div>
                 <div onClick={()=>{
                     changeRelevance("Rental")
