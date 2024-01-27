@@ -182,7 +182,7 @@ changeValue("");
         ) : (
           <div className=" font-bolder text-4xl mb-4 pl-[10px]">New Property</div>
         )}
-      <form className="flex flex-wrap w-[100%]">
+      <form className="flex flex-wrap w-[100%] dform">
         
         <div>
         <label htmlFor="name">Property Name</label>

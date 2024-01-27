@@ -1,6 +1,6 @@
 import Image from "next/image"
 import contactImage from "../assets/cf.jpg"
-import "./Header.css"
+import "./styles/contact.css"
 export default function contact(){
     return (
         <div className="contact__container">

@@ -7,8 +7,8 @@ table, th , td{
   }
 
 
-  label {
-    --tw-bg-opacity: 1;
+.dform > div > div > label{
+  --tw-bg-opacity: 1;
     color: rgb(30 58 138 / var(--tw-bg-opacity));
     color: #F4DFC8;
     width: 40%;
@@ -17,24 +17,22 @@ table, th , td{
     font-size: large;
 }
 
-/* button, input, optgroup, select, textarea {
-  font-family: inherit;
-  font-feature-settings: inherit;
-  font-variation-settings: inherit;
-  font-size: 100%;
-  font-weight: inherit;
-  line-height: inherit;
-  color: inherit;
-  margin: 0;
-  padding: 0;
-} */
-textarea{
+.dform > div > label {
+  --tw-bg-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-bg-opacity));
+  color: #F4DFC8;
+  width: 40%;
+  padding-left: 10px!important;
+  font-weight: bold;
+  font-size: large;
+}
+
+.dform > div >  textarea{
   width: 70%!important;
 }
-input, textarea, select {
-  --tw-bg-opacity: 1;
-  /* border: 2px solid rgb(30 58 138 / var(--tw-bg-opacity)); */
-  /* border: 2px solid white; */
+
+
+.dform > div > input , textarea, select{
   background-color: #F4DFC8;
   color: black!important;
   padding: 10px!important;
@@ -43,29 +41,37 @@ input, textarea, select {
 }
 
 
+.dform > div > div > input,textarea,select{
+  background-color: #F4DFC8;
+  color: black!important;
+  padding: 10px!important;
+  border-radius: 5px!important;
+  width: 40%;
+}
 
-input:active{
+
+.dform > div > input:active{
   border: none;
 }
 
-input::placeholder{
+.dform > div > input::placeholder{
+  color: black!important;
+}
+.dform > div > div> input::placeholder{
   color: black!important;
 }
 
-textarea::placeholder{
+.dform > div > textarea::placeholder{
 
   color : black!important;
 }
 
-button, select {
+.dform > div >  button, select {
   text-transform: none;
 }
 
 
 .btn__property {
-  --tw-bg-opacity: 1;
-  /* background-color: rgb(30 58 138 / var(--tw-bg-opacity))!important;
-   */
    background-color: #F4DFC8!important;
   color: black!important;
   padding: 10px!important;
@@ -79,15 +85,13 @@ button, select {
   margin: 100px auto;
 }
 
-form{
+.dform {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
-form > div{
+.dform > div{
   width: 50%;
-  /* padding: 20px; */
   display: flex;
   flex-direction: column;
   row-gap: 15px;
