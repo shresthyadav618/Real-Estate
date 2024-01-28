@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 200px;
-    height: 40vh;
+    height: 30vh;
 }
 
 .footer__parent{
@@ -40,9 +40,10 @@
     border-radius: 10px;
     color: black;
     font-weight: bold;
-    position: absolute;
+    width: fit-content;
+    /* position: absolute;
     left: 0%;
-    top: 80%;
+    top: 80%; */
 }
 
 .addClr{

@@ -39,12 +39,16 @@ export default function Home() {
     
     <Slider/>
     <Featured/>
-    <h1 className="font-bold text-4xl text-white w-[78vw] m-auto">What are we providing</h1>
+    
+
+    <div className="new_class">
+    <h1 className="font-bold text-4xl text-black w-[78vw] m-auto">What are we providing</h1>
     <div className="provide__container">
       
     {whatProvide.map((item)=>{
       return <WhatProvide heading={item.heading} para={item.para} img={item.img}/>
     })}
+    </div>
     </div>
     <h1 className="text-bold text-4xl w-[78vw] mx-auto mb-6">Meet Our Agents</h1>
     <div className="agent__container">

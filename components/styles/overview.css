@@ -1,5 +1,5 @@
 .overview__container{
-    height: 100vh;
+    height: 70vh;
     display: flex;
     width: 100vw;
     padding: 40px;
@@ -9,11 +9,11 @@
 
 .overview__child1{
     width: 40%;
-    height: 60%;
+    min-height: 60%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     row-gap: 10px;
     position: relative;
     
@@ -40,20 +40,18 @@ font-weight: bold;
     font-weight: bold;
     font-size: large;
     width: 40%;
-    position: absolute;
-    left: 0;
-    top: 80%;
-    
+    margin-top: 10px;
 }
 .overview__child2{
     cursor: pointer;
-    margin-top: 100px;
-width: 40%;
-display: flex;
-height: 60%;
-justify-content: center;
-align-items: center;
-column-gap: 15px;
+    margin-top: 0px;
+    width: 40%;
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 15px;
+    column-gap: 15px;
 }
 .sub__child1{
     display: flex;
@@ -94,7 +92,7 @@ column-gap: 15px;
     width: 30%;
     /* flex-wrap: wrap; */
     /* column-gap: 20px; */
-    background-color: #F4DFC8;
+    background-color: #F4EAE0;
     color: black;
     padding: 20px;
     border-radius: 10px;

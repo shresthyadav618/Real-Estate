@@ -74,3 +74,8 @@
     width: 90%;
 }
 
+.slick-slide{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}

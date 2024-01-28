@@ -53,7 +53,7 @@ export default function Residential(){
     const [toggle,setToggle] = useState(0);
     console.log('the toggle value is : ',toggle);
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 2,

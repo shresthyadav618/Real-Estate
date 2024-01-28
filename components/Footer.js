@@ -38,7 +38,7 @@ export default function Footer(props){
                 <div className={'footer__child4 relative'}>
                     <h1 className="font-bold text-xl">Talk to an Expert</h1>
                     <div>Get expert consultation regarding you Real Estate needs.</div>
-                    <button className="footer__button">Make An Enquiry</button>
+                    {/* <button className="footer__button">Make An Enquiry</button> */}
                     <div className="flex flex-col gap-y-2">
                         <h1>Connect with us</h1>
                         <div className="footer__links">
