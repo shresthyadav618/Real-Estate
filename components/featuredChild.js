@@ -15,9 +15,11 @@ export default function featuredChild(props){
     console.log('the images is : ',img);
     const _id = props._id;
     const [toggle,setToggle] = useState("all");
+    const present = props.present;
+    console.log(name,location,area,img,price,type,relevance,type);
 // all pe default top 4-5 properties display karege, then residential pe filter 
     return (
-        <div className="featured__display">
+        <div className={present?'featured__display w-[100%]!important bg-white':'featured__display'}>
         <Image src={img} width={200} height={100} className="w-[100%!important] h-[100%!important]"></Image>
 
         <h1 className="font-bold">{name}</h1>
@@ -46,7 +48,7 @@ export default function featuredChild(props){
 
         </div>
         <div className="featured__buttons">
-            <div className="price font-bold text-2xl">{price}</div>
+            <div className="price font-bold text-lg">{price}</div>
             <button className="rounded-lg font-bold" onClick={()=>{window.location.href=`/${type}/${_id}`}}>View Details</button>
         </div>
     </div>

@@ -1,0 +1,72 @@
+.form__container{
+    background-color: #f2f3f5;
+    padding: 30px 5px;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    height: 30%;
+}
+.form__container > div{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    column-gap: 10px;
+    margin-left: 40px;
+}
+.form__container > div > i {
+    color: #ffffff;
+    background: #a8cf45;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.form__container > form > div > input {
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 10px;
+    width: 45%;
+    border-radius: 4px;
+}
+.form__container > form > div > input::placeholder{
+    color: black;
+}
+
+.form > button{
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    background: #a8cf45;
+    width: 96%;
+    border-radius: 10px;
+    padding: 10px;
+}
+.form{
+    
+    color: black;
+    height: 100%;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+.form > div{
+    column-gap: 20px;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.form > textarea {
+    width: 96%;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 10px;
+    height: 40%;
+}
+.form > textarea::placeholder{
+    color: black;
+}

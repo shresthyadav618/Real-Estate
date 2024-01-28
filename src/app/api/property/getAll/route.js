@@ -1,8 +1,9 @@
 
 
-import { PropertyModel } from "@/models/property";
+
 import { NextResponse } from "next/server";
 import { connect } from "../../../../dbConfig/connectDB";
+import { PropertyModel } from "@/models/property";
 await connect();
 export async function GET(NextRequest){
 

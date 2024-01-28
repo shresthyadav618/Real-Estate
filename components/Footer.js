@@ -1,8 +1,10 @@
 import Link from "next/link";
 import "./styles/footer.css";
-export default function Footer(){
+export default function Footer(props){
+    const hmm = props.hmm;
+    console.log(hmm);
     return (
-        <div className="footer__container">
+        <div className={hmm?'addClr footer__container':'footer__container'}>
             <div className="footer__parent">
 
                 <div className="footer__child1">
@@ -33,7 +35,7 @@ export default function Footer(){
                 </div>
 
 
-                <div className="footer__child4 relative">
+                <div className={'footer__child4 relative'}>
                     <h1 className="font-bold text-xl">Talk to an Expert</h1>
                     <div>Get expert consultation regarding you Real Estate needs.</div>
                     <button className="footer__button">Make An Enquiry</button>

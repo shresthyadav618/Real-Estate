@@ -1,16 +1,31 @@
 
 'use client';
+import { PropertiesContext } from "@/propertiesProvider/propertiesProvider";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import Slider from "react-slick";
+// import "~slick-carousel/slick/slick-theme.css";
+// import "~slick-carousel/slick/slick.css";
 import Footer from "../../../../components/Footer";
 import Header from "../../../../components/Header";
+import PropertyChild from "../../../../components/featuredChild";
+import '../../../../components/styles/ContactForm.css';
+import "../../../../components/styles/featured.css";
 import "../../../../components/styles/indiProperty.css";
 export default function Residential(){
     const [data,changeData] = useState([]);
     const pathname = usePathname();
+    const pp = useContext(PropertiesContext);
+    console.log(pp);
+    const [allP,changeAllp] = useState(pp);
 
+    useEffect(()=>{
+        changeAllp(pp);
+    },[pp]);
+
+    console.log(allP);
     const _id = pathname.split('/')[2].toString();
     console.log('the id is : ',_id);
     useEffect(()=>{
@@ -34,6 +49,16 @@ export default function Residential(){
         getPropertyData();
     },[])
     console.log(data);
+    console.log(data.floorPlans);
+    const [toggle,setToggle] = useState(0);
+    console.log('the toggle value is : ',toggle);
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1
+      };
     return(
         <>
         <Header/>
@@ -43,12 +68,12 @@ export default function Residential(){
             <div className="left1">
                 <div className="left1__top">
                     <div className="flex justify-between items-center ">
-                        <h1>{data?.name}</h1>
+                        <h1 className="font-extrabold text-3xl fontClr">{data?.name}</h1>
                         <div className="price flex">Price : <p className="font-bold ml-1">{data?.price}</p></div>
                     </div>
 
                     <div className="flex justify-between items-center ">
-                        <div className="flex gap-x-1 items-center justify-between"> <i class="fa-solid fa-location-dot"></i> <p>{data.location}</p> </div>
+                        <div className="flex gap-x-2 items-center justify-between"> <i class="fa-solid fa-location-dot"></i> <p className="font-bold">{data.location}</p> </div>
                         <div className="links items-center justify-between">
                         <Link href={''}><i class="fa-brands fa-square-facebook"></i></Link>
                     <Link href={''}><i class="fa-brands fa-x-twitter"></i></Link>
@@ -86,20 +111,89 @@ export default function Residential(){
 
             <div className="left4">
             <h1 className="text-3xl text-[#97B618] font-extrabold">Floor Plans</h1>
-            <Image src={data?.floorPlansImages?.[0]} onClick={(e)=>{
-                window.location.href=`http://localhost:3001/_next/image?url=${data?.floorPlansImages?.[0]}&w=640&q=75`
-            }} width={200} height={200}></Image>
+            {data && data.floorPlansImages && data.floorPlansImages.map((elm)=>{
+                return <Image src={elm} onClick={(e)=>{
+                    window.location.href=`http://localhost:3001/_next/image?url=${elm}&w=640&q=75`
+                }} width={200} height={200}></Image>
+            })}
             </div>
 
-            <div className="left5">
+            <div className="left5 relative">
+                {/* related projects section */}
+                
+                {allP && <h1 className="font-bold text-3xl fontClr">Related Projects</h1>}
+                <div>
+                <Slider {...settings}>
+                   
+                
+                {allP && allP.map((property,index)=>{
+                    // let present = false;
+                    // if(index==toggle || index==toggle+1){
+                    //     present=true;
+                    // }
+                    // if(toggle+1>=allP.length && index==0){
+                    //     present = true;
+                    // }
+                    // present={present} removed
+                    return <PropertyChild present={true}  heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
+                })}
+                
+                
 
+                {/* <span className="slider__icon__left" onClick={()=>{
+                    setToggle((prev)=>{
+                        if(prev==0){
+                            return allP.length-1;
+                        }
+                        return prev-1;
+                    })
+                }}><i class="fa-solid fa-caret-left"></i></span>
+                <span className="slider__icon__right" onClick={()=>{
+                    setToggle((prev)=>{
+                        if(prev==allP.length-1){
+                            return 0;
+                        }
+                        return prev+1;
+                    })
+                }}><i class="fa-solid fa-caret-right"></i></span> */}
+
+
+                
+                </Slider>
+                </div>
             </div>
 
         </div>
-        <div className="indi__right"></div>
+
+    
+
+
+        <div className="indi__right">
+        <div className="form__container">
+                <div className="text-2xl font-bold"> <i class="fa-regular fa-envelope"></i>  <h1>CONTACT US</h1> </div>
+                <form className="flex flex-col form">
+                    <div className="flex">
+                        <input placeholder="First Name"></input>
+                        <input placeholder="Last Name"></input>
+                    </div>
+
+                    <div className="flex">
+                        <input placeholder="Your Email"></input>
+                        <input placeholder="Phone Number"></input>
+                    </div>
+
+                    <textarea  placeholder="Enter Message or Your Query"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+              </div>
+        </div>
+
+
+
+
     </div>
         }
-        <Footer/>
+        <Footer hmm = {true}/>
         </>
     )
 

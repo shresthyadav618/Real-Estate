@@ -72,7 +72,6 @@ export async function POST(NextRequest) {
       Key: newFilename,
       Body: fs.readFileSync(path),
       ACL: 'public-read',
-      // ContentType: mime.lookup(path),
 
     }));
     const link = `https://manushresth-real-estate.s3.amazonaws.com/${newFilename}`;

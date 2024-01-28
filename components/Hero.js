@@ -14,20 +14,3 @@ export default function Hero(){
 }
 
 
-// <div className="form__container mt-2">
-//                 <div className="text-2xl font-bold"> <i class="fa-regular fa-envelope"></i>  <h1>CONTACT US</h1> </div>
-//                 <form className="flex flex-col form">
-//                     <div className="flex">
-//                         <input placeholder="First Name"></input>
-//                         <input placeholder="Last Name"></input>
-//                     </div>
-
-//                     <div className="flex">
-//                         <input placeholder="Your Email"></input>
-//                         <input placeholder="Phone Number"></input>
-//                     </div>
-
-//                     <textarea  placeholder="Enter Message or Your Query"></textarea>
-//                     <button type="submit">Submit</button>
-//                 </form>
-//               </div>
