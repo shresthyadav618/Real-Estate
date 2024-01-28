@@ -49,7 +49,7 @@ export default function featuredChild(props){
         </div>
         <div className="featured__buttons">
             <div className="price font-bold text-lg">{price}</div>
-            <button className="rounded-lg font-bold" onClick={()=>{window.location.href=`/${type}/${_id}`}}>View Details</button>
+            <button className="rounded-lg font-bold" onClick={()=>{window.location.href=`/prop/${_id}`}}>View Details</button>
         </div>
     </div>
     )

@@ -6,8 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
-// import "~slick-carousel/slick/slick-theme.css";
-// import "~slick-carousel/slick/slick.css";
 import Footer from "../../../../components/Footer";
 import Header from "../../../../components/Header";
 import PropertyChild from "../../../../components/featuredChild";
@@ -61,7 +59,7 @@ export default function Residential(){
       };
     return(
         <>
-        <Header/>
+        <Header add={true}/>
         {data && 
         <div className="indi__container">
         <div className="indi__left">
@@ -74,7 +72,7 @@ export default function Residential(){
 
                     <div className="flex justify-between items-center ">
                         <div className="flex gap-x-2 items-center justify-between"> <i class="fa-solid fa-location-dot"></i> <p className="font-bold">{data.location}</p> </div>
-                        <div className="links items-center justify-between">
+                        <div className="links items-center justify-between text-white">
                         <Link href={''}><i class="fa-brands fa-square-facebook"></i></Link>
                     <Link href={''}><i class="fa-brands fa-x-twitter"></i></Link>
                     <Link href={''}><i class="fa-brands fa-linkedin"></i></Link>
@@ -91,7 +89,7 @@ export default function Residential(){
                         for(let key in p){
                             if(p.hasOwnProperty(key)){
                                 return (
-                                    <div className="flex flex-col"> <div className="text-gray-600"> {key} </div> <div className="font-bold"> {p[key]} </div>  </div>
+                                    <div className="flex flex-col"> <div className=" text-white"> {key} </div> <div className="font-bold"> {p[key]} </div>  </div>
                                 )
                             }
                         }

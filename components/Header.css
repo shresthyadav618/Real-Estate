@@ -56,7 +56,16 @@
     
 }
 
-
+.add{
+    position: fixed;
+top: 0px;
+width: 100vw;
+z-index: 5;
+color: white;
+padding: 15px;
+background-color: #101010;
+margin-top: 0px!important;
+}
 
 @media screen and (max-width:1040px){
     .header__list{

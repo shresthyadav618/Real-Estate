@@ -137,7 +137,8 @@ table, th , td{
 
 
 .dform > div >  .textarea{
-  width: 70%!important;
+  width: 100%!important;
+  height: 300px;
 }
 
 
@@ -171,4 +172,12 @@ table, th , td{
 
 .ql-container.ql-snow{
   border: none!important;
+}
+
+.addGray{
+  margin-top: 20px;
+  width: 70%;
+  background-color: lightgray!important;
+  font-weight: bolder;
+  font-size: x-large;
 }

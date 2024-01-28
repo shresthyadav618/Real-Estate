@@ -1,0 +1,9 @@
+.property__container{
+    width: 80vw;
+    margin: 40px auto;
+    display: flex;
+    column-gap: 20px;
+}
+.featured__display{
+    width: 24%!important;
+}

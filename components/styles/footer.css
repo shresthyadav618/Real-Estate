@@ -8,10 +8,11 @@
 }
 
 .footer__parent{
-    width: 80vw;
+    width: 100vw;
     display: flex;
     column-gap: 40px;
     align-items: center;
+    justify-content: space-evenly;
     height: 100%;
 }
 
