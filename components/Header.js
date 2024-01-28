@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import "./Header.css";
 export default function Header(props){
@@ -13,6 +14,16 @@ const add = props.add;
                 {headerItems.map((item)=>{
                     return <Link href={item.href} className={item.name==='Home'?'underline ':'onHoverUnderline '}><p>{item.name}</p></Link>
                 })}
+                <div className="cursor-pointer" onClick={()=>{
+                    if(typeof window !== 'undefined'){
+                        const posY = document.getElementsByClassName('contact__container')[0].offsetTop;
+                        console.log('the posY is : ',posY);
+                        window.scroll({
+                            top: posY,
+                            behavior: "smooth",
+                          });
+                    }
+                }}>Contact Us</div>
             </ul>
         </div>
     )

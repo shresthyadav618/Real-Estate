@@ -45,7 +45,36 @@ export default function Residential(){
         }
 
         getPropertyData();
-    },[])
+    },[]);
+
+    
+
+    function see(){
+        if (typeof window !== "undefined") {
+        let contactForm = document.getElementById(`${data._id}xyz`)?.getBoundingClientRect()?.top;
+        let heightOfLeft5 = document.getElementById(`${data._id}`)?.getBoundingClientRect()?.top;
+        // console.log(contactForm,heightOfLeft5);
+        if(heightOfLeft5<0){
+            const e = document.getElementById(`${data._id}xyz`);
+            const po = document.getElementById(`${data._id}`);
+            if(e){
+                const xx = po.offsetTop;
+                e.classList.add('removeFixed');
+                e.style.transform = `translate3d(70px, ${xx}px, 0px)`;
+            }
+        }else{
+            const e = document.getElementById(`${data._id}xyz`);
+            if(e){
+                e.classList.remove('removeFixed');
+                e.style.transform = '';
+            }
+        }
+    }
+    }
+    
+    if (typeof window !== "undefined") {
+    window?.addEventListener("scroll",see)
+    }
     console.log(data);
     console.log(data.floorPlans);
     const [toggle,setToggle] = useState(0);
@@ -54,9 +83,17 @@ export default function Residential(){
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 4,
         slidesToScroll: 1
       };
+
+      const settingsFloor = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
     return(
         <>
         <Header add={true}/>
@@ -107,13 +144,26 @@ export default function Residential(){
                 <div className="font-bold" dangerouslySetInnerHTML={{__html : data.amenities}}></div>
             </div>
 
-            <div className="left4">
-            <h1 className="text-3xl text-[#97B618] font-extrabold">Floor Plans</h1>
+            <div className="left4"  id={data._id}>
+            <h1 className="text-3xl text-[#97B618] font-extrabold mb-4">Floor Plans</h1>
+            {data && data.floorPlansImages && data.floorPlansImages.length>1 && <Slider {...settingsFloor}>
             {data && data.floorPlansImages && data.floorPlansImages.map((elm)=>{
                 return <Image src={elm} onClick={(e)=>{
                     window.location.href=`http://localhost:3001/_next/image?url=${elm}&w=640&q=75`
                 }} width={200} height={200}></Image>
             })}
+            </Slider>}
+            
+            {data && data.floorPlansImages && data.floorPlansImages.length==1 && data.floorPlansImages.map((elm)=>{
+                return <Image src={elm} onClick={(e)=>{
+                    window.location.href=`http://localhost:3001/_next/image?url=${elm}&w=640&q=75`
+                }} width={200} height={200}></Image>
+            })
+            
+            }
+
+            
+
             </div>
 
             <div className="left5 relative">
@@ -166,7 +216,7 @@ export default function Residential(){
     
 
 
-        <div className="indi__right">
+        <div className={'indi__right'} id={data._id+'xyz'}>
         <div className="form__container">
                 <div className="text-2xl font-bold"> <i class="fa-regular fa-envelope"></i>  <h1>CONTACT US</h1> </div>
                 <form className="flex flex-col form">

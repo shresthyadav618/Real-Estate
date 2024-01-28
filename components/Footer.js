@@ -3,8 +3,12 @@ import "./styles/footer.css";
 export default function Footer(props){
     const hmm = props.hmm;
     console.log(hmm);
+    const addClr = props.addClr;
+    // background-color: #101010;
+    // position: absolute;
+    // bottom: 0px;
     return (
-        <div className={hmm?'addClr footer__container':'footer__container'}>
+        <div className={hmm?'addClr footer__container':`footer__container ${addClr?'newClr':''}`}>
             <div className="footer__parent">
 
                 <div className="footer__child1">

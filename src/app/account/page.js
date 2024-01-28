@@ -26,7 +26,7 @@ export default function account() {
   if (session) {
     if (session?.user?.role == "admin") {
         // the user is an admin 
-        Router.push('Dashboard');
+        Router.push('/Dashboard');
     //   return (
     //     <div className="account__container">
     //       <Header />

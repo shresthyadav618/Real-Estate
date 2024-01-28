@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    height: 200vh;
+    /* height: 200vh; */
     font-family: 'Alegreya Sans SC'!important;
     /* background-color: #F0F0F0!important; */
     

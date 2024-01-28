@@ -1,10 +1,10 @@
 .footer__container{
     width: 100vw;
-    padding: 20px;
+    padding: 40px;
     display: flex;
     justify-content: center;
-    margin-bottom: 200px;
-    height: 30vh;
+    /* margin-bottom: 200px; */
+    /* height: 30vh; */
 }
 
 .footer__parent{
@@ -15,7 +15,11 @@
     justify-content: space-evenly;
     height: 100%;
 }
-
+.newClr{
+    background-color: #101010;
+    position: absolute;
+    bottom: 0px;
+}
 .footer__parent > div {
     display: flex;
     flex-direction: column;

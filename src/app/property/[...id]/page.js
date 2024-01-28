@@ -23,16 +23,16 @@ export default  function property(){
         });
     },[propertyContext,type]);
     console.log('the property data is : ',data , ' and the context was ',propertyContext);
-    
+   
   return (
     <>
-    <Header/>
+    <Header add={true}/>
     <div className="property__container">
         {data && data.map((property)=>{
-            return <FeaturedChild heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
+            return <FeaturedChild heading={property.name} addWid={true} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
         })}
     </div>
-    <Footer/>
+    <Footer addClr={true}/>
     </>
   )  
 }

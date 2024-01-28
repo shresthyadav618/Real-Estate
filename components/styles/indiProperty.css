@@ -12,11 +12,12 @@
     /* padding: 10px; */
 }
 .indi__right{
-    width: 35%;
+    width: 31%;
+    height: -moz-fit-content;
     height: fit-content;
     /* padding: 20px; */
     position: fixed;
-    right: 60px;
+    right: 120px;
 }
 
 .left1__top{
@@ -34,10 +35,19 @@
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.slick-slide > div{
+    width: 100%;
+}
+.slick-slide > div > img{
+    width: 100%!important;
+    height: 400px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 
+}
 .left4 > img{
-    width: 40%!important;
-    height: 200px;
+    width: 100%!important;
+    height: 400px;
     border-radius: 10px;
     margin-bottom: 10px;
 
@@ -123,4 +133,12 @@ border-radius: 5px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    width: 85vw;
+}
+
+.removeFixed{
+    position: relative;
+    /* transform: translate3d(70px, 1430px, 0px); */
+    width: 100%;
+    right: 60px;
 }

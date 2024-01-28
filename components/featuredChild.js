@@ -16,10 +16,12 @@ export default function featuredChild(props){
     const _id = props._id;
     const [toggle,setToggle] = useState("all");
     const present = props.present;
+    const addWid = props.addWid;
     console.log(name,location,area,img,price,type,relevance,type);
 // all pe default top 4-5 properties display karege, then residential pe filter 
     return (
-        <div className={present?'featured__display w-[100%]!important bg-white':'featured__display'}>
+        // <div className={present?'featured__display w-[100%]!important bg-white':'featured__display'+addWid?'addWid':''}>
+            <div className={present ? 'featured__display w-[100%]!important bg-white' : `featured__display ${addWid ? 'addWid' : ''}`}>
         <Image src={img} width={200} height={100} className="w-[100%!important] h-[100%!important]"></Image>
 
         <h1 className="font-bold">{name}</h1>
