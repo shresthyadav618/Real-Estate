@@ -27,7 +27,7 @@ const add = props.add;
       
     </ul>
   </div>
-            <ul className="flex gap-x-12 header__list">
+            <ul className="flex gap-x-12 header__list add">
                 <Link className="font-bold text-4xl" href={'/'}>Mohit Bohra</Link>
                 {headerItems.map((item)=>{
                     return <Link href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}><p>{item.name}</p></Link>

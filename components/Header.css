@@ -97,7 +97,7 @@ margin-top: 0px!important;
   }
   .menu__btn {
     position: fixed;
-    top: 50px;
+    top: 35px;
     right: 60px;
     width: 26px;
     height: 26px;
@@ -113,7 +113,7 @@ margin-top: 0px!important;
     width: 100%;
     height: 2px;
     background-color: #616161;
-    /* background-color: #F4DFC8; */
+    
     /* background-color: black; */
     background-color: white;
     transition-duration: .25s;
@@ -128,6 +128,7 @@ margin-top: 0px!important;
   }
   .hamburger-menu{
     display: none;
+    z-index: 120;
   }
   .menu__box {
     display: block;
