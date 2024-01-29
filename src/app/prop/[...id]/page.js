@@ -103,7 +103,28 @@ export default function Residential(){
         autoplaySpeed : 2000,
         infinite: true,
         cssEase: 'ease-in-out',
-        rtl: false
+        rtl: false,
+        responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 641,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
+              }
+            },
+            
+            ]
       };
 
     const settingsForFront = {

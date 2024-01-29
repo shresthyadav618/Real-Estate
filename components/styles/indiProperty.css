@@ -144,3 +144,44 @@ border-radius: 5px;
 }
 
 
+@media screen and (max-width:1200px){
+    .indi__right{
+        right: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .indi__right{
+        display: none;
+    }
+    .indi__left{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .left1 ,.left2 ,.left3 , .left4, .left5{
+        padding: 10px 20px 10px 20px;
+    }
+    .indi__container{
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width:540px){
+    .indi__container{
+        width: 95vw;
+    }
+    .left1__top > div > h1{
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width:440px){
+    .left1__top > div > h1{
+        font-size: large;
+    }
+    .left1__bottom > div{
+        width: 40%;
+    }
+}
