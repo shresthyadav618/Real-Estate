@@ -433,12 +433,12 @@ changeValue("");
           <button type="submit"
             onClick={(e) => {
               handleSubmit(e);
-            }} className="btn__property"
+            }} className="btn__property "
           >
             Edit This Product
           </button>
         ) : ( 
-          <button type="submit" className="btn__property addGray"
+          <button type="submit" className="btn__property addGray first__edit"
             onClick={(e) => {
               handleSubmit(e);
             }}
@@ -513,6 +513,23 @@ changeValue("");
        <button type="button" className="btn__property" onClick={(e)=>{handleKeyValueAdd(e)}}>Add Key-Value Pair</button>
        </div>
 
+       {check ? (
+          <button type="submit"
+            onClick={(e) => {
+              handleSubmit(e);
+            }} className="btn__property"
+          >
+            Edit This Product
+          </button>
+        ) : ( 
+          <button type="submit" className="btn__property addGray second__edit"
+            onClick={(e) => {
+              handleSubmit(e);
+            }}
+          >
+            Save
+          </button>
+        )}
         
           </div>
 

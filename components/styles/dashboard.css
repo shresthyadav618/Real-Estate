@@ -181,7 +181,9 @@ table, th , td{
   font-weight: bolder;
   font-size: x-large;
 }
-
+.second__edit{
+  display: none;
+}
 
 @media screen and (max-width:1200px){
   .form__property__add{
@@ -194,5 +196,11 @@ table, th , td{
 }
 .dform > div > input,select,textarea{
   width: 80%!important;
+}
+.second__edit{
+  display: block;
+}
+.first__edit{
+  display: none;
 }
 }
