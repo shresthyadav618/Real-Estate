@@ -175,3 +175,11 @@ font-weight: bold;
     }
    
 }
+@media screen and (max-width:510px){
+    .sub__child2 > img{
+        width: 140px!important;
+    }
+    .overview__child1{
+        width: 70%;
+    }
+}
