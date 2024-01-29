@@ -113,6 +113,9 @@ font-weight: bold;
     .sub__child1 > img{
         width: 150px!important;
     }
+    .child__provider > p{
+        text-align: left!important;
+    }
 }
 
 @media screen and (max-width : 1058px){
@@ -127,6 +130,9 @@ font-weight: bold;
     }
     .overview__child2{
         justify-content: center!important;
+    }
+    .child__provider{
+        width: 47%;
     }
 }
 
@@ -147,6 +153,12 @@ font-weight: bold;
     }
     .sub__child2{
         height: 80%;
+    }
+}
+
+@media screen and (max-width:650px){
+    .child__provider{
+        width: 90%;
     }
 }
 
