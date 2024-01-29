@@ -8,13 +8,31 @@ const add = props.add;
 //    ,{name : 'Contact Us' , href: '/contact-us'},
 
     return (
+        <>
+       
         <div className={add?'flex items-center justify-center mt-8  text-white add':'flex items-center justify-center mt-8  text-white'}>
+        <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+
+    <ul class="menu__box">
+      <li><Link class="menu__item" href="/property/Residential">Residential</Link></li>
+      <li><Link class="menu__item" href="/property/Commercial">Commercial</Link></li>
+      <li><Link class="menu__item" href="/property/Plot">Plot</Link></li>
+      <li><Link class="menu__item" href="/property/Rental">Rental</Link></li>
+      <li><Link class="menu__item" href="/property/Resale">Resale</Link></li>
+      <li><Link class="menu__item" href="/account">Account</Link></li>
+      
+    </ul>
+  </div>
             <ul className="flex gap-x-12 header__list">
                 <Link className="font-bold text-4xl" href={'/'}>Mohit Bohra</Link>
                 {headerItems.map((item)=>{
-                    return <Link href={item.href} className={item.name==='Home'?'underline ':'onHoverUnderline '}><p>{item.name}</p></Link>
+                    return <Link href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}><p>{item.name}</p></Link>
                 })}
-                <div className="cursor-pointer" onClick={()=>{
+                <div className="cursor-pointer hide" onClick={()=>{
                     if(typeof window !== 'undefined'){
                         const posY = document.getElementsByClassName('contact__container')[0].offsetTop;
                         console.log('the posY is : ',posY);
@@ -26,5 +44,6 @@ const add = props.add;
                 }}>Contact Us</div>
             </ul>
         </div>
+        </>
     )
 }
