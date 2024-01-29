@@ -79,3 +79,34 @@
     top: 69%;
 
 }
+
+
+@media screen and (max-width : 1356px){
+    .agent__container{
+        width: 90vw;
+    }
+}
+@media screen and (max-width : 1200px){
+    .agent__child{
+        width: 47%;
+    }
+}
+
+@media screen and (max-width:786px){
+    .links{
+        left: 20%;
+    }
+    .agent__child{
+        width: 100%;
+    }
+}
+@media screen and (max-width:507px){
+    .links{
+        left: 11%;
+    }
+}
+@media screen and (max-width:407px){
+    .links{
+        left: 8%;
+    }
+}
