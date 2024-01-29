@@ -15,6 +15,9 @@ const [p,changeP] = useState(propertyContext);
 useEffect(()=>{
 changeP(propertyContext);
 },[propertyContext]);
+if(typeof window !== "undefined"){
+    document?.body?.classList?.remove('addBg');
+  }
     return(
         <>
         <Header/>

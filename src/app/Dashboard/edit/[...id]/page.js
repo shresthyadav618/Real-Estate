@@ -77,10 +77,10 @@ export default function EditProperty() {
     {name : 'Ready To Move' , value : 'rtm'} , { name : 'New Launches' , value : 'nl' } , {name : 'Under Construction' , value : 'uc'}
   ] ,
   Rental : [
-    {name : 'Commercial For Rental' , value : 'cfrental' } , {name : 'Residential for Rental' , value : 'cfresale'}
+    {name : 'Commercial For Rental' , value : 'cfrental' } , {name : 'Residential for Rental' , value : 'rfrental'}
   ],
   Resale : [
-    {name : 'Residential For Resale' , value : 'rfrental' } , {name : 'Commercial for Resale' , value : 'rfresale'}
+    {name : 'Residential For Resale' , value : 'rfresale' } , {name : 'Commercial for Resale' , value : 'cfresale'}
   ],
 
 }

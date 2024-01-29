@@ -2,35 +2,74 @@
 import { PropertiesContext } from "@/propertiesProvider/propertiesProvider";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
+import ScaleLoader from "react-spinners/ScaleLoader";
 import Footer from "../../../../components/Footer";
 import Header from "../../../../components/Header";
 import FeaturedChild from "../../../../components/featuredChild";
 import "../../../../components/styles/featured.css";
 import '../../../../components/styles/property.css';
-
 export default  function property(){
+    const subCategories = { Residential : [
+        {name : 'Ready To Move' , value : 'rtm'} , { name : 'New Launches' , value : 'nl' } , {name : 'Under Construction' , value : 'uc'}
+      ] ,
+      Commercial : [
+        {name : 'Ready To Move' , value : 'rtm'} , { name : 'New Launches' , value : 'nl' } , {name : 'Under Construction' , value : 'uc'}
+      ] ,
+      Rental : [
+        {name : 'Commercial For Rental' , value : 'cfrental' } , {name : 'Residential for Rental' , value : 'rfrental'}
+      ],
+      Resale : [
+        {name : 'Residential For Resale' , value : 'rfresale' } , {name : 'Commercial for Resale' , value : 'cfresale'}
+      ],
+      Plot : [ {name:null,value:null} ]
+    
+    }
     const propertyContext =  useContext(PropertiesContext);
     const pathname = usePathname();
     const type = pathname.split('/')[2].toString();
     const [data,changeData] = useState(propertyContext);
     const [loader,setLoader] = useState(true);
+    const [sub,changeSub] = useState(subCategories[type][0].value);
+    console.log('the sub category is : ',sub);
+    if(type=='Plot' && sub!=='nl'){
+        changeSub('nl');
+    }
     useEffect(()=>{
+        setLoader(true);
         changeData(()=>{
             return propertyContext?.filter((elm)=>{
                 console.log(elm);
-                return elm.propertyCategory == type;
+                return elm.propertyCategory == type && elm.subCategory == sub;
             })
         });
         setLoader(false);
-    },[propertyContext,type]);
+    },[propertyContext,type,sub]);
     console.log('the property data is : ',data , ' and the context was ',propertyContext);
     if(typeof window !== "undefined"){
         document?.body?.classList?.add('addBg');
       }
+
+      if(loader){
+        return <div className="h-[100vh] w-[100vw] flex justify-center items-center"><ScaleLoader color="#36d7b7" /></div>
+      }
   return (
     <>
     <Header add={true}/>
-    <div className="property__container">
+
+    {type!=='Plot' && <div className="toggle__property">
+    <div>
+    {  subCategories[type].map((elm)=>{
+        console.log(elm);
+        return <div className={elm.value==sub ? 'onActive' : ''} onClick={()=>{
+            changeSub(()=>{
+                return elm.value;
+            })
+        }}>{elm.name}</div>
+    })}
+    </div>
+    </div>}
+
+    <div className={type=='Plot'?'property__container addMargin':'property__container'}>
         {data && data.map((property)=>{
             return <FeaturedChild heading={property.name} addWid={true} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
         })}

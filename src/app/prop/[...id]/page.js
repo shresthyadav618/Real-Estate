@@ -15,6 +15,7 @@ import "../../../../components/styles/featured.css";
 import "../../../../components/styles/indiProperty.css";
 
 export default function Residential(){
+    
     const [data,changeData] = useState([]);
     const pathname = usePathname();
     const pp = useContext(PropertiesContext);
@@ -30,6 +31,9 @@ export default function Residential(){
     console.log('the id is : ',_id);
     useEffect(()=>{
         setLoader(true);
+        if(typeof window !== "undefined"){
+            document?.body?.classList?.add('addBg');
+          }
         async function getPropertyData(){
             const res = await fetch(`http://localhost:3001/api/property/getById`,{
                 method : 'POST',
@@ -41,6 +45,9 @@ export default function Residential(){
                 const response = await res.json();
                 console.log('the response was : ',response);
                 changeData(response.propertyDetail);
+                if(typeof window !== "undefined"){
+                    document?.body?.classList?.add('addBg');
+                  }
                 setLoader(false);
             }else{
                 const response = await res.json();
@@ -51,7 +58,10 @@ export default function Residential(){
         getPropertyData();
     },[]);
 
-    
+    // width: 100%!important;
+    // height: 100%!important;
+    // border-radius: 10px;
+    // margin-bottom: 10px;
 
     function see(){
         if (typeof window !== "undefined") {
@@ -90,10 +100,18 @@ export default function Residential(){
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay : true,
-        autoplaySpeed : 3000,
+        autoplaySpeed : 2000,
         infinite: true,
         cssEase: 'ease-in-out',
         rtl: false
+      };
+
+    const settingsForFront = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
       };
 
       const settingsFloor = {
@@ -104,16 +122,14 @@ export default function Residential(){
         slidesToScroll: 1,
         autoplay : true,
         rtl : false,
-        autoplaySpeed : 3000,
+        autoplaySpeed : 2000,
         infinite : true,
       }
 
       if(loader){
-        return <div className="h-[100vh] w-[100vw] flex justify-center items-center"><ScaleLoader color="#36d7b7" /></div>
+        return <div className="h-[100vh] w-[100vw] flex justify-center items-center bg-black"><ScaleLoader color="#36d7b7" /></div>
       }
-      if(typeof window !== "undefined"){
-        document?.body?.classList?.add('addBg');
-      }
+      
     return(
         <>
         <Header add={true}/>
@@ -139,7 +155,15 @@ export default function Residential(){
 
                 </div>
                 <div className="left1__img">
-                    <Image src={data?.images?.[0]} width={200} height={200}></Image>
+                    {data && data.images.length>1 && <Slider {...settingsForFront}>
+                    {data && data.images && data.images.map((elm)=>{
+                        return <Image src={elm} width={200} height={200}></Image>
+                    })}
+
+                    </Slider>}
+                    {data && data.images.length==1 && data.images.map((elm)=>{
+                        return <Image src={elm} width={200} height={200}></Image>
+                    }) }
                 </div>
                 <div className="left1__bottom">
                     {data && data.details && data.details?.map((p)=>{

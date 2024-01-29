@@ -4,7 +4,7 @@ import "./Header.css";
 export default function Header(props){
 const add = props.add;
     // {name  : 'Home' , href: '/'} , {name : 'About' , href: '/about'}
-   const headerItems = [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name : 'Account' , href: '/account'}];
+   const headerItems = [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name:'Rental',href:'/property/Rental'},{name:'Resale',href:'/property/Resale'},{name : 'Account' , href: '/account'}];
 //    ,{name : 'Contact Us' , href: '/contact-us'},
 
     return (

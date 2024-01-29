@@ -19,17 +19,17 @@
     row-gap: 10px;
     background-color: #F4DFC8;
     color: black;
-    width: 270px;
+    width: 330px;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    height: 350px;
+    height: 400px;
 }
 .featured__toggle{
     cursor: pointer;
 }
 .featured__toggle :hover{
-    border-bottom: 1px solid #F4DFC8;
+    border-bottom: 2px solid #F4DFC8;
 }
 .featured__display > img{
     border-radius: 10px;
@@ -45,7 +45,12 @@
     display: flex;
     column-gap: 20px;
 }
-
+.featured__toggle > div{
+    padding: 5px;
+}
+.addBdr{
+    border-bottom: 2px solid #F4DFC8;
+}
 .featured__icons{
     display: flex;
     /* justify-content: center; */

@@ -18,22 +18,22 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
     /* height: 200vh; */
     font-family: 'Alegreya Sans SC'!important;
-    /* background-color: #F0F0F0!important; */
-    
+    background-color: black!important;
     
 }
 .addBg{
-  background: url('../../assets//star.png');
+  background: url('../../assets//bg3.jpg');
     background-repeat: none;
     background-size: contain;
+    /* background-position: center; */
 }
 .bg-img{
 opacity: 0.6;

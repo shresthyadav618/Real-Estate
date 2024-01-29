@@ -19,11 +19,22 @@ export default function featured(){
     useEffect(()=>{
         if(propertyContext){
             if(relevance!=="All"){
-                changeP(propertyContext.filter((prop)=>{
+                let ct = 0;
+                changeP(propertyContext.filter((prop,index)=>{
+                    if(ct<4){
                     console.log('the prop is  : ',prop);
-                    return prop.propertyCategory == relevance
-                }));}else{
-                    changeP(propertyContext);
+                    let x =  prop.propertyCategory == relevance;
+                    if(x){ct++;}
+                    return x;
+                    }
+                }));
+            }else{
+                    changeP(propertyContext.filter((prop,index)=>{
+                        if(index<4){
+                            return true;
+                        }
+                        return false;
+                    }));
                 }
                 setLoader(false);
         }else{
@@ -38,19 +49,19 @@ export default function featured(){
         <div className="featured__parent">
             <h1 className="text-2xl font-bold">Our Featured Products</h1>
             <div className="featured__toggle font-bold text-lg">
-                <div onClick={()=>{
+                <div className={relevance==='All'?'addBdr':''} onClick={()=>{
                     changeRelevance("All")
                 }}>All</div>
-                <div onClick={()=>{
+                <div className={relevance==='Commercial'?'addBdr':''} onClick={()=>{
                     changeRelevance("Commercial")
                 }}>Commercial</div>
-                <div onClick={()=>{
+                <div className={relevance==='Residential'?'addBdr':''} onClick={()=>{
                     changeRelevance("Residential")
                 }}>Residential</div>
-                <div onClick={()=>{
+                <div className={relevance==='Plot'?'addBdr':''} onClick={()=>{
                     changeRelevance("Plot")
                 }}>Plots</div>
-                <div onClick={()=>{
+                <div className={relevance==='Rental'?'addBdr':''} onClick={()=>{
                     changeRelevance("Rental")
                 }}>Rental</div>
             </div>

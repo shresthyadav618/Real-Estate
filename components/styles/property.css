@@ -1,9 +1,43 @@
 .property__container{
     width: 80vw;
-    margin: 100px auto;
+    margin: 60px auto 100px auto;
     display: flex;
     column-gap: 20px;
+    position: relative;
 }
 .addWid{
     width: 24%;
+}
+.toggle__property{
+    width: 80vw;
+    margin: 100px auto 60px auto;
+    
+    
+    /* width: fit-content; */
+}
+.toggle__property > div{
+    display: flex;
+    column-gap: 20px;
+    width: fit-content;
+    background-color: white;
+    background-color: #101010;
+    border-radius: 10px;
+    padding: 10px;
+}
+.toggle__property > div > div{
+    
+    background-color: #101010;
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.onActive{
+    background-color: #F4DFC8!important;
+    color: black!important;
+}
+.addMargin{
+    margin: 140px auto!important;
 }

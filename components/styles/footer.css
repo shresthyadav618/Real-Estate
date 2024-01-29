@@ -17,8 +17,8 @@
 }
 .newClr{
     background-color: #101010;
-    position: absolute;
-    bottom: 0px;
+    /* position: absolute;
+    bottom: 0px; */
 }
 .footer__parent > div {
     display: flex;
