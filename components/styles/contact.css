@@ -96,3 +96,73 @@
 .form > textarea::placeholder{
     color: black;
 }
+
+@media screen and (max-width:1160px){
+.contact__image{
+    width: 50%;
+}
+.form__container{
+    height: 88%;
+}
+}
+
+@media screen and (max-width:990px){
+    .contact__container > div > img{
+        height: 55%!important;
+    }
+    .form__container{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:775px){
+    .form__container{
+        width: 55%!important;
+    }
+    .contact__image{
+        width: 40%;
+    }
+    .content__image > h1{
+        font-size: large!important;
+    }
+    .contact__container > div > img{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:690px){
+    .contact__container > div > img{
+        display: none;
+    }
+    .content__image{
+        display: flex;
+        row-gap: 10px;
+        flex-direction: column;
+        width: 54%;
+    }
+    .contact__image{
+        height: fit-content;
+        margin-bottom: 10px;
+        width: 100%;
+        letter-spacing: 2px;
+    }
+    .contact__container{
+        flex-direction: column;
+    }
+    .form__container{
+        width: 60%!important;
+        height: 70%!important;
+    }
+}
+
+@media screen and (max-width:630px){
+    .contact__container{
+        height: 70vh;
+    }
+    .content__image{
+        width: 70%;
+    }
+    .form__container{
+        width: 75%!important;
+    }
+}
