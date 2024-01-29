@@ -13,7 +13,7 @@ export default  function property(){
     const pathname = usePathname();
     const type = pathname.split('/')[2].toString();
     const [data,changeData] = useState(propertyContext);
-    
+    const [loader,setLoader] = useState(true);
     useEffect(()=>{
         changeData(()=>{
             return propertyContext?.filter((elm)=>{
@@ -21,9 +21,12 @@ export default  function property(){
                 return elm.propertyCategory == type;
             })
         });
+        setLoader(false);
     },[propertyContext,type]);
     console.log('the property data is : ',data , ' and the context was ',propertyContext);
-   
+    if(typeof window !== "undefined"){
+        document?.body?.classList?.add('addBg');
+      }
   return (
     <>
     <Header add={true}/>

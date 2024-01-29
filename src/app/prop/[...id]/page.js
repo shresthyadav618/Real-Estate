@@ -6,19 +6,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
+import ScaleLoader from "react-spinners/ScaleLoader";
 import Footer from "../../../../components/Footer";
 import Header from "../../../../components/Header";
 import PropertyChild from "../../../../components/featuredChild";
 import '../../../../components/styles/ContactForm.css';
 import "../../../../components/styles/featured.css";
 import "../../../../components/styles/indiProperty.css";
+
 export default function Residential(){
     const [data,changeData] = useState([]);
     const pathname = usePathname();
     const pp = useContext(PropertiesContext);
     console.log(pp);
     const [allP,changeAllp] = useState(pp);
-
+    const [loader,setLoader] = useState(true);
     useEffect(()=>{
         changeAllp(pp);
     },[pp]);
@@ -27,6 +29,7 @@ export default function Residential(){
     const _id = pathname.split('/')[2].toString();
     console.log('the id is : ',_id);
     useEffect(()=>{
+        setLoader(true);
         async function getPropertyData(){
             const res = await fetch(`http://localhost:3001/api/property/getById`,{
                 method : 'POST',
@@ -38,6 +41,7 @@ export default function Residential(){
                 const response = await res.json();
                 console.log('the response was : ',response);
                 changeData(response.propertyDetail);
+                setLoader(false);
             }else{
                 const response = await res.json();
                 console.log('there was some error getting the property data',response);
@@ -84,7 +88,12 @@ export default function Residential(){
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        autoplay : true,
+        autoplaySpeed : 3000,
+        infinite: true,
+        cssEase: 'ease-in-out',
+        rtl: false
       };
 
       const settingsFloor = {
@@ -92,7 +101,18 @@ export default function Residential(){
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        autoplay : true,
+        rtl : false,
+        autoplaySpeed : 3000,
+        infinite : true,
+      }
+
+      if(loader){
+        return <div className="h-[100vh] w-[100vw] flex justify-center items-center"><ScaleLoader color="#36d7b7" /></div>
+      }
+      if(typeof window !== "undefined"){
+        document?.body?.classList?.add('addBg');
       }
     return(
         <>
@@ -243,6 +263,7 @@ export default function Residential(){
         }
         <Footer hmm = {true}/>
         </>
+        
     )
 
 }

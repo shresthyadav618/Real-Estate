@@ -1,5 +1,6 @@
 
 // import Image from 'next/image';
+'use client'
 import ag1 from "../../assets/ag1.jpg";
 import p1 from "../../assets/p1.png";
 import p2 from "../../assets/p2.png";
@@ -16,7 +17,12 @@ import Featured from "../../components/featured";
 import Overview from "../../components/overview";
 import Slider from "../../components/slider";
 import WhatProvide from "../../components/whatProvide";
+
 export default function Home() {
+  
+  if(typeof window !== "undefined"){
+    document?.body?.classList?.remove('addBg');
+  }
   // console.log(Img);
   // {name,role,since,number,l1,l2,l3,l4}
   const whatProvide = [{img : p1,heading : "Property Management" , para : 'We provide a range of services to property owners and landlords to help them effectively manage their real estate investments.'},{img: p2 , heading : "House Buying" , para : "Planning to buy home? We offer a range of assistance to make the home buying process smoother and more convenient for the buyer."},{img :p3 , heading : "Consulting Services" , para : "A team of professionals to advice and expertise to individuals, businesses, or organizations involved in various aspects of the real estate industry."},{img : p4 , heading : "House Leasing", para : "Whether you are an individual homeowner, real estate investor, we assist in marketing, selling, and closing the sale of your property."},{

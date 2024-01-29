@@ -15,7 +15,7 @@ export default function featured(){
     const [p,changeP] = useState([]);
     const [relevance,changeRelevance] = useState("All");
     console.log('the relevance is : ',relevance);
-
+    const [loader,setLoader] = useState(true);
     useEffect(()=>{
         if(propertyContext){
             if(relevance!=="All"){
@@ -25,12 +25,15 @@ export default function featured(){
                 }));}else{
                     changeP(propertyContext);
                 }
+                setLoader(false);
         }else{
             console.log('THE CONTEXT IS NULL PLEASE CHECK THE ERROR!!!');
         }
     },[propertyContext,relevance])
     
     console.log('the value of  p is : ',p);
+    
+      
     return(
         <div className="featured__parent">
             <h1 className="text-2xl font-bold">Our Featured Products</h1>

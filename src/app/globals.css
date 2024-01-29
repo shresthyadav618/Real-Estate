@@ -28,6 +28,12 @@ body {
     font-family: 'Alegreya Sans SC'!important;
     /* background-color: #F0F0F0!important; */
     
+    
+}
+.addBg{
+  background: url('../../assets//star.png');
+    background-repeat: none;
+    background-size: contain;
 }
 .bg-img{
 opacity: 0.6;
