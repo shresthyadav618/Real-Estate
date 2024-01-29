@@ -21,7 +21,7 @@ if(typeof window !== "undefined"){
     return(
         <>
         <Header/>
-        <div className="flex flex-col w-[80vw] mx-auto mt-6">
+        <div className="flex flex-col w-[80vw] mx-auto mt-20">
         <h1 className="font-bold text-2xl text-white"> Welcome to the dashboard {session?.user?.name}</h1>
         <Link href={'/Dashboard/new'} className="bg-blue-900 text-white p-4 rounded-xl mb-6 w-[18%] flex items-center justify-center mt-4"><p className="font-bold text-lg">Add New Property</p></Link>
 <table className="mt-6 basic w-full">

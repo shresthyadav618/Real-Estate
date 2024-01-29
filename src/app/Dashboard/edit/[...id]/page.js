@@ -442,14 +442,7 @@ changeValue("");
           </div>
         </div>
 
-        <label htmlFor="desc">Description</label>
-        <ReactQuill
-          value={data.description}
-          rows={"10"}
-          onChange={newValue => changeData((prev)=>{return {...prev,description:newValue}})}
-          placeholder="Description"
-          name="desc" className="textarea"
-        ></ReactQuill>
+        
         <label htmlFor="price">Price (in RS)</label>
         <input
           value={data.price}
@@ -486,12 +479,38 @@ changeValue("");
           placeholder="Location"
           name="location"
         ></input>
-
+        {check ? (
+          <button type="submit"
+            onClick={(e) => {
+              handleSubmit(e);
+            }} className="btn__property addGray"
+          >
+            Edit 
+          </button>
+        ) : (
+          <button type="submit" className="btn__property"
+            onClick={(e) => {
+              handleSubmit(e);
+            }}
+          >
+            Save
+          </button>
+        )}
         </div>
           
 
           <div>
-            
+
+          <label htmlFor="desc">Description</label>
+        <ReactQuill
+          value={data.description}
+          rows={"10"}
+          onChange={newValue => changeData((prev)=>{return {...prev,description:newValue}})}
+          placeholder="Description"
+          name="desc" className="textarea"
+        ></ReactQuill>    
+
+
         <label htmlFor="amenities">Amenities</label>
         <ReactQuill className="textarea"
           value={data.amenities}
@@ -544,23 +563,7 @@ changeValue("");
        <button type="button" className="btn__property" onClick={(e)=>{handleKeyValueAdd(e)}}>Add Key-Value Pair</button>
        </div>
 
-        {check ? (
-          <button type="submit"
-            onClick={(e) => {
-              handleSubmit(e);
-            }} className="btn__property"
-          >
-            Edit 
-          </button>
-        ) : (
-          <button type="submit" className="btn__property"
-            onClick={(e) => {
-              handleSubmit(e);
-            }}
-          >
-            Save
-          </button>
-        )}
+        
           </div>
 
 
