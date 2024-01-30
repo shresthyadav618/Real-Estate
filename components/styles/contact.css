@@ -132,22 +132,22 @@
 
 @media screen and (max-width:690px){
     .contact__container > div > img{
-        display: none;
+        display: none!important;
     }
     .content__image{
-        display: flex;
-        row-gap: 10px;
-        flex-direction: column;
-        width: 54%;
+        display: flex!important;
+        row-gap: 10px!important;
+        flex-direction: column!important;
+        width: 54%!important;
     }
     .contact__image{
-        height: fit-content;
-        margin-bottom: 10px;
-        width: 100%;
-        letter-spacing: 2px;
+        height: fit-content!important;
+        margin-bottom: 10px!important;
+        width: 100%!important;
+        letter-spacing: 2px!important;
     }
     .contact__container{
-        flex-direction: column;
+        flex-direction: column!important;
     }
     .form__container{
         width: 60%!important;
@@ -157,10 +157,10 @@
 
 @media screen and (max-width:630px){
     .contact__container{
-        height: 70vh;
+        height: 70vh!important;
     }
     .content__image{
-        width: 70%;
+        width: 70%!important;
     }
     .form__container{
         width: 75%!important;
