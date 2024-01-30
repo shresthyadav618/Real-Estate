@@ -13,9 +13,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* <AuthProvider> */}
+      <head>
       <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'></link>
       <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://kit.fontawesome.com/cacef5af72.js" crossorigin="anonymous"></script>
+      </head>
+      
       <body className={inter.className}>
 
         <AuthProvider>
@@ -25,8 +30,7 @@ export default function RootLayout({ children }) {
           </AuthProvider>
         
         </body>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <script src="https://kit.fontawesome.com/cacef5af72.js" crossorigin="anonymous"></script>
+     
       {/* </AuthProvider> */}
     </html>
   )

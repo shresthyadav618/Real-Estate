@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Header from "../../../../../components/Header";
 import "../../../../../components/styles/dashboard.css";
-export default function deleteProduct(){
+export default function DeleteProperty(){
 
     const pathname = usePathname();
     const _id = pathname.split('/')[3].toString();

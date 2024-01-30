@@ -264,7 +264,7 @@ changeValue("");
           {/* <option value={""}>Uncategorized</option>{" "} */}
           {categories &&
             categories.map((cat) => {
-              return <option value={cat.name}>{cat.name}</option>;
+              return <option key={cat.name+'edit2'} value={cat.name}>{cat.name}</option>;
             })}{" "}
         </select>
 
@@ -285,7 +285,7 @@ changeValue("");
               
               {subCategories && data.propertyCategory && 
                 subCategories[data.propertyCategory].map((cat) => {
-                  return <option value={cat.value}>{cat.name}</option>;
+                  return <option key={cat.name+'edit1'} value={cat.value}>{cat.name}</option>;
                 })}
             </select>
           </>
@@ -360,7 +360,7 @@ changeValue("");
                 data?.images?.map((imageContent) => {
                   if (imageContent)
                     return (
-                  <div className="relative ">
+                  <div className="relative " key={imageContent+'edit2'}>
                   
                       <img
                         src={imageContent}
@@ -422,7 +422,7 @@ changeValue("");
                 data?.floorPlansImages?.map((imageContent) => {
                   if (imageContent)
                     return (
-                  <div className="relative">
+                  <div key={imageContent+'edit1'} className="relative">
                       <img
                         src={imageContent}
                         width={"160px"}
@@ -531,7 +531,7 @@ changeValue("");
         for(const newKey in elm){
           if(elm.hasOwnProperty(newKey)){
             console.log(newKey,elm[newKey]);
-            newHTML = <div className="flex gap-x-2 items-center ">  <input value={newKey} onChange={(e)=>{
+            newHTML = <div key={newKey+'edit'} className="flex gap-x-2 items-center ">  <input value={newKey} onChange={(e)=>{
               changeData((prev)=>{
                 let newDetails = data.details;
                 newDetails[index] = {[e.target.value] : elm[newKey]};

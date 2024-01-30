@@ -23,6 +23,7 @@ export default function Home() {
   if(typeof window !== "undefined"){
     document?.body?.classList?.remove('addBg');
   }
+
   // console.log(Img);
   // {name,role,since,number,l1,l2,l3,l4}
   const whatProvide = [{img : p1,heading : "Property Management" , para : 'We provide a range of services to property owners and landlords to help them effectively manage their real estate investments.'},{img: p2 , heading : "House Buying" , para : "Planning to buy home? We offer a range of assistance to make the home buying process smoother and more convenient for the buyer."},{img :p3 , heading : "Consulting Services" , para : "A team of professionals to advice and expertise to individuals, businesses, or organizations involved in various aspects of the real estate industry."},{img : p4 , heading : "House Leasing", para : "Whether you are an individual homeowner, real estate investor, we assist in marketing, selling, and closing the sale of your property."},{
@@ -52,7 +53,7 @@ export default function Home() {
     <div className="provide__container">
       
     {whatProvide.map((item)=>{
-      return <WhatProvide heading={item.heading} para={item.para} img={item.img}/>
+      return <WhatProvide key={item.img+'app'} heading={item.heading} para={item.para} img={item.img}/>
     })}
     </div>
     </div>
@@ -60,7 +61,7 @@ export default function Home() {
     <div className="agent__container">
     {allAgents.map((agent)=>{
       
-      return <Agent name={agent.name} role={agent.role} since={agent.since} number={agent.number} l1={agent.l1} l2={agent.l2} l3={agent.l3} l4={agent.l4} img={agent.img}/>
+      return <Agent key={agent.name+'agent'} name={agent.name} role={agent.role} since={agent.since} number={agent.number} l1={agent.l1} l2={agent.l2} l3={agent.l3} l4={agent.l4} img={agent.img}/>
       
     })}
     </div>

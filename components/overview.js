@@ -10,7 +10,7 @@ return (
     <div className="overview__container text-white">
 
         <div className="overview__child1">
-            <h1>Discover Unmatched Opportunities in Gurgaon's Real Estate Landscape</h1>
+            <h1>Discover Unmatched Opportunities in Gurgaon Real Estate Landscape</h1>
             <p>Welcome to our premier real estate platform showcasing a diverse array of plots, commercial spaces, and residential lands in the thriving city of Gurgaon, Haryana. Immerse yourself in a curated selection of major projects that redefine luxury living and investment opportunities</p>
             <button>Read More</button>
         </div>

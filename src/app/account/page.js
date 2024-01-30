@@ -4,7 +4,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import "../../../components/styles/dashboard.css";
-export default function account() {
+export default function Account() {
   // const session = getServerSession(AuthOptions);
   const { data: session } = useSession();
   console.log("THE SESSION IS : ", session);

@@ -8,7 +8,7 @@ import Header from "../../../../components/Header";
 import FeaturedChild from "../../../../components/featuredChild";
 import "../../../../components/styles/featured.css";
 import '../../../../components/styles/property.css';
-export default  function property(){
+export default  function Property(){
     const subCategories = { Residential : [
         {name : 'Ready To Move' , value : 'rtm'} , { name : 'New Launches' , value : 'nl' } , {name : 'Under Construction' , value : 'uc'}
       ] ,
@@ -60,7 +60,7 @@ export default  function property(){
     <div>
     {  subCategories[type].map((elm)=>{
         console.log(elm);
-        return <div className={elm.value==sub ? 'onActive' : ''} onClick={()=>{
+        return <div key={elm.value+'property'} className={elm.value==sub ? 'onActive' : ''} onClick={()=>{
             changeSub(()=>{
                 return elm.value;
             })
@@ -71,7 +71,7 @@ export default  function property(){
 
     <div className={type=='Plot'?'property__container addMargin':'property__container'}>
         {data && data.map((property)=>{
-            return <FeaturedChild heading={property.name} addWid={true} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
+            return <FeaturedChild key={property._id+'property'} heading={property.name} addWid={true} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
         })}
     </div>
     <Footer addClr={true}/>

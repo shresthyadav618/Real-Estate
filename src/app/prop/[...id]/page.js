@@ -178,12 +178,12 @@ export default function Residential(){
                 <div className="left1__img">
                     {data && data.images.length>1 && <Slider {...settingsForFront}>
                     {data && data.images && data.images.map((elm)=>{
-                        return <Image src={elm} width={200} height={200}></Image>
+                        return <Image key={elm+'prop1'} src={elm} width={200} height={200}></Image>
                     })}
 
                     </Slider>}
                     {data && data.images.length==1 && data.images.map((elm)=>{
-                        return <Image src={elm} width={200} height={200}></Image>
+                        return <Image key={elm+'prop2'} src={elm} width={200} height={200}></Image>
                     }) }
                 </div>
                 <div className="left1__bottom">
@@ -191,7 +191,7 @@ export default function Residential(){
                         for(let key in p){
                             if(p.hasOwnProperty(key)){
                                 return (
-                                    <div className="flex flex-col"> <div className=" text-white"> {key} </div> <div className="font-bold"> {p[key]} </div>  </div>
+                                    <div key={key+'prop3'} className="flex flex-col"> <div className=" text-white"> {key} </div> <div className="font-bold"> {p[key]} </div>  </div>
                                 )
                             }
                         }
@@ -213,14 +213,14 @@ export default function Residential(){
             <h1 className="text-3xl text-[#97B618] font-extrabold mb-4">Floor Plans</h1>
             {data && data.floorPlansImages && data.floorPlansImages.length>1 && <Slider {...settingsFloor}>
             {data && data.floorPlansImages && data.floorPlansImages.map((elm)=>{
-                return <Image src={elm} onClick={(e)=>{
+                return <Image key={elm+'prop4'} src={elm} onClick={(e)=>{
                     window.location.href=`http://localhost:3001/_next/image?url=${elm}&w=640&q=75`
                 }} width={200} height={200}></Image>
             })}
             </Slider>}
             
             {data && data.floorPlansImages && data.floorPlansImages.length==1 && data.floorPlansImages.map((elm)=>{
-                return <Image src={elm} onClick={(e)=>{
+                return <Image key={elm+'prop5'} src={elm} onClick={(e)=>{
                     window.location.href=`http://localhost:3001/_next/image?url=${elm}&w=640&q=75`
                 }} width={200} height={200}></Image>
             })
@@ -248,7 +248,7 @@ export default function Residential(){
                     //     present = true;
                     // }
                     // present={present} removed
-                    return <PropertyChild present={true}  heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
+                    return <PropertyChild key={property._id +'prop'} present={true}  heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
                 })}
                 
                 

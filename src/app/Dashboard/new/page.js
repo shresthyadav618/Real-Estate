@@ -16,6 +16,7 @@ import { PuffLoader } from "react-spinners";
 import Header from "../../../../components/Header";
 import "../../../../components/styles/dashboard.css";
 // import { useRouter } from "next/navigation";
+
 export default function AddProperty() {
   const subCategories = { Residential : [
     {name : 'Ready To Move' , value : 'rtm'} , { name : 'New Launches' , value : 'nl' } , {name : 'Under Construction' , value : 'uc'}
@@ -76,7 +77,7 @@ async function handleSubmit(e){
   }
 
 }
-const [loading,setLoading] = useState(false);
+const [loading,setLoading] = useState(true);
 const [loading1,setLoading1] = useState(false);
 const [loading2,setLoading2] = useState(false);
 async function uploadImages(e){
@@ -213,7 +214,7 @@ changeValue("");
           {/* <option value={""}>Uncategorized</option>{" "} */}
           {categories &&
             categories.map((cat) => {
-              return <option value={cat.name}>{cat.name}</option>;
+              return <option key={cat.name+'new2'} value={cat.name}>{cat.name}</option>;
             })}{" "}
         </select>
 
@@ -234,40 +235,11 @@ changeValue("");
               
               {subCategories && data.propertyCategory && 
                 subCategories[data.propertyCategory].map((cat) => {
-                  return <option value={cat.value}>{cat.name}</option>;
+                  return <option key={cat.value+'new1'} value={cat.value}>{cat.name}</option>;
                 })}
             </select>
           </>
         )}
-
-        {/* {propertyToFill &&
-          propertyToFill.map((elm) => {
-            console.log(elm);
-            console.log(typeof elm.value);
-            return (
-              <div className="flex gap-x-2  flex-col">
-                {" "}
-                <label>{elm.name}</label>{" "}
-                <select
-                  onChange={(e) => {
-                    handlePropertyChange(e, elm.name);
-                  }}
-                  value={Properties[elm.name]}
-                >
-                  {" "}
-                  <option>Please select</option>{" "}
-                  {elm && Array.isArray(elm.value) ? (
-                    elm.value.map((v) => {
-                      console.log(v);
-                      return <option value={v}>{v}</option>;
-                    })
-                  ) : (
-                    <option value={elm.value}>{elm.value}</option>
-                  )}{" "}
-                </select>{" "}
-              </div>
-            );
-          })} */}
 
         <label htmlFor="photos">Photos</label>
         <label className=" btn__property font-normal cursor-pointer flex  items-center justify-center gap-x-4">
@@ -309,7 +281,7 @@ changeValue("");
                 data?.images?.map((imageContent) => {
                   if (imageContent)
                     return (
-                  <div className="relative ">
+                  <div key={imageContent+'new2'} className="relative ">
                   
                       <img
                         src={imageContent}
@@ -371,7 +343,7 @@ changeValue("");
                 data?.floorPlansImages?.map((imageContent) => {
                   if (imageContent)
                     return (
-                  <div className="relative">
+                  <div key={imageContent+'new1'} className="relative">
                       <img
                         src={imageContent}
                         width={"160px"}
@@ -481,7 +453,7 @@ changeValue("");
         for(const newKey in elm){
           if(elm.hasOwnProperty(newKey)){
             console.log(newKey,elm[newKey]);
-            newHTML = <div className="flex gap-x-2 items-center ">  <input value={newKey} onChange={(e)=>{
+            newHTML = <div key={newKey+'new'} className="flex gap-x-2 items-center ">  <input value={newKey} onChange={(e)=>{
               changeData((prev)=>{
                 let newDetails = data.details;
                 newDetails[index] = {[e.target.value] : elm[newKey]};

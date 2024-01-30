@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import o5 from "../assets/o5.jpg";
 import FeaturedChild from "./featuredChild";
 import "./styles/featured.css";
-export default function featured(){
+export default function Featured(){
     // {heading,location,img,bed,bath,area,price}
     const properties = [{heading :"Villa in Voila'Vatika" , location :"Deering Bay Drive,Vatika Sector-117" , img :o5 ,bed :"3" ,bath :"3",area: "3500 sq ft",price: "$530000",relevance : ['all','comm','res']},{heading :"Villa in Voila'Vatika" , location :"Deering Bay Drive,Vatika Sector-117" , img :o5 ,bed :"3" ,bath :"3",area: "3500 sq ft",price: "$530000"},{heading :"Villa in Voila'Vatika" , location :"Deering Bay Drive,Vatika Sector-117" , img :o5 ,bed :"3" ,bath :"3",area: "3500 sq ft",price: "$530000"}];
 
@@ -67,7 +67,7 @@ export default function featured(){
             </div>
         <div className="featured__container">
             {p!=[] && p.map((property)=>{
-                return <FeaturedChild heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price} relevance={relevance} _id={property._id} />
+                return <FeaturedChild key={property._id} heading={property.name} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price} relevance={relevance} _id={property._id} />
                 
             })}
         </div>

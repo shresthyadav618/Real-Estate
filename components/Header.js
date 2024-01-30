@@ -30,7 +30,7 @@ const add = props.add;
             <ul className="flex gap-x-12 header__list add">
                 <Link className="font-bold text-4xl" href={'/'}>Mohit Bohra</Link>
                 {headerItems.map((item)=>{
-                    return <Link href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}><p>{item.name}</p></Link>
+                    return <Link key={item.name} href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}><p>{item.name}</p></Link>
                 })}
                 <div className="cursor-pointer hide" onClick={()=>{
                     if(typeof window !== 'undefined'){

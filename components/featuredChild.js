@@ -2,7 +2,7 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
-export default function featuredChild(props){
+export default function FeaturedChild(props){
     const name = props.heading;
     const location = props.location;
     const img = props.img;
