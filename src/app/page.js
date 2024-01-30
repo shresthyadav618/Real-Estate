@@ -1,6 +1,8 @@
 
 // import Image from 'next/image';
 'use client'
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import ag1 from "../../assets/ag1.jpg";
 import p1 from "../../assets/p1.png";
@@ -9,6 +11,7 @@ import p3 from "../../assets/p3.jpg";
 import p4 from "../../assets/p4.jpg";
 import p5 from "../../assets/p5.png";
 import p6 from "../../assets/p6.svg";
+import wp from "../../assets/whatsapp.png";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
@@ -49,20 +52,15 @@ export default function Home() {
     {img : ag1,name : "Ramu" , role : "Exclusive Team Agent" , since : "2015" , number : "94732875455", l1 :'' , l2: '' , l3 : '', l4 :''}];
      
   return (
-   <div>
+   <div className="relative">
+    <Link href={'https://api.whatsapp.com/send?phone=919999261355'}><Image className="wp" width={100} height={100} src={wp}></Image></Link>
     <div className="image__container m-h-[80%] flex flex-col gap-y-[100px]">
     <Header/>
     {/* <DynamicHeader/> */}
     <Hero/>
     {/* <DynamicHero/> */}
     </div>
-    <Overview/>
-    {/* <DynamicOverview/> */}
-    <Slider/>
-    {/* <DynamicSlider/> */}
     <Featured/>
-    {/* <DynamicFeatured/> */}
-
     <div className="new_class">
     <h1 className="font-bold text-4xl text-black w-[78vw] m-auto">What are we providing</h1>
     <div className="provide__container">
@@ -73,6 +71,14 @@ export default function Home() {
     })}
     </div>
     </div>
+    <Overview/>
+    {/* <DynamicOverview/> */}
+    <Slider/>
+    {/* <DynamicSlider/> */}
+    
+    {/* <DynamicFeatured/> */}
+
+    
     <h1 className="text-bold text-4xl w-[78vw] mx-auto mb-6">Meet Our Agents</h1>
     <div className="agent__container">
     {allAgents.map((agent)=>{

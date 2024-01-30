@@ -5,8 +5,12 @@ export default function Header(props){
     console.log('executing header')
 const add = props.add;
     // {name  : 'Home' , href: '/'} , {name : 'About' , href: '/about'}
-   const headerItems = [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name:'Rental',href:'/property/Rental'},{name:'Resale',href:'/property/Resale'},{name : 'Account' , href: '/account'}];
+   const headerItems = [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name:'Rental',href:'/property/Rental'},{name:'Resale',href:'/property/Resale'}];
+//    {name : 'Account' , href: '/account'}
 //    ,{name : 'Contact Us' , href: '/contact-us'},
+
+
+
 
     return (
         <>
@@ -29,11 +33,11 @@ const add = props.add;
     </ul>
   </div>
             <ul className="flex gap-x-12 header__list add">
-                <Link className="font-bold text-4xl" href={'/'}>Mohit Bohra</Link>
+                <Link className="font-bold text-4xl" href={'/'}>Prime Associates</Link>
                 {headerItems.map((item)=>{
                     return <Link key={item.name} href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}><p>{item.name}</p></Link>
                 })}
-                <div className="cursor-pointer hide" 
+                <div className="cursor-pointer hide font-bold" 
                 onClick={()=>{
                     if(typeof(window) !== 'undefined'){
                         const posY = document?.getElementsByClassName('contact__container')[0]?.offsetTop;

@@ -15,6 +15,7 @@ import "../../../../components/styles/dashboard.css";
 // const DynamicHeader = dynamic(()=>import( "../../../../components/Header"),{ssr:false})
 
 const BASE_URL = 'https://prime-associates-real.vercel.app';
+// const BASE_URL = 'http://localhost:3001';
 export default function AddProperty() {
   console.log('executing dashboard/new')
  

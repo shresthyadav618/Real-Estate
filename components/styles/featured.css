@@ -12,7 +12,7 @@
     flex-direction: column;
     row-gap: 20px;
     width: 90vw;
-    color: white!important;
+    color: black!important;
 }
 .featured__display{
     display: flex;
@@ -30,7 +30,8 @@
     cursor: pointer;
 }
 .featured__toggle :hover{
-    border-bottom: 2px solid #F4DFC8;
+    /* border-bottom: 2px solid #F4DFC8; */
+    border-bottom: 2px solid black!important;
 }
 .featured__display > img{
     border-radius: 10px;

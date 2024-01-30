@@ -19,6 +19,7 @@ import Header from "../../../../components/Header";
 
 export default function Residential(){
     const BASE_URL = 'https://prime-associates-real.vercel.app';
+    // const BASE_URL = 'http://localhost:3001';
     const [data,changeData] = useState([]);
     const pathname = usePathname();
     const pp = useContext(PropertiesContext);
