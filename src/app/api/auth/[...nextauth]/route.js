@@ -6,7 +6,7 @@ import NextAuth from "next-auth/next";
 import clientPromise from "../../../../../lib/mongoAdapter";
 
 
-const isAdmin  = ['manushresth.official24669@gmail.com','shresthm727@gmail.com'];
+const isAdmin  = ['manushresth.official24669@gmail.com','shresthm727@gmail.com','shubhamyadav.manu@gmail.com','vatikaprime@gmail.com'];
 
 export const AuthOptions = {
     providers : [
