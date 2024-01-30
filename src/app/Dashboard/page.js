@@ -23,9 +23,9 @@ useEffect(()=>{
     document?.body?.classList?.remove('addBg');
   }
 },[]);
-if(!propertyContext){
-  return <div>Wait</div>;
-}else{
+// if(!propertyContext){
+//   return <div>Wait</div>;
+// }else{
     return(
         <>
         {/* <DynamicHeader/> */}
@@ -57,7 +57,7 @@ if(!propertyContext){
         </>
     )
 }
-}
+// }
 
 // now what we can do is use useContext to display all the properties , get them . and in home page filter those properties on basis of relevance and in here we can also genereate them all , so that will help to reduce the burden on server and reduce the api calls by a lot 
 
