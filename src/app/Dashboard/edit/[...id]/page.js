@@ -20,6 +20,7 @@ import "../../../../../components/styles/dashboard.css";
 // const DynamicHeader = dynamic(()=>import( "../../../../../components/Header"),{ssr:false})
 // import { useRouter } from "next/navigation";
 export default function EditProperty() {
+  const BASE_URL = 'https://prime-associates-real.vercel.app';
     const pathname = usePathname();
     const _id = pathname.split('/')[3].toString();
     console.log('the id is : ',_id);
@@ -40,7 +41,7 @@ export default function EditProperty() {
 
       useEffect(()=>{
         async function getDetailsById(){
-            const res = await fetch('http://localhost:3001/api/property/getById',{
+            const res = await fetch(BASE_URL+'/api/property/getById',{
                 method : 'POST',
                 body : JSON.stringify(_id),
                 headers : {'Content-Type': 'application/json'}
@@ -93,7 +94,7 @@ const check = true;
 async function handleSubmit(e){
  if(check){
     e.preventDefault();
-    const res = await fetch('http://localhost:3001/api/property/edit',{
+    const res = await fetch(BASE_URL+'/api/property/edit',{
         method : 'PUT',
         body : JSON.stringify(data),
         headers : {'Content-Type' : 'application/json'}
@@ -114,7 +115,7 @@ async function handleSubmit(e){
     e.preventDefault();
     console.log('Submitting form');
     console.log('the data submitted in the api req ',data);
-    const res = await fetch('http://localhost:3001/api/property/add',{
+    const res = await fetch(BASE_URL+'/api/property/add',{
       headers : {'Content-Type': 'application/json'},
       method : 'POST',
       body : JSON.stringify(data),
@@ -152,7 +153,7 @@ async function uploadImages(e){
    for(const file of files){
       dataForm.append('file',file);
    }
-   const response = await fetch('http://localhost:3001/api/upload',{
+   const response = await fetch(BASE_URL+'/api/upload',{
       method : 'POST',
       body : dataForm
    });

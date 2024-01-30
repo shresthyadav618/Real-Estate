@@ -14,7 +14,7 @@ import Header from "../../../../components/Header";
 import "../../../../components/styles/dashboard.css";
 // const DynamicHeader = dynamic(()=>import( "../../../../components/Header"),{ssr:false})
 
-
+const BASE_URL = 'https://prime-associates-real.vercel.app';
 export default function AddProperty() {
   console.log('executing dashboard/new')
  
@@ -527,7 +527,7 @@ async function handleSubmit(e) {
   e.preventDefault();
   console.log("Submitting form");
   console.log("the data submitted in the api req ", data);
-  const res = await fetch("http://localhost:3001/api/property/add", {
+  const res = await fetch(BASE_URL+"/api/property/add", {
     headers: { "Content-Type": "application/json" },
     method: "POST",
     body: JSON.stringify(data),
@@ -561,7 +561,7 @@ async function uploadImages(e) {
     for (const file of files) {
       dataForm.append("file", file);
     }
-    const response = await fetch("http://localhost:3001/api/upload", {
+    const response = await fetch(BASE_URL+"/api/upload", {
       method: "POST",
       body: dataForm,
     });

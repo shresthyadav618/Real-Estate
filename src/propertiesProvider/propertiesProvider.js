@@ -7,10 +7,10 @@ export const PropertiesContext = createContext();
 export default function PropertiesProvider({children}){
 
     const [allProperties,changeAllProperties] = useState();
-    
+    const BASE_URL = 'https://prime-associates-real.vercel.app';
     useEffect(()=>{
         async function getProperties(){
-            const res = await fetch('http://localhost:3001/api/property/getAll',{
+            const res = await fetch(BASE_URL+'/api/property/getAll',{
                 method : 'GET'
             });
 

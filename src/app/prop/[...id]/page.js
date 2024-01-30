@@ -18,7 +18,7 @@ import Header from "../../../../components/Header";
 // const DynamicFooter = dynamic(()=>import( "../../../../components/Footer"),{ssr:false})
 
 export default function Residential(){
-    
+    const BASE_URL = 'https://prime-associates-real.vercel.app';
     const [data,changeData] = useState([]);
     const pathname = usePathname();
     const pp = useContext(PropertiesContext);
@@ -38,7 +38,7 @@ export default function Residential(){
             document?.body?.classList?.add('addBg');
           }
         async function getPropertyData(){
-            const res = await fetch(`http://localhost:3001/api/property/getById`,{
+            const res = await fetch(`${BASE_URL}/api/property/getById`,{
                 method : 'POST',
                 body : JSON.stringify(_id),
                 headers : {'Content-Type' : 'application/json'}

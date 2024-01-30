@@ -6,7 +6,7 @@ import "../../../../../components/styles/dashboard.css";
 // import dynamic from "next/dynamic";
 // const DynamicHeader = dynamic(()=>import( "../../../../../components/Header"),{ssr:false})
 export default function DeleteProperty(){
-
+    const BASE_URL = 'https://prime-associates-real.vercel.app';
     const pathname = usePathname();
     const _id = pathname.split('/')[3].toString();
     // const Router = useRouter();
@@ -14,7 +14,7 @@ export default function DeleteProperty(){
     console.log('the id is : ',_id);
 
     async function handleDelete(){
-        const response = await fetch('http://localhost:3001/api/property/delete',{
+        const response = await fetch(BASE_URL+'/api/property/delete',{
             method : 'POST',
             body : JSON.stringify(_id),
             headers : {'Content-Type': 'application/json'}
