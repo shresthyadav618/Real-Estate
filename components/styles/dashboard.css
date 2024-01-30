@@ -185,6 +185,10 @@ table, th , td{
   display: none;
 }
 
+.dash > table{
+  color: white!important;
+}
+
 @media screen and (max-width:1200px){
   .form__property__add{
     width: 90vw!important;

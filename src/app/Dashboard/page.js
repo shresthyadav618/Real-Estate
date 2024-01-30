@@ -30,7 +30,7 @@ useEffect(()=>{
         <>
         {/* <DynamicHeader/> */}
         <Header/>
-        <div className="flex flex-col w-[80vw] mx-auto mt-20 max-[484px]:w-[95vw]">
+        <div className="flex flex-col w-[80vw] mx-auto mt-20 max-[484px]:w-[95vw] dash">
         <h1 className="font-bold text-2xl text-white"> Welcome to the dashboard {session?.user?.name}</h1>
         <Link href={'/Dashboard/new'} className="bg-blue-900 text-white p-4 rounded-xl mb-6 w-[18%] flex items-center justify-center mt-4 lg:w-[40%] min-[200px]:w-[100%] "><p className="font-bold text-lg">Add New Property</p></Link>
 <table className="mt-6 basic w-full">
