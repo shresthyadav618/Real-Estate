@@ -12,6 +12,7 @@
     flex-direction: column;
     row-gap: 20px;
     width: 90vw;
+    color: white!important;
 }
 .featured__display{
     display: flex;
@@ -129,5 +130,8 @@
     }
     .featured__toggle{
         font-size: small!important;
+    }
+    .featured__display > img{
+        width: 90%!important;
     }
 }
