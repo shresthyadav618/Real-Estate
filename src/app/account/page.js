@@ -3,6 +3,7 @@
 // import { AuthOptions } from "../api/auth/[...auth]/route";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import "../../../components/styles/dashboard.css";
 export default function account() {
   // const session = getServerSession(AuthOptions);
   const { data: session } = useSession();
@@ -13,7 +14,7 @@ export default function account() {
   if (!session) {
     console.log(session);
     // signIn();
-    return <button onClick={signIn}>Login</button>;
+    return <div className="w-[100vw] h-[100vh] flex items-center justify-center"><button className="btn__property" onClick={signIn}>Login</button></div>;
   }
   console.log("the user role is : ", session?.user?.role);
 

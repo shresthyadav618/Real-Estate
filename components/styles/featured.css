@@ -44,6 +44,7 @@
 .featured__toggle{
     display: flex;
     column-gap: 20px;
+    flex-wrap: wrap;
 }
 .featured__toggle > div{
     padding: 5px;

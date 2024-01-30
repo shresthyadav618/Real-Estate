@@ -18,6 +18,16 @@
     font-size: 20px;
 }
 
+.header__list  > a , .add > a{
+  color: unset !important;
+  color: white!important;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header__list>a:visited{
+  color: white !important;
+}
+
 .hero__container__one{
     display: flex;
     flex-direction: column;
