@@ -4,8 +4,8 @@ import Link from "next/link";
 import "./styles/agent.css";
 export default function agents(props){
    const {name,role,since,number,l1,l2,l3,l4,img} = props;
-    console.log(img);
-    console.log(name);
+    // console.log(img);
+    // console.log(name);
     return (
         
             

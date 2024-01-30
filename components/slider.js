@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import b1 from "../assets/b1.png"
 import b10 from "../assets/b10.png"

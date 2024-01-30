@@ -2,6 +2,7 @@
 import Link from "next/link";
 import "./Header.css";
 export default function Header(props){
+    console.log('executing header')
 const add = props.add;
     // {name  : 'Home' , href: '/'} , {name : 'About' , href: '/about'}
    const headerItems = [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name:'Rental',href:'/property/Rental'},{name:'Resale',href:'/property/Resale'},{name : 'Account' , href: '/account'}];
@@ -32,16 +33,18 @@ const add = props.add;
                 {headerItems.map((item)=>{
                     return <Link key={item.name} href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}><p>{item.name}</p></Link>
                 })}
-                <div className="cursor-pointer hide" onClick={()=>{
-                    if(typeof window !== 'undefined'){
-                        const posY = document.getElementsByClassName('contact__container')[0].offsetTop;
+                <div className="cursor-pointer hide" 
+                onClick={()=>{
+                    if(typeof(window) !== 'undefined'){
+                        const posY = document?.getElementsByClassName('contact__container')[0]?.offsetTop;
                         console.log('the posY is : ',posY);
-                        window.scroll({
+                        window?.scroll({
                             top: posY,
                             behavior: "smooth",
                           });
                     }
-                }}>Contact Us</div>
+                }}
+                >Contact Us</div>
             </ul>
         </div>
         </>

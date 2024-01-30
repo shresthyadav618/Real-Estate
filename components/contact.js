@@ -1,3 +1,5 @@
+
+'use client'
 import Image from "next/image"
 import contactImage from "../assets/cf.jpg"
 import "./styles/contact.css"

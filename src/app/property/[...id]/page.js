@@ -1,5 +1,6 @@
 'use client';
 import { PropertiesContext } from "@/propertiesProvider/propertiesProvider";
+// import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import ScaleLoader from "react-spinners/ScaleLoader";
@@ -8,6 +9,8 @@ import Header from "../../../../components/Header";
 import FeaturedChild from "../../../../components/featuredChild";
 import "../../../../components/styles/featured.css";
 import '../../../../components/styles/property.css';
+// const DynamicFooter = dynamic(()=>import( "../../../../components/Footer"),{ssr:false})
+// const DynamicHeader = dynamic(()=>import( "../../../../components/Header"),{ssr:false})
 export default  function Property(){
     const subCategories = { Residential : [
         {name : 'Ready To Move' , value : 'rtm'} , { name : 'New Launches' , value : 'nl' } , {name : 'Under Construction' , value : 'uc'}
@@ -45,7 +48,7 @@ export default  function Property(){
         setLoader(false);
     },[propertyContext,type,sub]);
     console.log('the property data is : ',data , ' and the context was ',propertyContext);
-    if(typeof window !== "undefined"){
+    if(typeof(window) !== "undefined"){
         document?.body?.classList?.add('addBg');
       }
 

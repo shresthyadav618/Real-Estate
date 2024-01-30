@@ -1,3 +1,4 @@
+'use client'
 import "./Header.css";
 export default function Hero(){
     return(

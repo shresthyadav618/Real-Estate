@@ -1,6 +1,7 @@
 
 // import Image from 'next/image';
 'use client'
+import { useEffect } from "react";
 import ag1 from "../../assets/ag1.jpg";
 import p1 from "../../assets/p1.png";
 import p2 from "../../assets/p2.png";
@@ -17,12 +18,23 @@ import Featured from "../../components/featured";
 import Overview from "../../components/overview";
 import Slider from "../../components/slider";
 import WhatProvide from "../../components/whatProvide";
-
+// import dynamic from "next/dynamic";
+// const DynamicHeader = dynamic(()=>import( "../../components/Header"),{ssr:false})
+// const DynamicHero = dynamic(()=>import( "../../components/Hero"),{ssr:false})
+// const DynamicAgent = dynamic(()=>import( "../../components/agents"),{ssr:false})
+// const DynamicContact = dynamic(()=>import( "../../components/contact"),{ssr:false})
+// const DynamicFeatured = dynamic(()=>import( "../../components/featured"),{ssr:false})
+// const DynamicOverview = dynamic(()=>import( "../../components/overview"),{ssr:false})
+// const DynamicSlider = dynamic(()=>import( "../../components/slider"),{ssr:false})
+// const DynamicFooter = dynamic(()=>import( "../../components/Footer"),{ssr:false})
+// const DynamicWhatProvide = dynamic(()=>import( "../../components/whatProvide"),{ssr:false})
 export default function Home() {
   
-  if(typeof window !== "undefined"){
-    document?.body?.classList?.remove('addBg');
-  }
+  useEffect(()=>{
+    if(typeof(window) !== "undefined"){
+      document?.body?.classList?.remove('addBg');
+    }
+  },[])
 
   // console.log(Img);
   // {name,role,since,number,l1,l2,l3,l4}
@@ -40,13 +52,16 @@ export default function Home() {
    <div>
     <div className="image__container m-h-[80%] flex flex-col gap-y-[100px]">
     <Header/>
+    {/* <DynamicHeader/> */}
     <Hero/>
+    {/* <DynamicHero/> */}
     </div>
     <Overview/>
-    
+    {/* <DynamicOverview/> */}
     <Slider/>
+    {/* <DynamicSlider/> */}
     <Featured/>
-    
+    {/* <DynamicFeatured/> */}
 
     <div className="new_class">
     <h1 className="font-bold text-4xl text-black w-[78vw] m-auto">What are we providing</h1>
@@ -54,6 +69,7 @@ export default function Home() {
       
     {whatProvide.map((item)=>{
       return <WhatProvide key={item.img+'app'} heading={item.heading} para={item.para} img={item.img}/>
+      // return <DynamicWhatProvide key={item.img+'app'} heading={item.heading} para={item.para} img={item.img}/>
     })}
     </div>
     </div>
@@ -62,11 +78,14 @@ export default function Home() {
     {allAgents.map((agent)=>{
       
       return <Agent key={agent.name+'agent'} name={agent.name} role={agent.role} since={agent.since} number={agent.number} l1={agent.l1} l2={agent.l2} l3={agent.l3} l4={agent.l4} img={agent.img}/>
+      // return <DynamicAgent key={agent.name+'agent'} name={agent.name} role={agent.role} since={agent.since} number={agent.number} l1={agent.l1} l2={agent.l2} l3={agent.l3} l4={agent.l4} img={agent.img}/>
       
     })}
     </div>
     <Contact/>
+    {/* <DynamicContact/> */}
     <Footer/>
+    {/* <DynamicFooter/> */}
    </div>
   )
 }

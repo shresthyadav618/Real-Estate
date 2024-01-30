@@ -1,12 +1,15 @@
 'use client'
 import { PropertiesContext } from "@/propertiesProvider/propertiesProvider";
+import { useSession } from "next-auth/react";
+// import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import Header from "../../../components/Header";
 import "../../../components/styles/dashboard.css";
+// const DynamicHeader = dynamic(()=>import( "../../../components/Header"),{ssr:false})
 export default function Dashboard(){
-
-// const {data : session} = useSession();
+console.log('executing dashboard')
+const {data : session} = useSession();
 
 const propertyContext = useContext(PropertiesContext);
 console.log('the value of propertyContext is  :',propertyContext);
@@ -14,16 +17,18 @@ const [p,changeP] = useState(propertyContext);
 useEffect(()=>{
 changeP(propertyContext);
 },[propertyContext]);
-if(!propertyContext){
-  return '';
-}
-
-if(typeof window !== null){
+useEffect(()=>{
+  console.log('the type of window is : ' ,typeof(window));
+  if(typeof(window) !== null && document!=undefined){
     document?.body?.classList?.remove('addBg');
   }
-  // 2beEdYpV2Gghk4qoXR9hHLtjqyO_cyoqseCrzVKgAfTs3Tzz
+},[]);
+if(!propertyContext){
+  return <div>Wait</div>;
+}else{
     return(
         <>
+        {/* <DynamicHeader/> */}
         <Header/>
         <div className="flex flex-col w-[80vw] mx-auto mt-20 max-[484px]:w-[95vw]">
         <h1 className="font-bold text-2xl text-white"> Welcome to the dashboard {session?.user?.name}</h1>
@@ -51,6 +56,7 @@ if(typeof window !== null){
         </div>
         </>
     )
+}
 }
 
 // now what we can do is use useContext to display all the properties , get them . and in home page filter those properties on basis of relevance and in here we can also genereate them all , so that will help to reduce the burden on server and reduce the api calls by a lot 

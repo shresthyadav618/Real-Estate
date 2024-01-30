@@ -1,3 +1,5 @@
+
+'use client'
 import Image from "next/image";
 import "./styles/overview.css";
 export default function whatProvide(props){

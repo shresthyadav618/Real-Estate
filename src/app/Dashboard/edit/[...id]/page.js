@@ -8,6 +8,7 @@
 // subCategory
 // details
 "use client";
+// import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
@@ -16,6 +17,7 @@ import { ReactSortable } from "react-sortablejs";
 import { PuffLoader } from "react-spinners";
 import Header from "../../../../../components/Header";
 import "../../../../../components/styles/dashboard.css";
+// const DynamicHeader = dynamic(()=>import( "../../../../../components/Header"),{ssr:false})
 // import { useRouter } from "next/navigation";
 export default function EditProperty() {
     const pathname = usePathname();
@@ -100,7 +102,10 @@ async function handleSubmit(e){
     if(res.ok){
         const response = await res.json();
         console.log('updated property',response);
-        window.location.href = '/Dashboard'
+        if(typeof(window) !== null){
+          window.location.href = '/Dashboard'
+        }
+       
     }else{
         const response = await res.json();
         console.log('there was some error',response);
@@ -228,6 +233,7 @@ changeValue("");
 
   return (
     <>
+    {/* <DynamicHeader/> */}
     <Header/>
     <div className="form__property__add">
     {check ? (

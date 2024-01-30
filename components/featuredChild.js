@@ -51,6 +51,8 @@ export default function FeaturedChild(props){
         </div>
         <div className="featured__buttons">
             <div className="price font-bold text-lg">{price}</div>
+            
+            {/* //REMOVED ON CLICK CHECK RHISISISISISISISIIS */}
             <button className="rounded-lg font-bold" onClick={()=>{window.location.href=`/prop/${_id}`}}>View Details</button>
         </div>
     </div>

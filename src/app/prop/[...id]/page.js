@@ -1,6 +1,7 @@
 
 'use client';
 import { PropertiesContext } from "@/propertiesProvider/propertiesProvider";
+// import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,11 +9,13 @@ import { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import Footer from "../../../../components/Footer";
-import Header from "../../../../components/Header";
 import PropertyChild from "../../../../components/featuredChild";
 import '../../../../components/styles/ContactForm.css';
 import "../../../../components/styles/featured.css";
 import "../../../../components/styles/indiProperty.css";
+// const DynamicHeader = dynamic(()=>import( "../../../../components/Header"),{ssr:false})
+import Header from "../../../../components/Header";
+// const DynamicFooter = dynamic(()=>import( "../../../../components/Footer"),{ssr:false})
 
 export default function Residential(){
     
@@ -31,7 +34,7 @@ export default function Residential(){
     console.log('the id is : ',_id);
     useEffect(()=>{
         setLoader(true);
-        if(typeof window !== "undefined"){
+        if(typeof(window) !== "undefined"){
             document?.body?.classList?.add('addBg');
           }
         async function getPropertyData(){
@@ -45,7 +48,7 @@ export default function Residential(){
                 const response = await res.json();
                 console.log('the response was : ',response);
                 changeData(response.propertyDetail);
-                if(typeof window !== "undefined"){
+                if(typeof(window) !== "undefined"){
                     document?.body?.classList?.add('addBg');
                   }
                 setLoader(false);
@@ -64,20 +67,20 @@ export default function Residential(){
     // margin-bottom: 10px;
 
     function see(){
-        if (typeof window !== "undefined") {
-        let contactForm = document.getElementById(`${data._id}xyz`)?.getBoundingClientRect()?.top;
-        let heightOfLeft5 = document.getElementById(`${data._id}`)?.getBoundingClientRect()?.top;
+        if (typeof(window) !== "undefined") {
+        let contactForm = document?.getElementById(`${data._id}xyz`)?.getBoundingClientRect()?.top;
+        let heightOfLeft5 = document?.getElementById(`${data._id}`)?.getBoundingClientRect()?.top;
         // console.log(contactForm,heightOfLeft5);
         if(heightOfLeft5<0){
-            const e = document.getElementById(`${data._id}xyz`);
-            const po = document.getElementById(`${data._id}`);
+            const e = document?.getElementById(`${data._id}xyz`);
+            const po = document?.getElementById(`${data._id}`);
             if(e){
                 const xx = po.offsetTop;
                 e.classList.add('removeFixed');
                 e.style.transform = `translate3d(70px, ${xx}px, 0px)`;
             }
         }else{
-            const e = document.getElementById(`${data._id}xyz`);
+            const e = document?.getElementById(`${data._id}xyz`);
             if(e){
                 e.classList.remove('removeFixed');
                 e.style.transform = '';
@@ -86,7 +89,7 @@ export default function Residential(){
     }
     }
     
-    if (typeof window !== "undefined") {
+    if (typeof(window) !== "undefined") {
     window?.addEventListener("scroll",see)
     }
     console.log(data);

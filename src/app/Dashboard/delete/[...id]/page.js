@@ -3,6 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Header from "../../../../../components/Header";
 import "../../../../../components/styles/dashboard.css";
+// import dynamic from "next/dynamic";
+// const DynamicHeader = dynamic(()=>import( "../../../../../components/Header"),{ssr:false})
 export default function DeleteProperty(){
 
     const pathname = usePathname();
@@ -23,7 +25,10 @@ export default function DeleteProperty(){
             console.log('the response was ',res);
             console.log('Deleted');
             alert('Deleted successfully');
-            window.location.href = '/Dashboard'
+            if(typeof(window) !== null){
+                window.location.href = '/Dashboard'
+              }
+            
             // Router.push('/Dashboard');
         }else{
             const res = await response.json();
@@ -34,6 +39,7 @@ export default function DeleteProperty(){
 
     return (
         <>
+        {/* <DynamicHeader/> */}
         <Header/>
         <div className="flex flex-col gap-y-2 w-[80vw] mx-auto my-8">
             <div className="text-xl font-bold">Do You Really Want to Delete this Property?</div>
