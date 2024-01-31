@@ -52,18 +52,22 @@ export default function Featured(){
                 <div className={relevance==='All'?'addBdr':''} onClick={()=>{
                     changeRelevance("All")
                 }}>All</div>
-                <div className={relevance==='Commercial'?'addBdr':''} onClick={()=>{
-                    changeRelevance("Commercial")
-                }}>Commercial</div>
                 <div className={relevance==='Residential'?'addBdr':''} onClick={()=>{
                     changeRelevance("Residential")
                 }}>Residential</div>
+                <div className={relevance==='Commercial'?'addBdr':''} onClick={()=>{
+                    changeRelevance("Commercial")
+                }}>Commercial</div>
+                
                 <div className={relevance==='Plot'?'addBdr':''} onClick={()=>{
                     changeRelevance("Plot")
                 }}>Plots</div>
                 <div className={relevance==='Rental'?'addBdr':''} onClick={()=>{
                     changeRelevance("Rental")
                 }}>Rental</div>
+                <div className={relevance==='Resale'?'addBdr':''} onClick={()=>{
+                    changeRelevance("Resale")
+                }}>Resale</div>
             </div>
         <div className="featured__container">
             {p!=[] && p.map((property)=>{
