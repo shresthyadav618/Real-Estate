@@ -6,7 +6,7 @@
     font-weight: bold;
     font-size: large;
     /* margin-bottom: 200px; */
-    height: 30vh;
+    min-height: 30vh;
 }
 
 .footer__parent{
