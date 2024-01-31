@@ -456,7 +456,7 @@ margin: 0px;
 .top__header{
   width: 100vw;
   height: 40px;
-  z-index: 100000;
+  z-index: 1000;
   color: white;
   display: flex;
   align-items: center;
