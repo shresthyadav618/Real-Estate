@@ -11,32 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  if(typeof window !== 'undefined'){
-    console.log('q');
-      const contactform = document?.querySelector('.contact-form');
-  const container = document?.querySelector('.container-f');
-  
-  contactform?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      container.innerHTML = '<p>Thanks for your message. <br /> I\'ll respond to you shortly</p>';
-  });
-  
-  const connectbtn = document?.querySelector('.connect-btn');
-  console.log('the connect btn is : ',connectbtn);
-  const crossbtn = document?.querySelector('.cross-btn');
-  const socialcontainer = document?.querySelector('.social-container');
-  
-  connectbtn?.addEventListener('click', () => {
-    console.log('clicked connect btn');
-    console.log(socialcontainer.classList.contains('visible'))
-    socialcontainer.classList.add('visible');
-  });
-  
-  crossbtn?.addEventListener('click', () => {
-      socialcontainer.classList.remove('visible')
-  });
-  }
-  
+ 
+
   return (
     <html lang="en">
       {/* <AuthProvider> */}
