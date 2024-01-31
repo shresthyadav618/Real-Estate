@@ -1,29 +1,48 @@
 'use client'
+import { useEffect } from "react";
 import "./Header.css";
 export default function Hero(){
 
 
-    if(typeof window !== 'undefined'){
-        const contactform = document?.querySelector('.contact-form');
-    const container = document?.querySelector('.container-f');
+  useEffect(() => {
+      // Your JavaScript code here
+      if(typeof window !== 'undefined'){
+        console.log('q');
+          const contactform = document?.getElementsByClassName('contact-form')[0];
+      const container = document?.getElementsByClassName('container-f')[0];
+      
+      contactform?.addEventListener('submit', (event) => {
+          event.preventDefault();
+          container.innerHTML = '<p>Thanks for your message. <br /> I\'ll respond to you shortly</p>';
+      });
+      
+      const connectbtn = document?.getElementsByClassName('connect-btn')[0];
+      console.log('the connect btn is : ',connectbtn);
+      const crossbtn = document?.getElementsByClassName('cross-btn')[0];
+      const socialcontainer = document?.getElementsByClassName('social-container')[0];
+     
+      connectbtn?.addEventListener('click', () => {
+        console.log('clicked connect btn');
+        // console.log(socialcontainer.classList.value)
+        const socialcontainer = document?.querySelectorAll('.social-container');
+        socialcontainer.forEach((con)=>{
+          con.classList.add('visible');
+        })
+        // socialcontainer.classList.toggle('visible');
+      });
+      
+      crossbtn?.addEventListener('click', () => {
+          socialcontainer.classList.remove('visible')
+      });
+      }
+
+
     
-    contactform?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        container.innerHTML = '<p>Thanks for your message. <br /> I\'ll respond to you shortly</p>';
-    });
+  });
+
+  
+
     
-    const connectbtn = document?.querySelector('.connect-btn');
-    const crossbtn = document?.querySelector('.cross-btn');
-    const socialcontainer = document?.querySelector('.social-container');
-    
-    connectbtn?.addEventListener('click', () => {
-        socialcontainer.classList.toggle('visible')
-    });
-    
-    crossbtn?.addEventListener('click', () => {
-        socialcontainer.classList.remove('visible')
-    });
-    }
 
     return(
         <div className="hero__container">
@@ -57,6 +76,10 @@ export default function Hero(){
   <div class="social-container">
     <div class="custom-social-container">
       <p>Contact me on</p>
+      <div className="flex phone gap-x-2">
+      <div className="text-black font-bold">9999261355, </div>
+      <div className="text-black font-bold"> 9999261355</div>
+      </div>
       <button class="cross-btn"><i class="fas fa-times"></i></button>
       <ul>
         <li>

@@ -11,38 +11,38 @@ export default function Footer(props){
     // bottom: 0px;
     return (
         <div className={hmm?'addClr footer__container':`footer__container ${addClr?'newClr':''}`}>
-            <div className="footer__parent">
+            <div className="footer__parent ">
 
                 <div className="footer__child1">
 
-                    <div>Mohit Bohra</div>
-                    <div className="flex gap-x-2 items-center ">  <i class="fa-solid fa-location-dot"></i> <p>Vatika Sector 117</p> </div>
-                    <div className="flex gap-x-2 items-center "> <i class="fa-solid fa-phone"></i> <p>9894374344</p> </div>
-                    <div className="flex gap-x-2 items-center "> <i class="fa-regular fa-envelope"></i> <p>mail.us@gmail.com</p> </div>
+                    <div className="footer__heading">Prime Associates</div>
+                    <div className="flex gap-x-2 items-center ">  <i class="fa-solid fa-location-dot"></i> <p className="ls">Plot no 7, TOWER-A11,Sector 82A,Gurugram, Haryana</p> </div>
+                    <div className="flex gap-x-2 items-center "> <i class="fa-solid fa-phone"></i> <p className="ls">9999261355</p> </div>
+                    <div className="flex gap-x-2 items-center "> <i class="fa-regular fa-envelope"></i> <p className="ls">vatikaprime@gmail.com</p> </div>
 
                 </div>
 
 
-                <div className="footer__child2">
+                <div className="footer__child2 cursor-pointer">
 
-                    <h1 className="font-bold text-xl">Quick Links</h1>
-                    <div>About</div>
-                    <div>Contact</div>
-                    <div>Agents</div>
+                    <h1 className="font-bold text-xl footer__heading">Quick Links</h1>
+                    <Link href={'/contact'}>Contact</Link>
+                    <Link href={'/property/Residential'}>Residential</Link>
+                    <Link href={'/property/Commercial'}>Commercial</Link>
                 </div>
 
 
-                <div className="footer__child3">
-                <h1 className="font-bold text-xl">Other Pages</h1>
-                    <div>Agents</div>
-                    <div>Contact</div>
-                    <div>Agents</div>
+                <div className="footer__child3 cursor-pointer">
+                <h1 className="font-bold text-xl footer__heading">Other Pages</h1>
+                    <Link href={'/property/Plot'}>Plots</Link>
+                    <Link href={'/property/Rental'}>Rental</Link>
+                    <Link href={'/property/Resale'}>Resale</Link>
 
                 </div>
 
 
-                <div className={'footer__child4 relative'}>
-                    <h1 className="font-bold text-xl">Talk to an Expert</h1>
+                <div className={'footer__child4 relative cursor-pointer'}>
+                    <h1 className="font-bold text-xl footer__heading">Talk to an Expert</h1>
                     <div>Get expert consultation regarding you Real Estate needs.</div>
                     {/* <button className="footer__button">Make An Enquiry</button> */}
                     <div className="flex flex-col gap-y-2">

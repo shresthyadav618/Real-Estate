@@ -15,6 +15,7 @@ import wp from "../../assets/whatsapp.png";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
+import TopHeader from "../../components/NewHeader";
 import Agent from "../../components/agents";
 import Contact from "../../components/contact";
 import Featured from "../../components/featured";
@@ -37,7 +38,35 @@ export default function Home() {
     if(typeof(window) !== "undefined"){
       document?.body?.classList?.remove('addBg');
     }
+
+    
   },[])
+
+  if(typeof window !== 'undefined'){
+    console.log('q');
+      const contactform = document?.querySelector('.contact-form');
+  const container = document?.querySelector('.container-f');
+  
+  contactform?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      container.innerHTML = '<p>Thanks for your message. <br /> I\'ll respond to you shortly</p>';
+  });
+  
+  const connectbtn = document?.querySelector('.connect-btn');
+  console.log('the connect btn is : ',connectbtn);
+  const crossbtn = document?.querySelector('.cross-btn');
+  const socialcontainer = document?.querySelector('.social-container');
+  
+  connectbtn?.addEventListener('click', () => {
+    console.log('clicked connect btn');
+    console.log(socialcontainer.classList.contains('visible'))
+    socialcontainer.classList.add('visible');
+  });
+  
+  crossbtn?.addEventListener('click', () => {
+      socialcontainer.classList.remove('visible')
+  });
+  }
 
   // console.log(Img);
   // {name,role,since,number,l1,l2,l3,l4}
@@ -55,6 +84,7 @@ export default function Home() {
    <div className="relative">
     <Link href={'https://api.whatsapp.com/send?phone=919999261355'}><Image className="wp" width={100} height={100} src={wp}></Image></Link>
     <div className="image__container m-h-[80%] flex flex-col gap-y-[100px]">
+    <TopHeader/>
     <Header/>
     {/* <DynamicHeader/> */}
     <Hero/>

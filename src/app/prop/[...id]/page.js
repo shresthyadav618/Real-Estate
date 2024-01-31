@@ -9,6 +9,7 @@ import { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import Footer from "../../../../components/Footer";
+import NewHeader from "../../../../components/NewHeader";
 import PropertyChild from "../../../../components/featuredChild";
 import '../../../../components/styles/ContactForm.css';
 import "../../../../components/styles/featured.css";
@@ -157,6 +158,7 @@ export default function Residential(){
       
     return(
         <>
+        <NewHeader/>
         <Header add={true}/>
         {data && 
         <div className="indi__container">

@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import Footer from "../../../../components/Footer";
 import Header from "../../../../components/Header";
+import NewHeader from "../../../../components/NewHeader";
 import FeaturedChild from "../../../../components/featuredChild";
 import "../../../../components/styles/featured.css";
 import '../../../../components/styles/property.css';
@@ -57,6 +58,7 @@ export default  function Property(){
       }
   return (
     <>
+    <NewHeader/>
     <Header add={true}/>
 
     {type!=='Plot' && <div className="toggle__property">
