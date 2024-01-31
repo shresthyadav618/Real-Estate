@@ -2,7 +2,6 @@
 // import Image from 'next/image';
 'use client'
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect } from "react";
 import ag1 from "../../assets/ag1.jpg";
 import p1 from "../../assets/p1.png";
@@ -82,7 +81,7 @@ export default function Home() {
      
   return (
    <div className="relative">
-    <Link href={'https://api.whatsapp.com/send?phone=919999261355'}><Image className="wp" width={100} height={100} src={wp}></Image></Link>
+    <a href={'https://api.whatsapp.com/send?phone=919999261355'}><Image className="wp" width={100} height={100} src={wp}></Image></a>
     <div className="image__container m-h-[80%] flex flex-col gap-y-[100px]">
     <TopHeader/>
     <Header/>
