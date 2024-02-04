@@ -84,11 +84,11 @@ Contact us */}
                 {/* <div className="flex flex-col phone"><p>9810898280</p><p>9810898280</p></div> */}
                 <ul>
                 {headerItems.map((item)=>{
-                    return <li> <Link key={item.name} href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}>{item.name} </Link>
+                    return <li key={item.name+'li'}> <Link key={item.name} href={item.href} className={item.name==='Home'?'underline hide':'onHoverUnderline hide'}>{item.name} </Link>
                     {item.pop_up && 
                     <ul className="sub__list">
                         {item.pop_up_items && item.pop_up_items.map((elm)=>{
-                            return <li><Link href={elm.href}>{elm.name}</Link></li>
+                            return <li key={elm.name+'popup'}><Link href={elm.href}>{elm.name}</Link></li>
                         })}
                   </ul>
                     }
