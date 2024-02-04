@@ -26,15 +26,25 @@
 
 .header__list > a > img{
   width: 200px;
-  height: 60px;
+  height: 65px;
+  object-position: center;
+  object-fit: cover;
 }
 
-.header__list  > a , .add > a{
+.header__list  > a , .add > a , .header__list >ul>li>a{
   color: unset !important;
   color: white!important;
   font-weight: bold;
   letter-spacing: 1px;
 }
+
+.header__list > ul{ 
+  /* sublist */
+  display: flex;
+  width: 53%;
+  justify-content: space-around;
+}
+
 .header__list>a:visited{
   color: white !important;
 }
@@ -99,15 +109,78 @@ background-color: #101010;
 margin-top: 0px!important;
 }
 
-/* @media screen and (max-width:1040px){
-    .header__list{
-        width: 60vw;
-    }
-    .hero__container__one,.hero__container__two{
-        width: 30%;
-    }
+
+
+
+/* body{ margin:0; font-family:'tahoma'}
+
+nav {
+  margin:0 auto;
+  width:100%;
+  height:auto;
+  display:inline-block;
+  background:#37bc9b;
+}
+
+nav ul {
+  margin:0;padding:0;
+  list-style-type:none;
+  float:left;
+  display:inline-block;
+}
+
+nav ul li {
+  position:relative;
+  margin:0 20px 0 0;
+  float:left;
+  display:inline-block;
 } */
 
+/* li > a:after { content: ' »'; } 
+
+li > a:only-child:after { content: ''; } */
+
+/* nav ul li a {
+  padding:20px;
+  display:inline-block;
+  color:white;
+  text-decoration:none;
+} */
+
+/* nav ul li a:hover {
+  opacity:0.5;
+} */
+
+/* nav ul li ul {
+  display:none;
+  position:absolute;
+  left:0;
+  background:#37bc9b;
+  float:left;
+} */
+
+
+.sub__list{
+      display: none;
+      position: fixed;
+      margin: 0px -23px;
+      padding: 20px;
+      background: #04222A;
+      border-radius: 10px;
+}
+
+.header__list> ul > li:hover >ul ,.sub__list:hover{
+  display: block;
+}
+
+.sub__list > li {
+  width:100%;
+  border-bottom:1px solid rgba(255,255,255,.3);
+}
+
+/* nav ul li:hover ul {
+  display:block;
+}  */
 
 
 #menu__toggle {
@@ -344,8 +417,10 @@ margin-top: 0px!important;
 }
 
 .menu__box > li > a > img{
-  width:100%;
-  height: 60px;
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  background-position: center;
 }
 
 .phone{

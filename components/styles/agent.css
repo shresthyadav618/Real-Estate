@@ -10,7 +10,8 @@
 .agent__child{
     display: flex;
     flex-wrap: wrap;
-    background-color: #FAF6F0;
+    /* background-color: #FAF6F0; */
+    background-color: #F4DFC8;
     color: black;
     /* column-gap: 20px!important; */
     margin-bottom: 40px;
