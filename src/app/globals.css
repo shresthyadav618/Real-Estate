@@ -32,9 +32,9 @@ body {
     color: black !important;
 }
 .addBg{
-  background: url('../../assets//bg3.jpg');
+  /* background: url('../../assets//bg3.jpg');
     background-repeat: none;
-    background-size: contain;
+    background-size: contain; */
     /* background-position: center; */
 }
 .bg-img{

@@ -4,6 +4,7 @@
     display: flex;
     column-gap: 20px;
     position: relative;
+    justify-content: center;
 }
 .addWid{
     width: 24%;
@@ -19,15 +20,16 @@
     display: flex;
     column-gap: 20px;
     width: fit-content;
-    background-color: white;
-    background-color: #101010;
+    /* background-color: white; */
+    /* background-color: #101010; */
     border-radius: 10px;
     padding: 10px;
+    margin: auto;
 }
 .toggle__property > div > div{
     
-    background-color: #101010;
-    color: white;
+    /* background-color: #101010; */
+    color: black;
     font-weight: bold;
     font-size: x-large;
     padding: 10px;
@@ -39,7 +41,7 @@
     color: black!important;
 }
 .addMargin{
-    margin: 140px auto!important;
+    margin: 180px auto 40px auto!important;
 }
 
 

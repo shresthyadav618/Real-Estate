@@ -19,7 +19,10 @@
     color: black!important;
 }
 .newClr{
-    background-color: #f5d0a0;
+    
+    /* background-color: #f5d0a0; */ 
+
+
     /* position: absolute;
     bottom: 0px; */
 }
@@ -55,9 +58,9 @@
 }
 
 .addClr{
-    background-color: #101010;
+    /* background-color: #101010;
     background-color: #f5d0a0;
-    color: white;
+    color: white; */
 }
 .footer__heading{
     letter-spacing: 2px;

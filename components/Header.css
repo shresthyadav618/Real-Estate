@@ -444,7 +444,7 @@ li > a:only-child:after { content: ''; } */
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  background-color: #101010;
+  background-color: #04222A;
   height: fit-content;
   border-radius: 10px;
   font-size: large;
@@ -544,7 +544,7 @@ margin: 0px;
 
 
 .contact__info{
-  background-color: #04222A;
+  background-color: white;
   padding: 100px;
   display: flex;
   /* flex-direction: column; */

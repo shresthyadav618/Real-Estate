@@ -67,9 +67,10 @@
 }
 .left1 ,.left2 ,.left3 , .left4, .left5{
     /* background-color: #F4DFC8; */
-    background-color: #101010;
+    /* background-color: #101010; */
+    background-color: #F4DFC8;
     padding: 15px;
-    color: white;
+    color: black;
     border-radius: 10px;
 }
 
@@ -89,7 +90,8 @@
 }
 .price{
     padding: 5px 5px 5px 5px;
-background-color: #97B618;
+/* background-color: #97B618; */
+background-color: white;
 border-radius: 5px;
 }
 
@@ -99,7 +101,7 @@ border-radius: 5px;
 
 .fontClr{
     /* color: #97B618; */
-    color: white;
+    color: black;
 }
 .xyz > div{
     width: 0.98%!important;

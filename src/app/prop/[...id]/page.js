@@ -172,7 +172,7 @@ export default function Residential(){
 
                     <div className="flex justify-between items-center ">
                         <div className="flex gap-x-2 items-center justify-between"> <i class="fa-solid fa-location-dot"></i> <p className="font-bold">{data.location}</p> </div>
-                        <div className="links items-center justify-between text-white">
+                        <div className="links items-center justify-between text-black">
                         <Link href={''}><i class="fa-brands fa-square-facebook"></i></Link>
                     <Link href={''}><i class="fa-brands fa-x-twitter"></i></Link>
                     <Link href={''}><i class="fa-brands fa-linkedin"></i></Link>
@@ -197,7 +197,7 @@ export default function Residential(){
                         for(let key in p){
                             if(p.hasOwnProperty(key)){
                                 return (
-                                    <div key={key+'prop3'} className="flex flex-col"> <div className=" text-white"> {key} </div> <div className="font-bold"> {p[key]} </div>  </div>
+                                    <div key={key+'prop3'} className="flex flex-col"> <div className=" text-black"> {key} </div> <div className="font-bold"> {p[key]} </div>  </div>
                                 )
                             }
                         }
@@ -206,17 +206,17 @@ export default function Residential(){
             </div>
 
             <div className="left2">
-                <h1 className="text-3xl text-[#97B618] font-extrabold">Overview</h1>
+                <h1 className="text-3xl text-black font-extrabold">Overview</h1>
                 <div  dangerouslySetInnerHTML={{__html:data.description}}></div>
             </div>
-
+            {/* text-[#97B618] removing */}
             <div className="left3">
-            <h1 className="text-3xl text-[#97B618] font-extrabold">Amenities</h1>
+            <h1 className="text-3xl text-black font-extrabold">Amenities</h1>
                 <div className="font-bold" dangerouslySetInnerHTML={{__html : data.amenities}}></div>
             </div>
 
             <div className="left4"  id={data._id}>
-            <h1 className="text-3xl text-[#97B618] font-extrabold mb-4">Floor Plans</h1>
+            <h1 className="text-3xl text-black font-extrabold mb-4">Floor Plans</h1>
             {data && data.floorPlansImages && data.floorPlansImages.length>1 && <Slider {...settingsFloor}>
             {data && data.floorPlansImages && data.floorPlansImages.map((elm)=>{
                 return <Image key={elm+'prop4'} src={elm} onClick={(e)=>{

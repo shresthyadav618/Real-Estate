@@ -8,7 +8,7 @@ export default function Header(props){
 const add = props.add;
     // {name  : 'Home' , href: '/'} , {name : 'About' , href: '/about'}
 //    const headerItems = [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name:'Rental',href:'/property/Rental'},{name:'Resale',href:'/property/Resale'}];
-const headerItems = [{name : 'Home' , href: '/'}, {name : 'About Us' , href: '/about'}, {name : 'Services' , href: '/', pop_up : true , pop_up_items : [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name:'Rental',href:'/property/Rental'},{name:'Resale',href:'/property/Resale'}]},{name : 'Contact Us' , href: '/contact'},]
+const headerItems = [{name : 'Home' , href: '/'}, {name : 'About Us' , href: '/about'}, {name : 'Services' , href: '#', pop_up : true , pop_up_items : [{name : 'Residential' , href: '/property/Residential'},{name : 'Commercial' , href: '/property/Commercial'},{name : 'Plots' , href: '/property/Plot'},{name:'Rental',href:'/property/Rental'},{name:'Resale',href:'/property/Resale'}]},{name : 'Contact Us' , href: '/contact'},]
 //    {name : 'Account' , href: '/account'}
 //    ,{name : 'Contact Us' , href: '/contact-us'},
 
