@@ -61,9 +61,9 @@ Contact us */}
 
 
       
-      <li><Link class="menu__item" href="/property/Residential">Home</Link></li>
-      <li><Link class="menu__item" href="/property/Residential">About Us</Link></li>
-      <li><Link class="menu__item" href="/property/Residential">Services</Link></li>
+      <li><Link class="menu__item" href="/">Home</Link></li>
+      <li><Link class="menu__item" href="/about">About Us</Link></li>
+      {/* <li><Link class="menu__item" href="/property/Residential">Services</Link></li> */}
       <li><Link class="menu__item" href="/property/Residential">Residential</Link></li>
       <li><Link class="menu__item" href="/property/Commercial">Commercial</Link></li>
       <li><Link class="menu__item" href="/property/Plot">Plot</Link></li>
