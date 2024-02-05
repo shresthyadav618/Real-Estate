@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState } from "react"
 import contactImage from "../assets/cf.jpg"
 import "./styles/contact.css"
-export default function contact(){
+export default function Contact(){
 
     const BASE_URL = 'https://prime-associates-real.vercel.app';
     // const BASE_URL = 'http://localhost:3001';
