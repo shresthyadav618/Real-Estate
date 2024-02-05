@@ -76,6 +76,7 @@ export default function Contact() {
               type="text"
               required="true"
               placeholder="First Name"
+              value={data.firstName}
               onChange={(e) => {
                 changeData((prev) => {
                   return { ...prev, firstName: e.target.value };
@@ -86,6 +87,7 @@ export default function Contact() {
               type="text"
               required="true"
               placeholder="Last Name"
+              value={data.lastName}
               onChange={(e) => {
                 changeData((prev) => {
                   return { ...prev, lastName: e.target.value };
@@ -96,6 +98,7 @@ export default function Contact() {
 
           <div className="flex">
             <input
+            value={data.email}
               type="email"
               required="true"
               placeholder="Your Email"
@@ -106,6 +109,7 @@ export default function Contact() {
               }}
             ></input>
             <input
+            value={data.number}
               type="number"
               required="true"
               placeholder="Phone Number"
@@ -118,6 +122,7 @@ export default function Contact() {
           </div>
 
           <textarea
+          value={data.message}
             type="text"
             required="true"
             placeholder="Enter Message or Your Query"
