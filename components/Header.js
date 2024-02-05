@@ -67,8 +67,8 @@ Contact us */}
       <li><Link class="menu__item" href="/property/Residential">Residential</Link></li>
       <li><Link class="menu__item" href="/property/Commercial">Commercial</Link></li>
       <li><Link class="menu__item" href="/property/Plot">Plot</Link></li>
-      <li><Link class="menu__item" href="/property/Rental">Rental</Link></li>
-      <li><Link class="menu__item" href="/property/Resale">Resale</Link></li>
+      {/* <li><Link class="menu__item" href="/property/Rental">Rental</Link></li>
+      <li><Link class="menu__item" href="/property/Resale">Resale</Link></li> */}
       <li><Link class="menu__item" href="/account">Account</Link></li>
       <li><Link className="menu__item" href={'/contact'}>Contact Us</Link></li>
     </ul>
