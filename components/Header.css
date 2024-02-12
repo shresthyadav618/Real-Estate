@@ -249,7 +249,7 @@ li > a:only-child:after { content: ''; } */
     margin: 0;
     padding: 80px 0;
     list-style: none;
-    background-color: #101010;
+    background-color: #617278;
     
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
@@ -413,7 +413,7 @@ li > a:only-child:after { content: ''; } */
 	width: 215px;
 }
 .menu__box  > li{
-  border-bottom: 1px solid #f5d0a0;
+  border-bottom: 1px solid black;
 }
 
 .menu__box > li > a > img{
