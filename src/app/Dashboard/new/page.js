@@ -10,15 +10,21 @@ import { PuffLoader } from "react-spinners";
 // Import ReactQuill dynamically to ensure it's only loaded on the client side
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 // import Header from "../../../../components/Header";
-import Header from "../../../../components/Header";
 import "../../../../components/styles/dashboard.css";
 // const DynamicHeader = dynamic(()=>import( "../../../../components/Header"),{ssr:false})
 
-const BASE_URL = 'https://prime-associates-real.vercel.app';
-// const BASE_URL = 'http://localhost:3001';
+// const BASE_URL = 'https://prime-associates-real.vercel.app';
+const BASE_URL = 'http://localhost:3001';
+
+
+
+
 export default function AddProperty() {
   console.log('executing dashboard/new')
- 
+  if(typeof(window) !== "undefined"){
+    document?.body?.classList?.remove('addBg');
+    document?.body?.classList?.add('addBlack');
+  }
   const subCategories = {
     Residential: [
       { name: "Ready To Move", value: "rtm" },
@@ -60,10 +66,7 @@ export default function AddProperty() {
     { name: "Plot" },
   ];
 
- 
-  const [loading, setLoading] = useState(true);
-  const [loading1, setLoading1] = useState(false);
-  const [loading2, setLoading2] = useState(false);
+
 
   
 
@@ -97,10 +100,97 @@ export default function AddProperty() {
     changeValue("");
   }
 
+   
+  const [loading, setLoading] = useState(true);
+  const [loading1, setLoading1] = useState(false);
+  const [loading2, setLoading2] = useState(false);
+
+  
+async function handleSubmit(e) {
+  e.preventDefault();
+  console.log("Submitting form");
+  console.log("the data submitted in the api req ", data);
+  const res = await fetch(BASE_URL+"/api/property/add", {
+    headers: { "Content-Type": "application/json" },
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+  console.log("the response is : ", res);
+  if (res.ok) {
+    const jsonRes = await res.json();
+    console.log("received the json response", jsonRes);
+  } else {
+    console.log("entered the error path");
+    const errorRes = await res.json();
+    console.log("Received some error", errorRes);
+  }
+}
+
+
+async function uploadImages(e) {
+  console.log(e.target.name);
+  if (e.target.name == "images") {
+    setLoading1(true);
+  } else {
+    setLoading2(true);
+  }
+  console.log("UPLOADING IMAGES");
+  setLoading(true);
+  console.log(e);
+  const files = e.target?.files;
+  console.log(files);
+  if (files?.length > 0) {
+    const dataForm = new FormData();
+    for (const file of files) {
+      dataForm.append("file", file);
+    }
+    const response = await fetch(BASE_URL+"/api/upload", {
+      method: "POST",
+      body: dataForm,
+    });
+    console.log("the response is : ", response);
+    const bodyResponse = await response.json();
+    console.log("the json response is : ", bodyResponse);
+    if (e.target.name == "images") {
+      console.log(data.images);
+      const newImages = data.images ? data.images : [];
+      newImages.push(bodyResponse[0]);
+      console.log("the new images are : ", newImages);
+
+      changeData((prev) => {
+        return {
+          ...prev,
+          images: newImages,
+        };
+      });
+    } else {
+      console.log(data.floorPlansImages);
+      const newImages = data.floorPlansImages ? data.floorPlansImages : [];
+      newImages.push(bodyResponse[0]);
+      console.log("the new images are : ", newImages);
+
+      changeData((prev) => {
+        return {
+          ...prev,
+          floorPlansImages: newImages,
+        };
+      });
+    }
+    console.log(bodyResponse);
+    console.log("the updated data is : ", data);
+  } else {
+    console.log("No file found");
+  }
+  if (e.target.name == "images") {
+    setLoading1(false);
+  } else {
+    setLoading2(false);
+  }
+}
+
   return (
     <>
       {/* <DynamicHeader/> */}
-      <Header />
       <div className="form__property__add">
         {check ? (
           <div className="p-[10px]">Edit Property</div>
@@ -523,85 +613,3 @@ export default function AddProperty() {
   );
 }
 
-
-async function handleSubmit(e) {
-  e.preventDefault();
-  console.log("Submitting form");
-  console.log("the data submitted in the api req ", data);
-  const res = await fetch(BASE_URL+"/api/property/add", {
-    headers: { "Content-Type": "application/json" },
-    method: "POST",
-    body: JSON.stringify(data),
-  });
-  console.log("the response is : ", res);
-  if (res.ok) {
-    const jsonRes = await res.json();
-    console.log("received the json response", jsonRes);
-  } else {
-    console.log("entered the error path");
-    const errorRes = await res.json();
-    console.log("Received some error", errorRes);
-  }
-}
-
-
-async function uploadImages(e) {
-  console.log(e.target.name);
-  if (e.target.name == "images") {
-    setLoading1(true);
-  } else {
-    setLoading2(true);
-  }
-  console.log("UPLOADING IMAGES");
-  setLoading(true);
-  console.log(e);
-  const files = e.target?.files;
-  console.log(files);
-  if (files?.length > 0) {
-    const dataForm = new FormData();
-    for (const file of files) {
-      dataForm.append("file", file);
-    }
-    const response = await fetch(BASE_URL+"/api/upload", {
-      method: "POST",
-      body: dataForm,
-    });
-    console.log("the response is : ", response);
-    const bodyResponse = await response.json();
-    console.log("the json response is : ", bodyResponse);
-    if (e.target.name == "images") {
-      console.log(data.images);
-      const newImages = data.images ? data.images : [];
-      newImages.push(bodyResponse[0]);
-      console.log("the new images are : ", newImages);
-
-      changeData((prev) => {
-        return {
-          ...prev,
-          images: newImages,
-        };
-      });
-    } else {
-      console.log(data.floorPlansImages);
-      const newImages = data.floorPlansImages ? data.floorPlansImages : [];
-      newImages.push(bodyResponse[0]);
-      console.log("the new images are : ", newImages);
-
-      changeData((prev) => {
-        return {
-          ...prev,
-          floorPlansImages: newImages,
-        };
-      });
-    }
-    console.log(bodyResponse);
-    console.log("the updated data is : ", data);
-  } else {
-    console.log("No file found");
-  }
-  if (e.target.name == "images") {
-    setLoading1(false);
-  } else {
-    setLoading2(false);
-  }
-}

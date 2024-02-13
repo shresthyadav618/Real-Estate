@@ -1,7 +1,6 @@
 'use client';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Header from "../../../../../components/Header";
 import "../../../../../components/styles/dashboard.css";
 // import dynamic from "next/dynamic";
 // const DynamicHeader = dynamic(()=>import( "../../../../../components/Header"),{ssr:false})
@@ -37,11 +36,13 @@ export default function DeleteProperty(){
             console.log('Failed to delete',res);
         }
     }
-
+    if(typeof(window) !=="undefined"){
+        document?.body?.classList?.remove('addBg');
+        document?.body?.classList?.add('addBlack');
+      }
     return (
         <>
         {/* <DynamicHeader/> */}
-        <Header/>
         <div className="flex flex-col gap-y-2 w-[80vw] mx-auto my-8">
             <div className="text-xl font-bold">Do You Really Want to Delete this Property?</div>
             <div className="flex gap-x-2 text-2xl font-bold"><button className="xx" onClick={handleDelete}>Yes</button> <Link className="xx" href={`/Dashboard`}>No</Link></div>

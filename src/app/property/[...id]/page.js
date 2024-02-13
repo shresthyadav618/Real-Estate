@@ -51,6 +51,7 @@ export default  function Property(){
     console.log('the property data is : ',data , ' and the context was ',propertyContext);
     if(typeof(window) !== "undefined"){
         document?.body?.classList?.add('addBg');
+        document?.body?.classList?.remove('addBlack');
       }
 
       if(loader){

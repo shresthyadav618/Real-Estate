@@ -38,6 +38,7 @@ export default function Residential(){
         setLoader(true);
         if(typeof(window) !== "undefined"){
             document?.body?.classList?.add('addBg');
+            document?.body?.classList?.remove('addBlack');
           }
         async function getPropertyData(){
             const res = await fetch(`${BASE_URL}/api/property/getById`,{

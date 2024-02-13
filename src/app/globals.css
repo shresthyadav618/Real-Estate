@@ -28,7 +28,7 @@ body {
     font-family: 'Alegreya Sans SC'!important;
     /* background-color: black!important; */
     /* background-color: #f5d0a0; */
-    background-color: white;
+    background-color: white!important;
     color: black !important;
 }
 .addBg{

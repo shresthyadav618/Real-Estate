@@ -9,6 +9,7 @@ export default function ContactPage(){
 
 if(typeof window!=="undefined"){
     document.body.classList.remove('addBg');
+    document?.body?.classList?.remove('addBlack');
 }
 
     return(

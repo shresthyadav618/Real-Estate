@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 // import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import Header from "../../../components/Header";
 import "../../../components/styles/dashboard.css";
 // const DynamicHeader = dynamic(()=>import( "../../../components/Header"),{ssr:false})
 export default function Dashboard(){
@@ -21,6 +20,7 @@ useEffect(()=>{
   console.log('the type of window is : ' ,typeof(window));
   if(typeof(window) !== null && document!=undefined){
     document?.body?.classList?.remove('addBg');
+    document?.body?.classList?.add('addBlack');
   }
 },[]);
 // if(!propertyContext){
@@ -29,8 +29,8 @@ useEffect(()=>{
     return(
         <>
         {/* <DynamicHeader/> */}
-        <Header/>
-        <div className="flex flex-col w-[80vw] mx-auto mt-20 max-[484px]:w-[95vw] dash">
+
+        <div className="flex flex-col w-[80vw] mx-auto mt-40 max-[484px]:w-[95vw] dash ">
         <h1 className="font-bold text-2xl text-white"> Welcome to the dashboard {session?.user?.name}</h1>
         <Link href={'/Dashboard/new'} className="bg-blue-900 text-white p-4 rounded-xl mb-6 w-[18%] flex items-center justify-center mt-4 lg:w-[40%] min-[200px]:w-[100%] "><p className="font-bold text-lg">Add New Property</p></Link>
 <table className="mt-6 basic w-full">

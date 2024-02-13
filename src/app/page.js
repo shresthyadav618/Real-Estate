@@ -36,6 +36,7 @@ export default function Home() {
   useEffect(()=>{
     if(typeof(window) !== "undefined"){
       document?.body?.classList?.remove('addBg');
+      document?.body?.classList?.remove('addBlack');
     }
 
     

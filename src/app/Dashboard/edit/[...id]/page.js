@@ -15,7 +15,6 @@ import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import { ReactSortable } from "react-sortablejs";
 import { PuffLoader } from "react-spinners";
-import Header from "../../../../../components/Header";
 import "../../../../../components/styles/dashboard.css";
 // const DynamicHeader = dynamic(()=>import( "../../../../../components/Header"),{ssr:false})
 // import { useRouter } from "next/navigation";
@@ -231,12 +230,14 @@ changeData((prev)=>{
 changeKey("");
 changeValue("");
 }
-
+if(typeof(window) !=="undefined"){
+  document?.body?.classList?.remove('addBg');
+  document?.body?.classList?.add('addBlack');
+}
 
   return (
     <>
     {/* <DynamicHeader/> */}
-    <Header/>
     <div className="form__property__add">
     {check ? (
           <div className="p-[10px]">Edit Property</div>
