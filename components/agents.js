@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
+import Def from "../assets/def.jpg";
 import "./styles/agent.css";
 export default function agents(props){
    const {name,role,since,number,l1,l2,l3,l4,img} = props;
@@ -11,13 +12,13 @@ export default function agents(props){
             
             <div className="agent__child">
                 <div className="agent__sub__child">
-                    <Image src={img}></Image>
+                    <Image src={Def}></Image>
                     <div className="agent__sub__child__info">
                         <h1>{name}</h1>
                         <div>{role}</div> 
                         <div className="flex gap-x-2 items-center ">  <i class="fa-solid fa-check"></i>  <p>Operating since {since}</p> </div>
                         <div className="flex gap-x-2 items-center "> <i class="fa-solid fa-phone"></i>  <p>{number}</p></div>
-                        <button > Contact Agent</button>
+                        <a href={`https://api.whatsapp.com/send?phone=${number}`}> Contact Agent</a>
                     </div>
 
                     <div className="links">

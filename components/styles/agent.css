@@ -48,13 +48,15 @@
     flex-direction: column;
     row-gap: 10px;
     padding: 10px;
+    font-weight: bold;
 }
 
-.agent__sub__child__info > button{
+.agent__sub__child__info > a{
     padding: 10px;
     /* color: white; */
     font-weight: bold;
     font-size: large;
+    width: fit-content;
     /* background-color: #F4DFC8; */
     /* border: 2px solid #F4DFC8; */
     background-color: #97B618;

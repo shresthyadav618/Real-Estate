@@ -1,5 +1,6 @@
 import PropertiesProvider from '@/propertiesProvider/propertiesProvider';
 import { Inter } from 'next/font/google';
+import AgentProvider from '../../components/agentProvider/AgentProvider';
 import AuthProvider from '../../components/authProvider/authProvider';
 import './globals.css';
 const inter = Inter({ subsets: ['latin'] })
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
 
         <AuthProvider>
+          <AgentProvider>
           <PropertiesProvider>
           {children}
           </PropertiesProvider>
+          </AgentProvider>
           </AuthProvider>
         
         </body>
