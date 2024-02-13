@@ -8,9 +8,8 @@ await connect();
 export async function GET(NextRequest){
 
 try{
-
-const allProperties = await PropertyModel.find({});    
 await connect();
+const allProperties = await PropertyModel.find({});    
 if(allProperties){
     // console.log('got all the properties',allProperties);
     return NextResponse.json({
