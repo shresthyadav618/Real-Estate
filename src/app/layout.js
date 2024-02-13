@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import AgentProvider from '../../components/agentProvider/AgentProvider';
 import AuthProvider from '../../components/authProvider/authProvider';
 import './globals.css';
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
