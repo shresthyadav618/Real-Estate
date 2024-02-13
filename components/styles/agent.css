@@ -25,6 +25,7 @@
 .agent__sub__child{
     display: flex;
     /* width: 45%; */
+    width: 100%!important;
     -moz-column-gap: 20px;
     column-gap: 20px;
     justify-content: center;
