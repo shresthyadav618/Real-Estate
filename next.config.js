@@ -5,7 +5,9 @@
 const nextConfig = {
   images: {
     domains: ['manushresth-real-estate.s3.amazonaws.com'],
+    unoptimized: true,
 },
+
   async headers() {
       return [
           {
