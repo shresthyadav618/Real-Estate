@@ -221,7 +221,7 @@ export default function Residential(){
             {data && data.floorPlansImages && data.floorPlansImages.length>1 && <Slider {...settingsFloor}>
             {data && data.floorPlansImages && data.floorPlansImages.map((elm)=>{
                 return <Image key={elm+'prop4'} src={elm} onClick={(e)=>{
-                    window.location.href=`http://localhost:3001/_next/image?url=${elm}&w=640&q=75`
+                    window.location.href=`https://prime-associates-real.vercel.app/_next/image?url=${elm}&w=640&q=75`
                 }} width={200} height={200}></Image>
             })}
             </Slider>}
