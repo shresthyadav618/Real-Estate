@@ -63,7 +63,8 @@ export default  function Property(){
       function handleSearchButtonClick(){
         if(!propertyContext){return;}
         const newData = propertyContext.filter((property)=>{
-          if( (property.name.includes(search)) && property.propertyCategory == type && property.subCategory == sub ){
+          const lower = property.name.toLowerCase();
+          if( (lower.includes(search.toLowerCase())) && property.propertyCategory == type && property.subCategory == sub ){
             return true;
           }
         });
