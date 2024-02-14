@@ -12,6 +12,35 @@ const headerItems = [{name : 'Home' , href: '/'}, {name : 'About Us' , href: '/a
 //    {name : 'Account' , href: '/account'}
 //    ,{name : 'Contact Us' , href: '/contact-us'},
 
+if(typeof window !== 'undefined'){
+  const menu__box = document.getElementsByClassName('menu__box')[0];
+const menu__btn = document.getElementsByClassName('menu__btn')[0];
+const menu__toggle__span = document.getElementsByClassName('menu__toggle__span')[0];
+const menu__toggle = document.getElementById('menu__toggle');
+window.addEventListener('click', function(event) {
+  if (!menu__box.contains(event.target) && (event.target !== menu__toggle && event.target!==menu__toggle__span )) {
+    menu__toggle.checked = false;
+  }else
+   if(!menu__box.contains(event.target) && (event.target === menu__toggle || event.target === menu__toggle__span)){
+    console.log('the menu toggle checked value is  : ',menu__toggle.checked);
+    if(menu__toggle.checked == false){
+    menu__toggle.checked = true;
+    }else{
+      menu__toggle.checked = false;
+    }
+  }
+});
+
+
+// menu__btn.addEventListener('click',function(e){
+//   if(menu__toggle.checked){
+//     menu__toggle.checked = false;
+//   }else{
+//     menu__toggle.checked = true;
+//   }
+// })
+}
+
 {/* <nav>
   <ul>
     <li><a href="#">Home</a></li>
@@ -39,7 +68,7 @@ const headerItems = [{name : 'Home' , href: '/'}, {name : 'About Us' , href: '/a
         <div class="hamburger-menu">
     <input id="menu__toggle" type="checkbox" />
     <label class="menu__btn" for="menu__toggle">
-      <span></span>
+      <span className="menu__toggle__span"></span>
     </label>
     {/* Home 
 About us
