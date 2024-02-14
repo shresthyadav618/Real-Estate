@@ -121,6 +121,36 @@ Contact us */}
 
 
         </div>
+
+        <div class="sticky-container">
+    <ul class="sticky-social-icons">
+         <li>
+            <Image alt="twitter" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl2.png" width={32} height={32}/>
+            <p><Link href="https://twitter.com" target="_blank">Follow Us on<br/>Twitter</Link></p>
+        </li>
+       
+       
+        <li>
+            <Image alt="Linkedin" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl6.png" width={32} height={32}/>
+            <p><Link href="https://www.linkedin.com/company" target="_blank">Subscribe on<br/>LinkedIn</Link></p>
+        </li>
+         <li>
+            <Image alt="Instagram" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl5.png" width={32} height={32}/>
+            <p><Link href="https://www.instagram.com/" target="_blank">Follow Us on<br/>Instagram</Link></p>
+        </li>
+        
+         <li>
+            <Image alt="Facebook" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl1.png" width={32} height={32}/>
+            <p><Link href="https://www.facebook.com/" target="_blank">Like Us on<br/>Facebook</Link></p>
+        </li>
+         <li>
+            <Image alt="Pinterest" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl3.png" width={32} height={32}/>
+            <p><Link href="https://in.pinterest.com/" target="_blank">View Us on<br/>Pinterest</Link></p>
+        </li>
+        
+    </ul>
+</div>
+
         </>
     )
 }
