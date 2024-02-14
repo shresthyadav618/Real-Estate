@@ -18,12 +18,12 @@ const menu__btn = document.getElementsByClassName('menu__btn')[0];
 const menu__toggle__span = document.getElementsByClassName('menu__toggle__span')[0];
 const menu__toggle = document.getElementById('menu__toggle');
 window.addEventListener('click', function(event) {
-  if (!menu__box.contains(event.target) && (event.target !== menu__toggle && event.target!==menu__toggle__span )) {
+  if (!menu__box?.contains(event.target) && (event.target !== menu__toggle && event.target!==menu__toggle__span )) {
     menu__toggle.checked = false;
   }else
-   if(!menu__box.contains(event.target) && (event.target === menu__toggle || event.target === menu__toggle__span)){
-    console.log('the menu toggle checked value is  : ',menu__toggle.checked);
-    if(menu__toggle.checked == false){
+   if(!menu__box?.contains(event.target) && (event.target === menu__toggle || event.target === menu__toggle__span)){
+    console.log('the menu toggle checked value is  : ',menu__toggle?.checked);
+    if(menu__toggle?.checked == false){
     menu__toggle.checked = true;
     }else{
       menu__toggle.checked = false;

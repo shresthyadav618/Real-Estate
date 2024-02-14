@@ -33,6 +33,8 @@ export default  function Property(){
     const type = pathname.split('/')[2].toString();
     const [data,changeData] = useState(propertyContext);
     const [loader,setLoader] = useState(true);
+    const [search,setSearch] = useState(null);
+    console.log('search value ',search);
     const [sub,changeSub] = useState(subCategories[type][0].value);
     console.log('the sub category is : ',sub);
     if(type=='Plot' && sub!=='nl'){
@@ -57,6 +59,17 @@ export default  function Property(){
       if(loader){
         return <div className="h-[100vh] w-[100vw] flex justify-center items-center"><ScaleLoader color="#36d7b7" /></div>
       }
+
+      function handleSearchButtonClick(){
+        if(!propertyContext){return;}
+        const newData = propertyContext.filter((property)=>{
+          if( (property.name.includes(search)) && property.propertyCategory == type && property.subCategory == sub ){
+            return true;
+          }
+        });
+        changeData(newData);
+      }
+
   return (
     <>
     <NewHeader/>
@@ -74,6 +87,12 @@ export default  function Property(){
     })}
     </div>
     </div>}
+
+    <div className="search__property">
+      
+      <input placeholder="Property Name" onChange={(e)=>{setSearch(e.target.value)}} type="text" ></input>
+      <button onClick={handleSearchButtonClick} className="search__button">Search</button>
+      </div> 
 
     <div className={type=='Plot'?'property__container addMargin':'property__container'}>
         {data && data.map((property)=>{
