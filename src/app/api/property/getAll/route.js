@@ -5,13 +5,14 @@ import { PropertyModel } from "@/models/property";
 import { NextResponse } from "next/server";
 import { connect } from "../../../../dbConfig/connectDB";
 await connect();
+export const dynamic = 'force-dynamic';
 export async function GET(NextRequest){
 
 try{
 await connect();
 const allProperties = await PropertyModel.find({});    
 if(allProperties){
-    // console.log('got all the properties',allProperties);
+    console.log('got all the properties',allProperties);
     return NextResponse.json({
         status : 200,
         allProperties

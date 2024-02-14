@@ -4,6 +4,7 @@ import { PropertyModel } from "@/models/property";
 import { NextResponse } from "next/server";
 import { connect } from "../../../../dbConfig/connectDB";
 await connect();
+export const dynamic = 'force-dynamic';
 export async function POST(NextRequest){
 console.log('INSIDE THE POST REQUEST TO ADD PROPERTY');
     try{
