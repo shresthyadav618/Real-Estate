@@ -1,7 +1,17 @@
 .about__info{
     width: 80vw;
     margin: auto;
-    font-weight: bold;
+    font-weight: 700;
     font-size: large;
     letter-spacing: 1px;
+    font-family: cursive;
+    font-size: x-large;
+    text-align: justify;
+}
+
+@media screen and (max-width:786px){
+    .about__info{
+        font-size: large!important;
+        text-align: left;
+    }
 }
