@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 const nodemailer = require("nodemailer");
+export const dynamic = 'force-dynamic';
 export async function POST(NextRequest){
     try {
             // Create .createTestAccount
