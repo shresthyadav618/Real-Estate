@@ -80,7 +80,7 @@ export default function Residential(){
             if(e){
                 const xx = po.offsetTop;
                 e.classList.add('removeFixed');
-                e.style.transform = `translate3d(70px, ${xx}px, 0px)`;
+                e.style.transform = `translate3d(76px, ${xx-50}px, 0px)`;
             }
         }else{
             const e = document?.getElementById(`${data._id}xyz`);
