@@ -106,7 +106,7 @@ width: 100%;
   font-size: 20px;
   line-height: 1;
   opacity: .75;
-  color: black;
+  color: black!important;
 }
 
 @media screen and (max-width:1000px){
