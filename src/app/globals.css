@@ -102,6 +102,13 @@ width: 100%;
 }
 
 
+.slick-next:before, .slick-prev:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: black;
+}
+
 @media screen and (max-width:1000px){
   .wp{
     width: 6% !important;
