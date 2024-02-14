@@ -185,7 +185,7 @@ export default function Residential(){
                 <div className="left1__img">
                     {data && data.images.length>1 && <Slider {...settingsForFront}>
                     {data && data.images && data.images.map((elm)=>{
-                        return <Image key={elm+'prop1'} src={elm} width={200} height={200}></Image>
+                        return <Image key={elm+'prop1'} src={elm} width={200} height={200} quality={100}></Image>
                     })}
 
                     </Slider>}

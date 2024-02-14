@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../assets/final_logo.png";
+import logo from "../assets/logo-bg.png";
 import "./Header.css";
 export default function Header(props){
     console.log('executing header')
