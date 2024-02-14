@@ -43,7 +43,9 @@
 .addMargin{
     margin: 180px auto 40px auto!important;
 }
-
+.addSearchMargin{
+    margin: 200px auto -100px auto!important;
+}
 .search__property{
     width: 80vw;
     margin: auto;

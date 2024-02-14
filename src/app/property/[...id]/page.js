@@ -87,8 +87,8 @@ export default  function Property(){
     })}
     </div>
     </div>}
-
-    <div className="search__property">
+   
+    <div className={type==='Plot' ? "addSearchMargin search__property" : "search__property" }>
       
       <input placeholder="Property Name" onChange={(e)=>{setSearch(e.target.value)}} type="text" ></input>
       <button onClick={handleSearchButtonClick} className="search__button">Search</button>
