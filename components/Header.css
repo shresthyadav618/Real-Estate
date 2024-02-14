@@ -422,7 +422,13 @@ li > a:only-child:after { content: ''; } */
   object-fit: cover;
   background-position: center;
 }
-
+.numbers{
+  max-width: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .phone{
   position: absolute;
   top: 40px;

@@ -16,7 +16,7 @@ export default function Footer(props){
                 <div className="footer__child1">
 
                     <div className="footer__heading">Prime Associates</div>
-                    <div className="flex gap-x-2 items-center ">  <i class="fa-solid fa-location-dot"></i> <p className="ls">Plot no 7, TOWER-A11,Sector 82A,Gurugram, Haryana</p> </div>
+                    <div className="flex gap-x-2 items-center ">  <i class="fa-solid fa-location-dot"></i> <p className="ls">Plot no 7, Street A 1.1 , Sector 82A,Gurugram, Haryana</p> </div>
                     <div className="flex gap-x-2 items-center "> <i class="fa-solid fa-phone"></i> <p className="ls">9999261355</p> </div>
                     <div className="flex gap-x-2 items-center "> <i class="fa-regular fa-envelope"></i> <p className="ls">vatikaprime@gmail.com</p> </div>
 

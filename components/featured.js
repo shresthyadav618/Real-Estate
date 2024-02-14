@@ -3,6 +3,7 @@
 import { PropertiesContext } from "@/propertiesProvider/propertiesProvider";
 import { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
+import ScaleLoader from "react-spinners/ScaleLoader";
 import o5 from "../assets/o5.jpg";
 import FeaturedChild from "./featuredChild";
 import "./styles/featured.css";
@@ -70,7 +71,11 @@ export default function Featured(){
             
             ]
       };
+      if(!propertyContext){
       
+            return <div className="h-[100vh] w-[100vw]  flex justify-center items-center "><ScaleLoader color="#36d7b7" /></div>
+          
+      }
     return(
         <div className="featured__parent ">
             <h1 className="text-4xl  font-bold">Our Featured Products</h1>

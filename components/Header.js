@@ -109,9 +109,9 @@ Contact us */}
                 >
                     {/* Contact Us */}
                     <i class="fa-solid fa-phone phone__class fa-xl"></i>
-                    <div>
+                    <div className="numbers">
                     <div>+91 9999261355</div>
-                    <div>+91 9999261355</div>
+                    <div>+91 9654000756</div>
                     </div>
 
                 </div>
