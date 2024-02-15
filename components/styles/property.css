@@ -95,6 +95,20 @@
     }
 }
 
+@media screen and (max-width:700px){
+    .search__property{
+        flex-direction: column!important;
+        row-gap: 10px!important;
+    }
+    .search__property > input{
+        width: 100%!important;
+    }.search__property > button{
+        width: 100%!important;
+    }
+    
+}
+
+
 @media screen and (max-width:480px){
     .toggle__property > div {
          flex-direction: column;

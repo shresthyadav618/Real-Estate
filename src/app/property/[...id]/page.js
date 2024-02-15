@@ -34,6 +34,7 @@ export default  function Property(){
     const [data,changeData] = useState(propertyContext);
     const [loader,setLoader] = useState(true);
     const [search,setSearch] = useState(null);
+    const [searchLocation,setSearchLocation] = useState(null);
     console.log('search value ',search);
     const [sub,changeSub] = useState(subCategories[type][0].value);
     console.log('the sub category is : ',sub);
@@ -63,10 +64,25 @@ export default  function Property(){
       function handleSearchButtonClick(){
         if(!propertyContext){return;}
         const newData = propertyContext.filter((property)=>{
-          const lower = property.name.toLowerCase();
-          if( (lower.includes(search.toLowerCase())) && property.propertyCategory == type && property.subCategory == sub ){
+          const lowerSearch = property.name.toLowerCase();
+          const lowerSearchLocation = property.location.toLowerCase();
+          console.log('Search location and value',search,searchLocation);
+          if(search && search!=" " && searchLocation && searchLocation!=" "){
+            console.log('Inside this');
+            if( (lowerSearch?.includes(search?.toLowerCase()) && lowerSearchLocation?.includes(searchLocation?.toLowerCase()) ) && property.propertyCategory == type && property.subCategory == sub ){
+              return true;
+            }
+          }else {
+          if(search && search.length>0 &&  (lowerSearch?.includes(search?.toLowerCase())) && property.propertyCategory == type && property.subCategory == sub ){
+            return true;
+          }else if(searchLocation && searchLocation.length>0 && lowerSearchLocation?.includes(searchLocation?.toLowerCase()) && property.propertyCategory == type && property.subCategory == sub  ){
+            return true;
+          }else if( property.propertyCategory == type && property.subCategory == sub ){
             return true;
           }
+
+        }
+
         });
         changeData(newData);
       }
@@ -92,8 +108,11 @@ export default  function Property(){
     <div className={type==='Plot' ? "addSearchMargin search__property" : "search__property" }>
       
       <input placeholder="Property Name" onChange={(e)=>{setSearch(e.target.value)}} type="text" ></input>
+      <input placeholder="Enter Location" onChange={(e)=>{setSearchLocation(e.target.value)}} type="text" ></input>
       <button onClick={handleSearchButtonClick} className="search__button">Search</button>
       </div> 
+
+   
 
     <div className={type=='Plot'?'property__container addMargin':'property__container'}>
         {data && data.map((property)=>{
