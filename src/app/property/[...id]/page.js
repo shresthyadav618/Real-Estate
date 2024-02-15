@@ -67,6 +67,10 @@ export default  function Property(){
           const lowerSearch = property.name.toLowerCase();
           const lowerSearchLocation = property.location.toLowerCase();
           console.log('Search location and value',search,searchLocation);
+          
+          if(( (search==" " && searchLocation==" ") || (!search && !searchLocation) )&&  property.propertyCategory == type && property.subCategory == sub){
+            return true;
+          }else
           if(search && search!=" " && searchLocation && searchLocation!=" "){
             console.log('Inside this');
             if( (lowerSearch?.includes(search?.toLowerCase()) && lowerSearchLocation?.includes(searchLocation?.toLowerCase()) ) && property.propertyCategory == type && property.subCategory == sub ){
@@ -76,8 +80,6 @@ export default  function Property(){
           if(search && search.length>0 &&  (lowerSearch?.includes(search?.toLowerCase())) && property.propertyCategory == type && property.subCategory == sub ){
             return true;
           }else if(searchLocation && searchLocation.length>0 && lowerSearchLocation?.includes(searchLocation?.toLowerCase()) && property.propertyCategory == type && property.subCategory == sub  ){
-            return true;
-          }else if( property.propertyCategory == type && property.subCategory == sub ){
             return true;
           }
 
