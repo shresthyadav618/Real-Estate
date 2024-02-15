@@ -151,7 +151,7 @@ Contact us */}
 
         </div>
 
-        <div class="sticky-container">
+        <span class="sticky-container">
     <ul class="sticky-social-icons">
          <li>
             <Image alt="twitter" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl2.png" width={32} height={32}/>
@@ -178,7 +178,7 @@ Contact us */}
         </li>
         
     </ul>
-</div>
+</span>
 
         </>
     )
