@@ -309,16 +309,16 @@ li > a:only-child:after { content: ''; } */
     margin: 0;
     padding: 80px 0;
     list-style: none;
-    background-color: #617278;
-    
+    background-color: white;
+    color: black;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
   }
   .menu__item {
     display: block;
     padding: 12px 24px;
-    color: #333;
-    color: white;
+    /* color: #333; */
+    color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 600;
