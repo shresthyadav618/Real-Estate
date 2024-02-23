@@ -598,12 +598,13 @@ margin: 0px;
   width: 100vw;
   height: 40px;
   z-index: 1000;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   letter-spacing: 3px;
-  background-color: gray;
+  background-color: white;
+  border-bottom: 1px solid gray;
   position: fixed;
   top: 0px;
 }
