@@ -82,6 +82,7 @@ export default function Home() {
     {img : ag1,name : "prahlad" , role : "Exclusive Team Agent" , since : "2020" , number : "919717532616", l1 :'' , l2: '' , l3 : '', l4 :''}];
      
   return (
+    
    <div className="relative">
     <a href={'https://api.whatsapp.com/send?phone=919999261355'}><Image className="wp" width={100} height={100} src={wp}></Image></a>
     <div className="image__container m-h-[80%] flex flex-col gap-y-[100px]">
