@@ -20,6 +20,7 @@ import Contact from "../../components/contact";
 import Featured from "../../components/featured";
 import Overview from "../../components/overview";
 import Slider from "../../components/slider";
+import VideoComponent from "../../components/videoContainer";
 import WhatProvide from "../../components/whatProvide";
 // import dynamic from "next/dynamic";
 // const DynamicHeader = dynamic(()=>import( "../../components/Header"),{ssr:false})
@@ -84,6 +85,7 @@ export default function Home() {
    <div className="relative">
     <a href={'https://api.whatsapp.com/send?phone=919999261355'}><Image className="wp" width={100} height={100} src={wp}></Image></a>
     <div className="image__container m-h-[80%] flex flex-col gap-y-[100px]">
+      <VideoComponent videoSrc={'https://app.vidzflow.com/v/H0LDXZjsnq?dq=576&ap=true&muted=true&loop=true&ctp=false&bc=%234E5FFD&controls='} />
     <TopHeader/>
     <Header/>
     {/* <DynamicHeader/> */}
