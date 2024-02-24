@@ -7,7 +7,8 @@ export const PropertiesContext = createContext();
 export default function PropertiesProvider({children}){
 
     const [allProperties,changeAllProperties] = useState();
-    const BASE_URL = 'https://prime-associates-real.vercel.app';
+    // const BASE_URL = 'https://prime-associates-real.vercel.app';
+    const BASE_URL = 'https://www.primeassociatesgroup.com';
     // const BASE_URL = 'http://localhost:3001';
 // 
     useEffect(()=>{
