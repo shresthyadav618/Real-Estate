@@ -226,6 +226,7 @@ li > a:only-child:after { content: ''; } */
       padding: 20px;
       background: #04222A;
       border-radius: 10px;
+      color: white !important;
 }
 
 .header__list> ul > li:hover >ul ,.sub__list:hover{
