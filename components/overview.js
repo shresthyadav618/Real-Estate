@@ -19,13 +19,13 @@ return (
         <div className="overview__child2">
 
             <div className="sub__child1">
-                <Image src={o1} className="h-[60%]"></Image>
-                <Image src={o2} className="h-[40%]"></Image>
+                <Image alt="No Image Found" src={o1} className="h-[60%]"></Image>
+                <Image alt="No Image Found" src={o2} className="h-[40%]"></Image>
             </div>
 
             <div className="sub__child2">
-            <Image src={o3} className="h-[40%]"></Image>
-            <Image src={o4} className="h-[60%]"></Image>
+            <Image alt="No Image Found" src={o3} className="h-[40%]"></Image>
+            <Image alt="No Image Found" src={o4} className="h-[60%]"></Image>
             </div>
 
         </div>

@@ -371,7 +371,7 @@ if(typeof(window) !=="undefined"){
                     return (
                   <div className="relative " key={imageContent+'edit2'}>
                   
-                      <img
+                      <img alt="No Image Found"
                         src={imageContent}
                         width={"160px"}
                         height={"160px"}
@@ -432,7 +432,7 @@ if(typeof(window) !=="undefined"){
                   if (imageContent)
                     return (
                   <div key={imageContent+'edit1'} className="relative">
-                      <img
+                      <img alt="No Image Found"
                         src={imageContent}
                         width={"160px"}
                         height={"160px"}

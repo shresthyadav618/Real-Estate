@@ -75,7 +75,7 @@ About us
 Services 
 Contact us */}
     <ul class="menu__box">
-      <li><a className="menu__item" href={'/'}><Image src={logo} width={252} height={90}></Image></a></li>
+      <li><a className="menu__item" href={'/'}><Image alt="No Image Found"  src={logo} width={252} height={90}></Image></a></li>
       {/* <li><Link>Home</Link> </li>
       <li><Link> About Us</Link></li>
       <li><Link> Services </Link> */}
@@ -109,7 +109,7 @@ Contact us */}
                 <div>Huehue</div> */}
             <ul className="flex gap-x-12 header__list add">
                 
-                <Link className="font-bold text-4xl" href={'/'}><Image src={logo} width={200} height={65}></Image></Link>
+                <Link className="font-bold text-4xl" href={'/'}><Image  alt="No Image Found" src={logo} width={200} height={65}></Image></Link>
                 {/* <div className="flex flex-col phone"><p>9810898280</p><p>9810898280</p></div> */}
                 <ul>
                 {headerItems.map((item)=>{
@@ -154,26 +154,26 @@ Contact us */}
         <span class="sticky-container">
     <ul class="sticky-social-icons">
          <li>
-            <Image alt="twitter" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl2.png" width={32} height={32}/>
+            <Image  alt="twitter" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl2.png" width={32} height={32}/>
             <p><Link href="https://twitter.com" target="_blank">Follow Us on<br/>Twitter</Link></p>
         </li>
        
        
         <li>
-            <Image alt="Linkedin" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl6.png" width={32} height={32}/>
+            <Image  alt="Linkedin" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl6.png" width={32} height={32}/>
             <p><Link href="https://www.linkedin.com/company" target="_blank">Subscribe on<br/>LinkedIn</Link></p>
         </li>
          <li>
-            <Image alt="Instagram" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl5.png" width={32} height={32}/>
+            <Image  alt="Instagram" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl5.png" width={32} height={32}/>
             <p><Link href="https://www.instagram.com/" target="_blank">Follow Us on<br/>Instagram</Link></p>
         </li>
         
          <li>
-            <Image alt="Facebook" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl1.png" width={32} height={32}/>
+            <Image  alt="Facebook" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl1.png" width={32} height={32}/>
             <p><Link href="https://www.facebook.com/" target="_blank">Like Us on<br/>Facebook</Link></p>
         </li>
          <li>
-            <Image alt="Pinterest" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl3.png" width={32} height={32}/>
+            <Image  alt="Pinterest" src="https://www.realtimerealtors.in/user/images/icon/ftr_scl3.png" width={32} height={32}/>
             <p><Link href="https://in.pinterest.com/" target="_blank">View Us on<br/>Pinterest</Link></p>
         </li>
         

@@ -12,7 +12,7 @@ export default function agents(props){
             
             <div className="agent__child">
                 <div className="agent__sub__child">
-                    <Image src={Def}></Image>
+                    <Image alt="No Image Found" src={Def}></Image>
                     <div className="agent__sub__child__info">
                         <h1>{name}</h1>
                         <div>{role}</div> 

@@ -22,7 +22,7 @@ export default function FeaturedChild(props){
     return (
         // <div className={present?'featured__display w-[100%]!important bg-white':'featured__display'+addWid?'addWid':''}>
             <div className={present ? 'featured__display w-[100%]!important bg-white' : `featured__display ${addWid ? 'addWid' : ''}`}>
-        <Image src={img} width={200} height={100} className="w-[100%!important] h-[100%!important]"></Image>
+        <Image alt="No Image Found" src={img} width={200} height={100} className="w-[100%!important] h-[100%!important]"></Image>
 
         <h1 className="font-bold">{name}</h1>
         <div className="l">{location}</div>

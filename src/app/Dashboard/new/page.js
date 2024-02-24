@@ -308,7 +308,7 @@ async function uploadImages(e) {
                             key={imageContent + "new2"}
                             className="relative "
                           >
-                            <img
+                            <img alt="No Image Found"
                               src={imageContent}
                               width={"160px"}
                               height={"160px"}
@@ -377,7 +377,7 @@ async function uploadImages(e) {
                       if (imageContent)
                         return (
                           <div key={imageContent + "new1"} className="relative">
-                            <img
+                            <img alt="No Image Found"
                               src={imageContent}
                               width={"160px"}
                               height={"160px"}
