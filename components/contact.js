@@ -5,6 +5,7 @@ import contactImage from "../assets/cf.jpg";
 import "./styles/contact.css";
 export default function Contact() {
   const BASE_URL = "https://prime-associates-real.vercel.app";
+  // const BASE_URL = "https://www.primeassociatesgroup.com";
   // const BASE_URL = 'http://localhost:3001';
 
   const [data, changeData] = useState({

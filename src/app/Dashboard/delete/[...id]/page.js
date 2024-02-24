@@ -6,6 +6,7 @@ import "../../../../../components/styles/dashboard.css";
 // const DynamicHeader = dynamic(()=>import( "../../../../../components/Header"),{ssr:false})
 export default function DeleteProperty(){
     const BASE_URL = 'https://prime-associates-real.vercel.app';
+    // const BASE_URL = 'https://www.primeassociatesgroup.com';
     // const BASE_URL = 'http://localhost:3001';
     const pathname = usePathname();
     const _id = pathname.split('/')[3].toString();
