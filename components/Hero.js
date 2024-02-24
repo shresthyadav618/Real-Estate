@@ -78,7 +78,7 @@ export default function Hero(){
       <p>Contact me on</p>
       <div className="flex phone gap-x-2">
       <div className="text-black font-bold">9999261355, </div>
-      <div className="text-black font-bold"> 9999261355</div>
+      <div className="text-black font-bold"> 9654000756</div>
       </div>
       <button class="cross-btn"><i class="fas fa-times"></i></button>
       <ul>
