@@ -55,7 +55,7 @@ export default function Contact() {
     <div className="contact__container">
       <div className="contact__image">
         {/* <div> */}
-        <Image src={contactImage}></Image>
+        <Image alt="No image found" src={contactImage}></Image>
         {/* </div> */}
 
         <div className="content__image">
