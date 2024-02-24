@@ -19,7 +19,8 @@ import Header from "../../../../components/Header";
 // const DynamicFooter = dynamic(()=>import( "../../../../components/Footer"),{ssr:false})
 
 export default function Residential(){
-    const BASE_URL = 'https://prime-associates-real.vercel.app';
+    // const BASE_URL = 'https://prime-associates-real.vercel.app';
+    const BASE_URL = 'https://www.primeassociatesgroup.com';
     // const BASE_URL = 'http://localhost:3001';
     const [data,changeData] = useState([]);
     const pathname = usePathname();
