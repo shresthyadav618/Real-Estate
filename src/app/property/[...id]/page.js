@@ -88,7 +88,7 @@ export default  function Property(){
         });
         changeData(newData);
       }
-
+console.log('Value of data is : ',data);
   return (
     <>
     <NewHeader/>
@@ -117,9 +117,14 @@ export default  function Property(){
    
 
     <div className={type=='Plot'?'property__container addMargin':'property__container'}>
-        {data && data.map((property)=>{
-            return <FeaturedChild key={property._id+'property'} heading={property.name} addWid={true} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
+        {data && data!=[] && data.map((property)=>{
+            return<>
+             <FeaturedChild key={property._id+'property'} heading={property.name} addWid={true} location={property.location} img={property.images[0]} type={property.propertyCategory} area={property.area} price={property.price}  _id={property._id} />
+            </>
         })}
+        {(!data || data.length===0) &&  <h1 className="font-bold text-xl mb-10">
+          Oops No Data found!
+          </h1> }
     </div>
     <Footer addClr={true}/>
     </>
