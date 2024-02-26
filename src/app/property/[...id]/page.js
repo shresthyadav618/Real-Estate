@@ -1,5 +1,5 @@
 
-import PropertyId from "./propertyId";
+import PropertyId from "./PropertyId";
 // import { useId } from "./getPathId";
 
 // import { _id } from "./PropertyId";
