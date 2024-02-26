@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Prime Associates Group',
-  description: 'Prime Associates Realty Group',
+  description: 'Prime Associates Group , a real estate agency which helps you to choose your Dream Home. Your Dream is one step away , visit US.',
+  metadataBase : new URL('https://primeassociatesgroup.com')
 }
 
 export default function RootLayout({ children }) {

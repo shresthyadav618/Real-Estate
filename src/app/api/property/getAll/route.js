@@ -12,13 +12,13 @@ try{
 await connect();
 const allProperties = await PropertyModel.find({});    
 if(allProperties){
-    console.log('got all the properties',allProperties);
+    // console.log('got all the properties',allProperties);
     return NextResponse.json({
         status : 200,
         allProperties
     })
 }else{
-    console.log('No product is found');
+    // console.log('No product is found');
     return NextResponse.json({
         status : 200,
         data : 'No Products found'
@@ -26,7 +26,7 @@ if(allProperties){
 }
 
 }catch(err){
-    console.log('THERE WAS SOME ERROR WHILE GETTING ALL THE PROPERTIES',err);
+    // console.log('THERE WAS SOME ERROR WHILE GETTING ALL THE PROPERTIES',err);
     return NextResponse.json({
         status : 500,
         error : err

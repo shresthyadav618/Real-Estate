@@ -150,9 +150,15 @@
 .container-f{
   font-size: x-large;
 }
-.hero__container__one > p{
-  font-size: x-large;
+
+  .property-description {
+    font-size: x-large;
+    text-align: justify; /* Align text justified */
+    /* width: 80%; Adjust width as needed */
+    margin: 0 auto; /* Center the paragraph horizontally */
+    max-width: 100%; /* Ensure the paragraph doesn't exceed its container */
 }
+
 .add{
     position: fixed;
 top: 40px;

@@ -75,7 +75,7 @@ About us
 Services 
 Contact us */}
     <ul class="menu__box">
-      <li><a className="menu__item" href={'/'}><Image alt="No Image Found"  src={logo} width={252} height={90}></Image></a></li>
+      <li><a className="menu__item" href={'/'}><Image alt="No Image Found"   src={logo} width={252} height={90}></Image></a></li>
       {/* <li><Link>Home</Link> </li>
       <li><Link> About Us</Link></li>
       <li><Link> Services </Link> */}

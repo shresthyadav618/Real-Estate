@@ -11,9 +11,9 @@ try{
 
 const body = await NextRequest.json();
 const _id = body;
-console.log('the id received in edit api is : ',_id);
+// console.log('the id received in edit api is : ',_id);
 const pp = await PropertyModel.findById(_id);
-console.log('found the property',pp);
+// console.log('found the property',pp);
 if(pp){
     return NextResponse.json({
         status : 200,
@@ -26,7 +26,7 @@ return NextResponse.json({
 })
 
 }catch(err){
-    console.log('the error is  : ',err);
+    // console.log('the error is  : ',err);
     return NextResponse.json({
         status : 500,
         err
