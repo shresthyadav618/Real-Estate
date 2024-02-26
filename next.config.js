@@ -35,9 +35,10 @@
 // module.exports = nextConfig;
 
 const nextConfig = {
+  // output: 'export',
   images: {
-    domains: ['manushresth-real-estate.s3.amazonaws.com'],
-    unoptimized: true,
+    domains: ['manushresth-real-estate.s3.amazonaws.com','www.realtimerealtors.in'],
+    // unoptimized: true,
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
