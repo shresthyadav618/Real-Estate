@@ -1,3 +1,19 @@
+
+.developer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    column-gap: 20px;
+}
+
+.developer > span{
+    font-size: normal;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
 .footer__container{
     width: 100vw;
     padding: 40px;
@@ -8,6 +24,12 @@
     /* margin-bottom: 200px; */
     min-height: 30vh;
 }
+
+.footer__container {
+    border-bottom: 2px solid gray;
+}
+
+
 
 .footer__parent{
     width: 100vw;
@@ -90,5 +112,12 @@ max-width: 25%;
 @media screen and (max-width:560px){
     .footer__parent> div{
         width: 100%;
+    }
+}
+
+@media screen and (max-width : 450px){
+    .developer{
+        font-size: small;
+        letter-spacing: default;
     }
 }

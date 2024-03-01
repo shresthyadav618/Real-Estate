@@ -17,6 +17,7 @@ import Hero from "../../components/Hero";
 import TopHeader from "../../components/NewHeader";
 import Agent from "../../components/agents";
 import Contact from "../../components/contact";
+import Developer from "../../components/developer";
 import Featured from "../../components/featured";
 import Overview from "../../components/overview";
 import Slider from "../../components/slider";
@@ -124,6 +125,7 @@ export default function Home() {
     <Contact/>
     {/* <DynamicContact/> */}
     <Footer/>
+    <Developer/>
     {/* <DynamicFooter/> */}
    </div>
   )
