@@ -6,6 +6,7 @@
     align-items: center;
     padding: 10px;
     column-gap: 20px;
+
 }
 
 .developer > span{
@@ -109,15 +110,36 @@ max-width: 25%;
         row-gap: 20px;
     }
 }
+
+@media screen and (max-width : 800px){
+    .developer{
+        font-size: small;
+        letter-spacing: default;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:600px){
+    .developer{
+        justify-content: unset!important;
+        align-items: unset!important;
+        margin-left: 20%;
+        width: fit-content;
+    }
+}
 @media screen and (max-width:560px){
     .footer__parent> div{
         width: 100%;
     }
 }
 
-@media screen and (max-width : 450px){
+
+@media screen and (max-width:500px){
     .developer{
-        font-size: small;
-        letter-spacing: default;
+        margin-left: 15%;
+    }
+    .hideSpan{
+        display: none;
     }
 }
