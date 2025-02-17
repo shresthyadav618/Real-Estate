@@ -5,7 +5,7 @@ export default function Hero(){
 
 
   useEffect(() => {
-      // Your JavaScript code here
+      
       if(typeof window !== 'undefined'){
         console.log('q');
           const contactform = document?.getElementsByClassName('contact-form')[0];
