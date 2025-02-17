@@ -1,6 +1,6 @@
 
 
-
+// unecessary right now.
 
 // const nextConfig = {
 //   images: {
