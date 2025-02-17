@@ -26,7 +26,7 @@ const PropertySchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    details: Object // Consider a more specific schema if needed
+    details: Object // Consider a more specific schema if needed.
 },{
     timestamps : true
 });
